@@ -3202,6 +3202,10 @@ blockquote footer cite:before {
   max-height: 1.4em;
   width: auto;
 }
+#aside_content div:not(:last-child) {
+  display: none;
+  font-size: 13px;
+}
 #page-header {
   position: relative;
   width: 100%;
