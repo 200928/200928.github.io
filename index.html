@@ -52,7 +52,7 @@
   isHome: true,
   isHighlightShrink: true,
   isToc: false,
-  postUpdate: '2022-03-05 13:17:27'
+  postUpdate: '2022-03-14 19:44:42'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -193,8 +193,21 @@ pppoe-status
 待续
 
 
-</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/03/01/ArchLinux%E5%AE%89%E8%A3%85VMware/" title="ArchLinux安装VMware">ArchLinux安装VMware</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-01T02:28:58.000Z" title="发表于 2022-03-01 10:28:58">2022-03-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-01T07:39:55.662Z" title="更新于 2022-03-01 15:39:55">2022-03-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">
-安装VMware1$ yay -S vmware-workstation
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/03/01/ArchLinux%E5%AE%89%E8%A3%85VMware/" title="ArchLinux安装VMware">ArchLinux安装VMware</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-01T02:28:58.000Z" title="发表于 2022-03-01 10:28:58">2022-03-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-09T04:06:24.477Z" title="更新于 2022-03-09 12:06:24">2022-03-09</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">
+安装
+安装依赖
+12$ sudo pacman -S fuse2 gtkmm linux-headers pcsclite libcanberra$ yay -S ncurses5-compat-libs
+安装 VMware
+1$ pacman -S vmware-workstation
+如果出现下面问题，只需要安装linux-headers，通过命令安装
+1$ pacman -S linux-headers
+
+
+安装好之后记得打开两个服务，否则进入虚拟机系统会没有网络
+123$ sudo systemctl start vmware-networks.service  vmware-usbarbitrator.service       #启动虚拟机的网络,USB,共享等服务$ sudo systemctl enable vmware-networks.service  vmware-usbarbitrator.service      #启动虚拟机的网络,USB,共享等服务$ sudo modprobe -a vmw_vmci vmmon		#加载VMware模块
+
+
+
 
 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/03/01/ranger/" title="Ranger">Ranger</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-01T02:28:58.000Z" title="发表于 2022-03-01 10:28:58">2022-03-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-04T14:29:08.381Z" title="更新于 2022-03-04 22:29:08">2022-03-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">
 Ranger 安装1$ sudo pacman -S ranger
@@ -277,7 +290,7 @@ Ranger 安装1$ sudo pacman -S ranger
 MyISAM存储引擎支持全文索引，但是在实际生产环境中，不会使用MySQL提供的MyISAM存储引擎的全文索引功能来实现全文索引，而是使用第三方的全文索引中间件，比如ElasticSearch、Solr等
 
 
-</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/22/DWM/" title="DWM-动态窗口管理器">DWM-动态窗口管理器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-22T08:28:58.000Z" title="发表于 2022-01-22 16:28:58">2022-01-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-04T14:28:28.965Z" title="更新于 2022-03-04 22:28:28">2022-03-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/22/DWM/" title="DWM-动态窗口管理器">DWM-动态窗口管理器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-22T08:28:58.000Z" title="发表于 2022-01-22 16:28:58">2022-01-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-09T04:28:23.309Z" title="更新于 2022-03-09 12:28:23">2022-03-09</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">
 安装 DWM来到官网：https://dwm.suckless.org/
 下面需要克隆dwm st dmenu
 
@@ -531,119 +544,6 @@ Typora 软件内有测试按钮
 
 
 
-</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/15/ArchLinux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" title="ArchLinux系统安装">ArchLinux系统安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-15T08:28:58.000Z" title="发表于 2022-01-15 16:28:58">2022-01-15</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-05T05:16:35.953Z" title="更新于 2022-03-05 13:16:35">2022-03-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">
-安装步骤连接网络分区并挂载
-查看当前磁盘分区fdisk -l详情
-
-分区可以使用两个工具，cfdisk和gdisk，前者是有DOS界面的，后者命令行
-
-然后就是分区了，最少建立两个分区（有boot分区的情况下），即根分区和swap分区
-
-swap分区大小可以分内存一半，或者与内存等大
-根分区为其他未分配空间
-
-
-如果是硬盘里面只装这一个系统就还需要建立boot分区，用来引导系统。因为我原本是还有一个Windows系统，Windows已经创建了boot分区，我就可以不用创建了。
-
-这里分区分好之后，假设分区情况如下
-
-boot分区：/dev/nvme0n1p1
-根分区：/dev/nvme0n1p5
-swap分区：/dev/nvme0n1p6
-
-下面将分区格式化，执行如下命令
-123$ mkfs.ext4 -L ArchFSBoot /dev/nvme0n1p5	# -L 指定卷标名$ mkswap /dev/nvme0n1p6$ swapon /dev/nvme0n1p6	# 打开交换分区
-分区完成后，进行挂载
-挂载的目的就是写文件到刚刚所建分区上（刚刚已经格式化了，什么东西都没有），因为我们现在所处的是光盘镜像（可以看到是红色的root），还未安装系统到新建分区上，因此需要通过挂载刚刚新建分区到光盘镜像的某个目录下，与此同时，Linux挂载目录通常是/mnt下
-下面把根分区（/dev/nvme0n1p5）挂载到/nmt下
-swap分区（/dev/nvme0n1p6）挂载到/mnt/boot下，在挂载前，需要创建/mnt/boot目录
-下面开始挂载，注意挂载顺序，先挂载外面的/mnt，然后挂载/mnt下的boot，当然，挂载前需要创建该/mnt/boot目录
-下面假设先创建/mnt/boot目录并将此目录作为硬盘/dev/nvme0n1p6的挂载点，直到这里没有任何问题，然后挂载硬盘/dev/nvme0n1p5到/mnt，然后你查看/mnt下的文件ls /mnt，会发现刚刚挂载的/mnt/boot没有了。这里我是认为是先挂载的/mnt/boot这个目录被后面挂载的/mnt所掩盖了，即挂载一个目录后，该目录原始的文件会看不到了，具体原因还未知！类比刚刚，先挂载的/mnt/boot被后面挂载的/mnt掩盖掉了。
-123$ mount /dev/nvme0n1p5 /mnt$ mkdir -p /mnt/boot$ mount /dev/nvme0n1p1 /mnt/boot
-开始装系统书接上文，我们把上面的所做的工作用一个图表示
-这里很好理解，/mnt等价于需装系统(ArchLinux)的/
-而/mnt/boot等价于/boot
-
-知道了/mnt就是待装系统的/那么现在在/mnt下装系统，官方提供了一条命令pacstrap，下面是我安装的一些东西，按个人需求安装
-1$ pacstrap /mnt base base-devel linux linux-firmware networkmanager vim intel-ucode git
-等待即可！！！
-安装好了之后生成文件表
-1$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-
-/etc/fstab是Linux系统下的n硬盘挂载点文件
-
-
-
-新系统配置刚刚已经将系统安装好了，并且生成了文件表，下面切换到新安装的ArchLinux系统
-1$ arch-chroot /mnt
-
-语言
-1$ vim /ect/local.gen
-找到zh_CN.UTF-8 UTF-8和en_US.UTF-8 UTF-8前面#删除
-生成语言文件
-1$ locale-gen
-设置系统缺省语言文件
-1$ echo LANG=en_US.UTF-8 &gt; /etc/locale.conf
-
-
-设置时区
-12$ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime$ timedatectl set-ntp true
-硬件时钟
-1$ hwclock --systohc
-
-
-主机名，我这里设置为 Mingarch
-1$ echo Mingarch &gt; /etc/hostname
-
-
-域名解析文件（hosts）
-1$ vim /etc/hosts
-我的内容如下
-123456# Static table lookup for hostnames.# See hosts(5) for details.127.0.0.1       localhost::1             localhost127.0.1.1       Mingarch.localdomain    Mingarch
-
-这里面的 Mingarch 是主机名，不要搞错了
-
-
-给普通用户执行sudo命令权限
-1$ visudo
-找到%wheel ALL=(ALL) ALL，前面#删除
-
-给 root 用户重新设密码
-1$ passwd
-新建用户并加入组
-123$ useradd -m minghui$ usermod -aG wheel,audio,video,optical,storage minghui$ passwd minghui
-重要一部，安装引导，使用 systemd-boot 安装
-systemd-boot系统自带：这是一个教程
-1$ bootctl install
-安装好了之后，进行简单配置
-
-需要配置/boot/loader/loader.conf和/boot/loader/entries/
-
-首先到/boot/loader/entries/新建一个.conf文件，我这里建为Arch.conf，然后编辑它，我的内容如下
-12345title Arch Linuxlinux   /vmlinuz-linuxinitrd  /intel-ucode.imginitrd  /initramfs-linux.imgoptions root=&quot;PARTUUID=87898fba-ac8a-4703-b317-a858ca9a7ffd&quot; rw
-
-vmlinuz-linux：内核文件
-
-上面的options root=指点根文件系统在哪里，我这里使用了PARTUUID，具体查看方法，如果是在 vim 编辑器下，直接输入:r!blkid会写在当前打开文件，然后找到根分区的PARTUUID复制过去，最后别忘记删除无关内容
-
-编辑/boot/loader/loader.conf文件
-我的内容如下
-12default Archtimeout 5
-
-default Arch：表示的是默认读取名为Arch的配置文件，该文件即为刚刚创建的，/boot/loader/entries/Arch.conf
-
-
-
-
-
-新系统重启
-先回到光盘镜像文件exit或者Ctrl+D
-
-卸载开始挂载的分区
-1$ umount -R /mntr
-终于可以reboot了，完成
-
-
 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/11/ArchLinux%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="ArchLinux开发环境配置">ArchLinux开发环境配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-11T08:28:58.000Z" title="发表于 2022-01-11 16:28:58">2022-01-11</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-19T04:44:25.040Z" title="更新于 2022-01-19 12:44:25">2022-01-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">
 安装
 vscode
@@ -784,6 +684,119 @@ utools：神器
 neofetch：装逼神器
 flameshot：截图工具
 telegram：电报
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/08/ArchLinux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" title="ArchLinux系统安装">ArchLinux系统安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-08T08:28:58.000Z" title="发表于 2022-01-08 16:28:58">2022-01-08</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-08T10:23:19.710Z" title="更新于 2022-03-08 18:23:19">2022-03-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">
+安装步骤连接网络分区并挂载
+查看当前磁盘分区fdisk -l详情
+
+分区可以使用两个工具，cfdisk和gdisk，前者是有DOS界面的，后者命令行
+
+然后就是分区了，最少建立两个分区（有boot分区的情况下），即根分区和swap分区
+
+swap分区大小可以分内存一半，或者与内存等大
+根分区为其他未分配空间
+
+
+如果是硬盘里面只装这一个系统就还需要建立boot分区，用来引导系统。因为我原本是还有一个Windows系统，Windows已经创建了boot分区，我就可以不用创建了。
+
+这里分区分好之后，假设分区情况如下
+
+boot分区：/dev/nvme0n1p1
+根分区：/dev/nvme0n1p5
+swap分区：/dev/nvme0n1p6
+
+下面将分区格式化，执行如下命令
+123$ mkfs.ext4 -L ArchFSBoot /dev/nvme0n1p5	# -L 指定卷标名$ mkswap /dev/nvme0n1p6$ swapon /dev/nvme0n1p6	# 打开交换分区
+分区完成后，进行挂载
+挂载的目的就是写文件到刚刚所建分区上（刚刚已经格式化了，什么东西都没有），因为我们现在所处的是光盘镜像（可以看到是红色的root），还未安装系统到新建分区上，因此需要通过挂载刚刚新建分区到光盘镜像的某个目录下，与此同时，Linux挂载目录通常是/mnt下
+下面把根分区（/dev/nvme0n1p5）挂载到/nmt下
+swap分区（/dev/nvme0n1p6）挂载到/mnt/boot下，在挂载前，需要创建/mnt/boot目录
+下面开始挂载，注意挂载顺序，先挂载外面的/mnt，然后挂载/mnt下的boot，当然，挂载前需要创建该/mnt/boot目录
+下面假设先创建/mnt/boot目录并将此目录作为硬盘/dev/nvme0n1p6的挂载点，直到这里没有任何问题，然后挂载硬盘/dev/nvme0n1p5到/mnt，然后你查看/mnt下的文件ls /mnt，会发现刚刚挂载的/mnt/boot没有了。这里我是认为是先挂载的/mnt/boot这个目录被后面挂载的/mnt所掩盖了，即挂载一个目录后，该目录原始的文件会看不到了，具体原因还未知！类比刚刚，先挂载的/mnt/boot被后面挂载的/mnt掩盖掉了。
+123$ mount /dev/nvme0n1p5 /mnt$ mkdir -p /mnt/boot$ mount /dev/nvme0n1p1 /mnt/boot
+开始装系统书接上文，我们把上面的所做的工作用一个图表示
+这里很好理解，/mnt等价于需装系统(ArchLinux)的/
+而/mnt/boot等价于/boot
+
+知道了/mnt就是待装系统的/那么现在在/mnt下装系统，官方提供了一条命令pacstrap，下面是我安装的一些东西，按个人需求安装
+1$ pacstrap /mnt base base-devel linux linux-firmware networkmanager vim intel-ucode git
+等待即可！！！
+安装好了之后生成文件表
+1$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+
+/etc/fstab是Linux系统下的n硬盘挂载点文件
+
+
+
+新系统配置刚刚已经将系统安装好了，并且生成了文件表，下面切换到新安装的ArchLinux系统
+1$ arch-chroot /mnt
+
+语言
+1$ vim /ect/local.gen
+找到zh_CN.UTF-8 UTF-8和en_US.UTF-8 UTF-8前面#删除
+生成语言文件
+1$ locale-gen
+设置系统缺省语言文件
+1$ echo LANG=en_US.UTF-8 &gt; /etc/locale.conf
+
+
+设置时区
+12$ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime$ timedatectl set-ntp true
+硬件时钟
+1$ hwclock --systohc
+
+
+主机名，我这里设置为 Mingarch
+1$ echo Mingarch &gt; /etc/hostname
+
+
+域名解析文件（hosts）
+1$ vim /etc/hosts
+我的内容如下
+123456# Static table lookup for hostnames.# See hosts(5) for details.127.0.0.1       localhost::1             localhost127.0.1.1       Mingarch.localdomain    Mingarch
+
+这里面的 Mingarch 是主机名，不要搞错了
+
+
+给普通用户执行sudo命令权限
+1$ visudo
+找到%wheel ALL=(ALL) ALL，前面#删除
+
+给 root 用户重新设密码
+1$ passwd
+新建用户并加入组
+123$ useradd -m minghui$ usermod -aG wheel,audio,video,optical,storage minghui$ passwd minghui
+重要一部，安装引导，使用 systemd-boot 安装
+systemd-boot系统自带：这是一个教程
+1$ bootctl install
+安装好了之后，进行简单配置
+
+需要配置/boot/loader/loader.conf和/boot/loader/entries/
+
+首先到/boot/loader/entries/新建一个.conf文件，我这里建为Arch.conf，然后编辑它，我的内容如下
+12345title Arch Linuxlinux   /vmlinuz-linuxinitrd  /intel-ucode.imginitrd  /initramfs-linux.imgoptions root=&quot;PARTUUID=87898fba-ac8a-4703-b317-a858ca9a7ffd&quot; rw
+
+vmlinuz-linux：内核文件
+
+上面的options root=指点根文件系统在哪里，我这里使用了PARTUUID，具体查看方法，如果是在 vim 编辑器下，直接输入:r!blkid会写在当前打开文件，然后找到根分区的PARTUUID复制过去，最后别忘记删除无关内容
+
+编辑/boot/loader/loader.conf文件
+我的内容如下
+12default Archtimeout 5
+
+default Arch：表示的是默认读取名为Arch的配置文件，该文件即为刚刚创建的，/boot/loader/entries/Arch.conf
+
+
+
+
+
+新系统重启
+先回到光盘镜像文件exit或者Ctrl+D
+
+卸载开始挂载的分区
+1$ umount -R /mntr
+终于可以reboot了，完成
+
 
 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/12/27/Vue/" title="Vue Study">Vue Study</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-27T11:59:33.000Z" title="发表于 2021-12-27 19:59:33">2021-12-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-01T07:14:46.481Z" title="更新于 2022-01-01 15:14:46">2022-01-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Vue/">Vue</a></span></div><div class="content">
 记录12345678910111213141516171819&#x2F;&#x2F; 导航，可以展开&lt;el-submenu index&#x3D;&quot;1&quot;&gt;      &lt;template slot&#x3D;&quot;title&quot;&gt;        &lt;i class&#x3D;&quot;el-icon-location&quot;&gt;&lt;&#x2F;i&gt;        &lt;span slot&#x3D;&quot;title&quot;&gt;导航一&lt;&#x2F;span&gt;      &lt;&#x2F;template&gt;      &lt;el-menu-item-group&gt;        &lt;span slot&#x3D;&quot;title&quot;&gt;分组一&lt;&#x2F;span&gt;        &lt;el-menu-item index&#x3D;&quot;1-1&quot;&gt;选项1&lt;&#x2F;el-menu-item&gt;        &lt;el-menu-item index&#x3D;&quot;1-2&quot;&gt;选项2&lt;&#x2F;el-menu-item&gt;      &lt;&#x2F;el-menu-item-group&gt;      &lt;el-menu-item-group title&#x3D;&quot;分组2&quot;&gt;        &lt;el-menu-item index&#x3D;&quot;1-3&quot;&gt;选项3&lt;&#x2F;el-menu-item&gt;      &lt;&#x2F;el-menu-item-group&gt;      &lt;el-submenu index&#x3D;&quot;1-4&quot;&gt;        &lt;span slot&#x3D;&quot;title&quot;&gt;选项4&lt;&#x2F;span&gt;        &lt;el-menu-item index&#x3D;&quot;1-4-1&quot;&gt;选项1&lt;&#x2F;el-menu-item&gt;      &lt;&#x2F;el-submenu&gt;    &lt;&#x2F;el-submenu&gt;
@@ -2451,6 +2464,57 @@ exit 退出终端
 success
 
 
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/27/%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/" title="通信技术[基础]">通信技术[基础]</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-27T02:32:33.000Z" title="发表于 2021-09-27 10:32:33">2021-09-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-11T03:10:31.475Z" title="更新于 2021-10-11 11:10:31">2021-10-11</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%80%9A%E4%BF%A1/">通信</a></span></div><div class="content">
+通信技术演变图
+
+改图截取自：https://www.bilibili.com/video/BV1hE411P7k3?spm_id_from=333.999.0.0
+
+FDD 与 TDDFDD：频分复用，上行和下行的频率不同，互不干扰，可以同时传送数据（双车道）
+TDD：时分复用，上行和下行使用一样的频率，不可以同时传送数据（单车道）
+
+技术家族最上面一条是 3GPP 家族、中间是高通家族，目前电信的 2G、3G 在使用这个技术，最下面是 WiMax 家族，目前手机上似乎没有涉及到该通信技术
+
+三大运营商
+
+
+
+2G
+3G
+4G
+
+
+
+移动
+GSM、GPRS、EDGE
+TD-SCDMA
+TDD-LTE、FDD-LTE
+
+
+联通
+GSM、GPRS、EDGE
+WCDMA
+FDD-LTE
+
+
+电信
+CMDA 1x
+CMDA 2000
+FDD-LTE
+
+
+
+移动现已没有了 3G（TD-SCDMA），从 18 年开始部署 FDD-LTE 技术
+
+单卡双待、VoLTE和CSFB 技术
+4G 的 LTE 技术只是用于上网，并不可以进行语音通话，那么当你正使用 4G 网络时候，来了一个电话要怎么接听呢？
+4G 本身是不可以进行语音通话，2、3G 可以，所以我们就要将网络转变为 2/3G
+
+CSFB 技术就是实现在接听电话的时候将 4G 网络退回到 2/3G 
+如果不可以回落的话，比如电信的 2/3G 使用的是高通的技术，但是 4G 使用的是 3GPP 技术，其不可以直接从 4G 到 3G，那么要打电话就要用 单卡双待 技术实现
+移动：由于现在没有了 3G 所以打电话的时候网络就会回落到 2G 
+联通：打电话网络回落到 3G
+电信：技术不同，不能直接回落到 3G，使用了 单卡双待 技术就是同时会有两个网络频段，比如通知栏（LTE\1X）
+单卡双待和 CSFB 都有缺陷，后来出现了 VoLTe 技术，VoLTE 就可以不回退网络直接在 4G 网络下打电话
 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/27/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84/" title="网络是怎样连接的">网络是怎样连接的</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-27T02:32:33.000Z" title="发表于 2021-09-27 10:32:33">2021-09-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-23T06:39:16.095Z" title="更新于 2021-10-23 14:39:16">2021-10-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E4%B9%A6%E7%B1%8D/">书籍</a></span></div><div class="content">
 
 从在浏览器中输入网址，到屏幕上显示出网页的内容，在这个只有几秒钟的过程中，很多硬件和软件都在各自的岗位上相互配合完成了一系列的工作。本书将以探索之旅的形式，带领大家探索这一系列工作中的每一个环节。每个单独的环节都并不复杂，只要仔细阅读就一定能够理解。不过，探索之旅中出现的硬件和软件数量庞大，如果仅从微观的视角关注每一个单独的点，可能就会因为看不到整体而迷失了方向。因此，在真正出发开始探索之前，我们先来对这次探索之旅作个简单的介绍。下面的介绍中还包含一张探索之旅的路线图，万一在旅途中迷失了方向，请大家务必回来看一看这张地图
@@ -2642,58 +2706,7 @@ HTTP 消息是一种数字信息（digital data），因此可以说是委托协
 应用层里面有应用，应用跑在某个主机上面，
 
 
-2.1.2　套接字的实体就是通信控制信息2.1.3　调用socket 时的操作2.2　连接服务器2.2.1　连接是什么意思2.2.2　负责保存控制信息的头部</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/27/%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/" title="通信技术[基础]">通信技术[基础]</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-27T02:32:33.000Z" title="发表于 2021-09-27 10:32:33">2021-09-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-11T03:10:31.475Z" title="更新于 2021-10-11 11:10:31">2021-10-11</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%80%9A%E4%BF%A1/">通信</a></span></div><div class="content">
-通信技术演变图
-
-改图截取自：https://www.bilibili.com/video/BV1hE411P7k3?spm_id_from=333.999.0.0
-
-FDD 与 TDDFDD：频分复用，上行和下行的频率不同，互不干扰，可以同时传送数据（双车道）
-TDD：时分复用，上行和下行使用一样的频率，不可以同时传送数据（单车道）
-
-技术家族最上面一条是 3GPP 家族、中间是高通家族，目前电信的 2G、3G 在使用这个技术，最下面是 WiMax 家族，目前手机上似乎没有涉及到该通信技术
-
-三大运营商
-
-
-
-2G
-3G
-4G
-
-
-
-移动
-GSM、GPRS、EDGE
-TD-SCDMA
-TDD-LTE、FDD-LTE
-
-
-联通
-GSM、GPRS、EDGE
-WCDMA
-FDD-LTE
-
-
-电信
-CMDA 1x
-CMDA 2000
-FDD-LTE
-
-
-
-移动现已没有了 3G（TD-SCDMA），从 18 年开始部署 FDD-LTE 技术
-
-单卡双待、VoLTE和CSFB 技术
-4G 的 LTE 技术只是用于上网，并不可以进行语音通话，那么当你正使用 4G 网络时候，来了一个电话要怎么接听呢？
-4G 本身是不可以进行语音通话，2、3G 可以，所以我们就要将网络转变为 2/3G
-
-CSFB 技术就是实现在接听电话的时候将 4G 网络退回到 2/3G 
-如果不可以回落的话，比如电信的 2/3G 使用的是高通的技术，但是 4G 使用的是 3GPP 技术，其不可以直接从 4G 到 3G，那么要打电话就要用 单卡双待 技术实现
-移动：由于现在没有了 3G 所以打电话的时候网络就会回落到 2G 
-联通：打电话网络回落到 3G
-电信：技术不同，不能直接回落到 3G，使用了 单卡双待 技术就是同时会有两个网络频段，比如通知栏（LTE\1X）
-单卡双待和 CSFB 都有缺陷，后来出现了 VoLTe 技术，VoLTE 就可以不回退网络直接在 4G 网络下打电话
-</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" title="编译原理">编译原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-07T02:32:33.000Z" title="发表于 2021-09-07 10:32:33">2021-09-07</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-21T04:32:00.721Z" title="更新于 2021-11-21 12:32:00">2021-11-21</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%BA%95%E5%B1%82/">底层</a></span></div><div class="content">
+2.1.2　套接字的实体就是通信控制信息2.1.3　调用socket 时的操作2.2　连接服务器2.2.1　连接是什么意思2.2.2　负责保存控制信息的头部</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" title="编译原理">编译原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-07T02:32:33.000Z" title="发表于 2021-09-07 10:32:33">2021-09-07</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-21T04:32:00.721Z" title="更新于 2021-11-21 12:32:00">2021-11-21</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%BA%95%E5%B1%82/">底层</a></span></div><div class="content">
 第一章 引论
 程序编译有几个阶段？各有什么功能？
 
@@ -4064,8 +4077,8 @@ a：定义超链接，打开新的 URL
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item parent"><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C</span><span class="card-category-list-count">1</span><i class="fas fa-caret-left "></i></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Windows/"><span class="card-category-list-name">Windows</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/javaSE/"><span class="card-category-list-name">javaSE</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/tools/"><span class="card-category-list-name">tools</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/wxy/"><span class="card-category-list-name">wxy</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Linux/" style="font-size: 1.45em; color: rgb(114, 20, 81)">Linux</a><a href="/tags/CSS/" style="font-size: 1.15em; color: rgb(112, 28, 96)">-CSS</a><a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 1.38em; color: rgb(187, 87, 179)">记录</a><a href="/tags/java/" style="font-size: 1.3em; color: rgb(84, 26, 175)">java</a><a href="/tags/Linux/" style="font-size: 1.15em; color: rgb(86, 112, 89)">-Linux</a><a href="/tags/Windows/" style="font-size: 1.3em; color: rgb(72, 179, 101)">-Windows</a><a href="/tags/Git/" style="font-size: 1.15em; color: rgb(186, 90, 195)">Git</a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.15em; color: rgb(95, 146, 1)">服务器</a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(167, 146, 97)">-HTML</a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.15em; color: rgb(116, 38, 72)">博客</a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 1.15em; color: rgb(175, 113, 117)">软件</a><a href="/tags/Maven/" style="font-size: 1.15em; color: rgb(58, 82, 67)">Maven</a><a href="/tags/MySQL/" style="font-size: 1.3em; color: rgb(122, 180, 176)">MySQL</a><a href="/tags/C/" style="font-size: 1.3em; color: rgb(135, 104, 26)">C++</a><a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.15em; color: rgb(46, 23, 168)">链表</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.3em; color: rgb(62, 64, 194)">数据结构</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.3em; color: rgb(107, 138, 185)">算法</a><a href="/tags/LeetCode/" style="font-size: 1.15em; color: rgb(134, 121, 40)">LeetCode</a><a href="/tags/Vue/" style="font-size: 1.15em; color: rgb(81, 181, 142)">Vue</a><a href="/tags/tree-java/" style="font-size: 1.15em; color: rgb(78, 197, 93)">tree - java</a><a href="/tags/wxy/" style="font-size: 1.15em; color: rgb(49, 170, 155)">wxy</a><a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 1.15em; color: rgb(26, 65, 11)">壁纸</a><a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.22em; color: rgb(163, 92, 128)">C++ - 数据结构</a><a href="/tags/vim/" style="font-size: 1.15em; color: rgb(41, 9, 177)">vim</a><a href="/tags/vlan/" style="font-size: 1.15em; color: rgb(29, 163, 193)">vlan</a><a href="/tags/%E4%B8%AA%E4%BA%BA/" style="font-size: 1.15em; color: rgb(179, 10, 191)">个人</a><a href="/tags/route/" style="font-size: 1.22em; color: rgb(128, 80, 154)">route</a><a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 1.15em; color: rgb(124, 61, 189)">汇编</a><a href="/tags/%E5%BA%95%E5%B1%82/" style="font-size: 1.22em; color: rgb(8, 75, 183)">底层</a><a href="/tags/Wireshark/" style="font-size: 1.15em; color: rgb(17, 17, 156)">Wireshark</a><a href="/tags/Burp-Suite/" style="font-size: 1.15em; color: rgb(153, 6, 143)">Burp Suite</a><a href="/tags/%E6%96%87%E4%BB%B6/" style="font-size: 1.15em; color: rgb(26, 17, 186)">文件</a><a href="/tags/%E4%B9%A6%E7%B1%8D/" style="font-size: 1.15em; color: rgb(155, 43, 191)">书籍</a><a href="/tags/%E9%80%9A%E4%BF%A1/" style="font-size: 1.15em; color: rgb(107, 123, 27)">通信</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">十二月 2021</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">54</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-02-17T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">72.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-03-05T05:17:27.213Z"></div></div></div></div><div class="card-widget"><div class="item-headline"><i></i><span>访客</span></div><div class="item-content"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=Ti7plTQaKk8zjpyoUXfK29uCDrIzNldAuvoLvSLy1bU"></script></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Linux/" style="font-size: 1.45em; color: rgb(144, 92, 31)">Linux</a><a href="/tags/Linux/" style="font-size: 1.15em; color: rgb(6, 123, 124)">-Linux</a><a href="/tags/CSS/" style="font-size: 1.15em; color: rgb(175, 162, 137)">-CSS</a><a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 1.38em; color: rgb(18, 157, 94)">记录</a><a href="/tags/java/" style="font-size: 1.3em; color: rgb(63, 186, 77)">java</a><a href="/tags/Windows/" style="font-size: 1.3em; color: rgb(158, 96, 33)">-Windows</a><a href="/tags/Git/" style="font-size: 1.15em; color: rgb(151, 14, 171)">Git</a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.15em; color: rgb(138, 11, 4)">服务器</a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(5, 186, 32)">-HTML</a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.15em; color: rgb(116, 95, 129)">博客</a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 1.15em; color: rgb(41, 35, 141)">软件</a><a href="/tags/Maven/" style="font-size: 1.15em; color: rgb(0, 163, 120)">Maven</a><a href="/tags/MySQL/" style="font-size: 1.3em; color: rgb(139, 193, 5)">MySQL</a><a href="/tags/C/" style="font-size: 1.3em; color: rgb(140, 78, 146)">C++</a><a href="/tags/Vue/" style="font-size: 1.15em; color: rgb(104, 50, 158)">Vue</a><a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.15em; color: rgb(173, 51, 192)">链表</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.3em; color: rgb(137, 13, 121)">数据结构</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.3em; color: rgb(138, 151, 190)">算法</a><a href="/tags/LeetCode/" style="font-size: 1.15em; color: rgb(27, 16, 63)">LeetCode</a><a href="/tags/tree-java/" style="font-size: 1.15em; color: rgb(120, 178, 29)">tree - java</a><a href="/tags/wxy/" style="font-size: 1.15em; color: rgb(62, 186, 87)">wxy</a><a href="/tags/%E5%A3%81%E7%BA%B8/" style="font-size: 1.15em; color: rgb(129, 187, 184)">壁纸</a><a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.22em; color: rgb(32, 20, 0)">C++ - 数据结构</a><a href="/tags/vim/" style="font-size: 1.15em; color: rgb(144, 13, 41)">vim</a><a href="/tags/vlan/" style="font-size: 1.15em; color: rgb(95, 172, 168)">vlan</a><a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 1.15em; color: rgb(132, 62, 19)">汇编</a><a href="/tags/%E5%BA%95%E5%B1%82/" style="font-size: 1.22em; color: rgb(74, 160, 58)">底层</a><a href="/tags/Wireshark/" style="font-size: 1.15em; color: rgb(162, 72, 20)">Wireshark</a><a href="/tags/%E4%B8%AA%E4%BA%BA/" style="font-size: 1.15em; color: rgb(91, 64, 31)">个人</a><a href="/tags/route/" style="font-size: 1.22em; color: rgb(134, 154, 156)">route</a><a href="/tags/Burp-Suite/" style="font-size: 1.15em; color: rgb(51, 27, 79)">Burp Suite</a><a href="/tags/%E6%96%87%E4%BB%B6/" style="font-size: 1.15em; color: rgb(39, 126, 66)">文件</a><a href="/tags/%E9%80%9A%E4%BF%A1/" style="font-size: 1.15em; color: rgb(117, 183, 36)">通信</a><a href="/tags/%E4%B9%A6%E7%B1%8D/" style="font-size: 1.15em; color: rgb(50, 47, 155)">书籍</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">十二月 2021</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">54</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-02-17T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">72.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-03-14T11:44:42.473Z"></div></div></div></div><div class="card-widget"><div class="item-headline"><i></i><span>访客</span></div><div class="item-content"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=Ti7plTQaKk8zjpyoUXfK29uCDrIzNldAuvoLvSLy1bU"></script></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
 </script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
