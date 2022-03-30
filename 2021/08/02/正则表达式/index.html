@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RegExp | 灰灰爱吃小云朵</title><meta name="keywords" content="java"><meta name="author" content="xiaofan"><meta name="copyright" content="xiaofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="正则表达式语法 限定符 选择匹配符 分组组合和反向引用 特殊字符 字符匹配符 定位符  元字符 转义号 \\  匹配某些特殊字符需要用到 一个 \ 开头的字符会被当作转义字符处理 Java 的正则表达式中，两个 \\ 代表其他语言的一个 \  需要用到转义符号的字符：* + ( ) $ &#x2F; \ ? [ ] ^ &amp;#123; &amp;#125; 如匹配 “(“ 写成 \\( 匹配 “.” 写成 \\.">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RegExp | 灰灰爱吃小云朵</title><meta name="keywords" content="java"><meta name="author" content="xiaofan"><meta name="copyright" content="xiaofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="正则表达式语法  限定符 选择匹配符 分组组合和反向引用 特殊字符 字符匹配符 定位符  元字符   转义号 \\  匹配某些特殊字符需要用到 一个 \ 开头的字符会被当作转义字符处理 Java 的正则表达式中，两个 \\ 代表其他语言的一个 \  需要用到转义符号的字符：* + ( ) $ &#x2F; \ ? [ ] ^ &amp;#123; &amp;#125; 如匹配 “(” 写成 \\( 匹配 “.” 写成 \">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RegExp">
 <meta property="og:url" content="http://755400668.github.io/2021/08/02/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="灰灰爱吃小云朵">
-<meta property="og:description" content="正则表达式语法 限定符 选择匹配符 分组组合和反向引用 特殊字符 字符匹配符 定位符  元字符 转义号 \\  匹配某些特殊字符需要用到 一个 \ 开头的字符会被当作转义字符处理 Java 的正则表达式中，两个 \\ 代表其他语言的一个 \  需要用到转义符号的字符：* + ( ) $ &#x2F; \ ? [ ] ^ &amp;#123; &amp;#125; 如匹配 “(“ 写成 \\( 匹配 “.” 写成 \\.">
+<meta property="og:description" content="正则表达式语法  限定符 选择匹配符 分组组合和反向引用 特殊字符 字符匹配符 定位符  元字符   转义号 \\  匹配某些特殊字符需要用到 一个 \ 开头的字符会被当作转义字符处理 Java 的正则表达式中，两个 \\ 代表其他语言的一个 \  需要用到转义符号的字符：* + ( ) $ &#x2F; \ ? [ ] ^ &amp;#123; &amp;#125; 如匹配 “(” 写成 \\( 匹配 “.” 写成 \">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
 <meta property="article:published_time" content="2021-08-02T04:32:33.000Z">
@@ -166,8 +166,9 @@
     })(window)</script><link rel="stylesheet" href="/css/mycss/background.css"><link rel="stylesheet" href="/css/mycss/footer.css"><link rel="stylesheet" href="/css/mycss/scroll_bar.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/css/hideCategory.min.css"><link rel="stylesheet" href="/css/mycss/read.css"><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">灰灰爱吃小云朵</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">RegExp<a class="post-edit-link" href="https://github.com/755400668/755400668.github.io/_posts/正则表达式.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-02T04:32:33.000Z" title="发表于 2021-08-02 12:32:33">2021-08-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-14T14:06:06.736Z" title="更新于 2021-12-14 22:06:06">2021-12-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/javaSE/">javaSE</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">947</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<h1 id="正则表达式语法"><a href="#正则表达式语法" class="headerlink" title="正则表达式语法"></a>正则表达式语法</h1><ol>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">灰灰爱吃小云朵</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">RegExp<a class="post-edit-link" href="https://github.com/755400668/755400668.github.io/_posts/正则表达式.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-02T04:32:33.000Z" title="发表于 2021-08-02 12:32:33">2021-08-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-14T14:06:06.736Z" title="更新于 2021-12-14 22:06:06">2021-12-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/javaSE/">javaSE</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">965</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1>正则表达式语法</h1>
+<ol>
 <li>限定符</li>
 <li>选择匹配符</li>
 <li>分组组合和反向引用</li>
@@ -175,189 +176,204 @@
 <li>字符匹配符</li>
 <li>定位符</li>
 </ol>
-<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><ol>
-<li><p>转义号 <code>\\</code></p>
+<h2 id="元字符">元字符</h2>
+<ol>
+<li>
+<p>转义号 <code>\\</code></p>
 <blockquote>
 <p>匹配某些特殊字符需要用到</p>
 <p>一个 \ 开头的字符会被当作转义字符处理</p>
 <p>Java 的正则表达式中，两个 \\ 代表其他语言的一个 \</p>
 </blockquote>
 <p>需要用到转义符号的字符：<code>* + ( ) $ / \ ? [ ] ^ &#123; &#125;</code></p>
-<p>如匹配 “(“ 写成 <code>\\(</code></p>
+<p>如匹配 “(” 写成 <code>\\(</code></p>
 <p>匹配 “.” 写成 <code>\\.</code></p>
 </li>
-<li><p>字符匹配符</p>
+<li>
+<p>字符匹配符</p>
 </li>
 </ol>
 <table>
 <thead>
 <tr>
-<th align="left">符号</th>
-<th align="center">含义</th>
-<th align="center">示例</th>
-<th align="center">解释</th>
+<th style="text-align:left">符号</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">解释</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><code>[ ]</code></td>
-<td align="center">可接受的字符列表</td>
-<td align="center">[abcd]</td>
-<td align="center">abcd中的任意一个字符</td>
+<tbody>
+<tr>
+<td style="text-align:left"><code>[ ]</code></td>
+<td style="text-align:center">可接受的字符列表</td>
+<td style="text-align:center">[abcd]</td>
+<td style="text-align:center">abcd中的任意一个字符</td>
 </tr>
 <tr>
-<td align="left"><code>[^ ]</code></td>
-<td align="center">不接受的字符列表</td>
-<td align="center">[^abcd]</td>
-<td align="center">除 abcd 以外的任一字符，包括数字和特殊符号</td>
+<td style="text-align:left"><code>[^ ]</code></td>
+<td style="text-align:center">不接受的字符列表</td>
+<td style="text-align:center">[^abcd]</td>
+<td style="text-align:center">除 abcd 以外的任一字符，包括数字和特殊符号</td>
 </tr>
 <tr>
-<td align="left"><code>-</code></td>
-<td align="center">连字符</td>
-<td align="center">A-Z or [AB…Z]</td>
-<td align="center">任意大写字母</td>
+<td style="text-align:left"><code>-</code></td>
+<td style="text-align:center">连字符</td>
+<td style="text-align:center">A-Z or [AB…Z]</td>
+<td style="text-align:center">任意大写字母</td>
 </tr>
 <tr>
-<td align="left"><code>.</code></td>
-<td align="center">匹配除 \n 以外的任何字符。如果匹配自身，则需要使用<code>\\.</code></td>
-<td align="center">a..b</td>
-<td align="center">匹配以 a 开头，b 结尾，中间两个字符任意，长度为 4 的字符串</td>
+<td style="text-align:left"><code>.</code></td>
+<td style="text-align:center">匹配除 \n 以外的任何字符。如果匹配自身，则需要使用<code>\\.</code></td>
+<td style="text-align:center">a…b</td>
+<td style="text-align:center">匹配以 a 开头，b 结尾，中间两个字符任意，长度为 4 的字符串</td>
 </tr>
 <tr>
-<td align="left"><code>\\d</code></td>
-<td align="center">匹配单个数字字符，等价于 <code>[0-9]</code></td>
-<td align="center">\\d{3}(\\d)?</td>
-<td align="center">匹配 3 或 4 个数字的字符串</td>
+<td style="text-align:left"><code>\\d</code></td>
+<td style="text-align:center">匹配单个数字字符，等价于 <code>[0-9]</code></td>
+<td style="text-align:center">\\d{3}(\\d)?</td>
+<td style="text-align:center">匹配 3 或 4 个数字的字符串</td>
 </tr>
 <tr>
-<td align="left"><code>\\D</code></td>
-<td align="center">匹配单个非数字字符，等价于 <code>[^0-9]</code></td>
-<td align="center">\\D(\\d)*</td>
-<td align="center">匹配以单个非数字开头，后任意个数字的字符串</td>
+<td style="text-align:left"><code>\\D</code></td>
+<td style="text-align:center">匹配单个非数字字符，等价于 <code>[^0-9]</code></td>
+<td style="text-align:center">\\D(\\d)*</td>
+<td style="text-align:center">匹配以单个非数字开头，后任意个数字的字符串</td>
 </tr>
 <tr>
-<td align="left"><code>\\w</code></td>
-<td align="center">匹配单个数字、大小写字母字符，等价于 <code>[0-9a-zA-Z_]</code></td>
-<td align="center">\\d{3}\\w{4}</td>
-<td align="center">匹配以 3 个数字开头的长度为 7 的数字字母的字符串</td>
+<td style="text-align:left"><code>\\w</code></td>
+<td style="text-align:center">匹配单个数字、大小写字母字符，等价于 <code>[0-9a-zA-Z_]</code></td>
+<td style="text-align:center">\\d{3}\\w{4}</td>
+<td style="text-align:center">匹配以 3 个数字开头的长度为 7 的数字字母的字符串</td>
 </tr>
 <tr>
-<td align="left"><code>\\W</code></td>
-<td align="center">匹配单个非数字、大小写字母字符，等价于<code>[^0-9a-zA-Z_]</code></td>
-<td align="center">\\W+\\d{2}</td>
-<td align="center">匹配以<strong>至少 1 个</strong>非数字、大小写字母字符开头，2 个数字字符结尾的字符串</td>
+<td style="text-align:left"><code>\\W</code></td>
+<td style="text-align:center">匹配单个非数字、大小写字母字符，等价于<code>[^0-9a-zA-Z_]</code></td>
+<td style="text-align:center">\\W+\\d{2}</td>
+<td style="text-align:center">匹配以<strong>至少 1 个</strong>非数字、大小写字母字符开头，2 个数字字符结尾的字符串</td>
 </tr>
 <tr>
-<td align="left"><code>\\s</code></td>
-<td align="center">匹配任何空白字符（空格、制符表等）</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:left"><code>\\s</code></td>
+<td style="text-align:center">匹配任何空白字符（空格、制符表等）</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="left"><code>\\S</code></td>
-<td align="center">匹配任何非空白字符</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:left"><code>\\S</code></td>
+<td style="text-align:center">匹配任何非空白字符</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
 <p><code>\\w</code>匹配 4 类：数字，小写字母、大写字母、包括下划线</p>
 <p><code>abc</code>：匹配 abc 字符</p>
 <p><code>(?!)abc</code>：匹配 abc 和 ABC 字符</p>
 </blockquote>
 <ol start="3">
-<li><p>选择匹配符</p>
+<li>
+<p>选择匹配符</p>
 <p>一个<code>|</code></p>
 </li>
-<li><p>限定符</p>
+<li>
+<p>限定符</p>
 <p>用于限定前面的字符和组合项连续出现多少次</p>
 <table>
 <thead>
 <tr>
-<th align="left">符号</th>
-<th align="center">含义</th>
-<th align="center">示例</th>
-<th align="center">解释</th>
+<th style="text-align:left">符号</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">解释</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><code>*</code></td>
-<td align="center">零次或多次匹配前面的字符或子表达式</td>
-<td align="center">zo*</td>
-<td align="center">zo* 匹配”z”和”zoo”。* 等效于 {0,}</td>
+<tbody>
+<tr>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:center">零次或多次匹配前面的字符或子表达式</td>
+<td style="text-align:center">zo*</td>
+<td style="text-align:center">zo* 匹配&quot;z&quot;和&quot;zoo&quot;。* 等效于 {0,}</td>
 </tr>
 <tr>
-<td align="left"><code>+</code></td>
-<td align="center">一次或多次匹配前面的字符或子表达式</td>
-<td align="center">zo+</td>
-<td align="center">“zo+”与”zo”和”zoo”匹配，但与”z”不匹配。+ 等效于 {1,}</td>
+<td style="text-align:left"><code>+</code></td>
+<td style="text-align:center">一次或多次匹配前面的字符或子表达式</td>
+<td style="text-align:center">zo+</td>
+<td style="text-align:center">&quot;zo+&quot;与&quot;zo&quot;和&quot;zoo&quot;匹配，但与&quot;z&quot;不匹配。+ 等效于 {1,}</td>
 </tr>
 <tr>
-<td align="left"><code>?</code></td>
-<td align="center">零次或一次匹配前面的字符或子表达式</td>
-<td align="center">do(es)?</td>
-<td align="center">“do(es)?”匹配”do”或”does”中的”do”。? 等效于 {0,1}</td>
+<td style="text-align:left"><code>?</code></td>
+<td style="text-align:center">零次或一次匹配前面的字符或子表达式</td>
+<td style="text-align:center">do(es)?</td>
+<td style="text-align:center">&quot;do(es)?“匹配&quot;do&quot;或&quot;does&quot;中的&quot;do”。? 等效于 {0,1}</td>
 </tr>
 <tr>
-<td align="left"><code>&#123;n&#125;</code></td>
-<td align="center">只能输入 n 个字符</td>
-<td align="center">[abcd]{3}</td>
-<td align="center">由abcd中字母组成的任意长度为 3 的字符串，eg：abc、abd、dda</td>
+<td style="text-align:left"><code>&#123;n&#125;</code></td>
+<td style="text-align:center">只能输入 n 个字符</td>
+<td style="text-align:center">[abcd]{3}</td>
+<td style="text-align:center">由abcd中字母组成的任意长度为 3 的字符串，eg：abc、abd、dda</td>
 </tr>
 <tr>
-<td align="left"><code>&#123;n,&#125;</code></td>
-<td align="center">指定至少 n  个匹配</td>
-<td align="center">[abcd]{3,}</td>
-<td align="center">由abcd中字母组成的任意长度至少为 3 的字符串，eg：abc、adbd、addaa</td>
+<td style="text-align:left"><code>&#123;n,&#125;</code></td>
+<td style="text-align:center">指定至少 n  个匹配</td>
+<td style="text-align:center">[abcd]{3,}</td>
+<td style="text-align:center">由abcd中字母组成的任意长度至少为 3 的字符串，eg：abc、adbd、addaa</td>
 </tr>
 <tr>
-<td align="left"><code>&#123;n,m&#125;</code></td>
-<td align="center">指定至少 n 个但不多于 m 个匹配</td>
-<td align="center">[abcd]{3,5}</td>
-<td align="center">由abcd中字母组成的任意长度至少为 3 但不多于 5 的字符串（即 3|4|5个）</td>
+<td style="text-align:left"><code>&#123;n,m&#125;</code></td>
+<td style="text-align:center">指定至少 n 个但不多于 m 个匹配</td>
+<td style="text-align:center">[abcd]{3,5}</td>
+<td style="text-align:center">由abcd中字母组成的任意长度至少为 3 但不多于 5 的字符串（即 3|4|5个）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
-<li><p>定位符</p>
+<li>
+<p>定位符</p>
 <table>
 <thead>
 <tr>
-<th align="left">符号</th>
-<th align="center">含义</th>
-<th align="center">示例</th>
-<th align="center">解释</th>
+<th style="text-align:left">符号</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">解释</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><code>^</code></td>
-<td align="center">指定起始字符</td>
-<td align="center">^[0-9]+[a-z]*</td>
-<td align="center">以至少一个数字开头，后面任意接小写字母的字符串（也可以没有小写字母字符串）</td>
+<tbody>
+<tr>
+<td style="text-align:left"><code>^</code></td>
+<td style="text-align:center">指定起始字符</td>
+<td style="text-align:center">^[0-9]+[a-z]*</td>
+<td style="text-align:center">以至少一个数字开头，后面任意接小写字母的字符串（也可以没有小写字母字符串）</td>
 </tr>
 <tr>
-<td align="left"><code>$</code></td>
-<td align="center">指定结束字符</td>
-<td align="center">^[0-9]-[a-z]+$</td>
-<td align="center">以一个数字开头后连接 “-”，并以至少一个小写字母结尾的字符串</td>
+<td style="text-align:left"><code>$</code></td>
+<td style="text-align:center">指定结束字符</td>
+<td style="text-align:center">^[0-9]-[a-z]+$</td>
+<td style="text-align:center">以一个数字开头后连接 “-”，并以至少一个小写字母结尾的字符串</td>
 </tr>
 <tr>
-<td align="left"><code>\\b</code></td>
-<td align="center">匹配目标字符串的边界</td>
-<td align="center">abc\b</td>
-<td align="center">“abc123<strong>abc</strong> 4<strong>abc</strong>“ 会匹配尾部两个 abc，空格分隔会识别为 2 个目标字符串</td>
+<td style="text-align:left"><code>\\b</code></td>
+<td style="text-align:center">匹配目标字符串的边界</td>
+<td style="text-align:center">abc\b</td>
+<td style="text-align:center">“abc123<strong>abc</strong> 4<strong>abc</strong>” 会匹配尾部两个 abc，空格分隔会识别为 2 个目标字符串</td>
 </tr>
 <tr>
-<td align="left"><code>\\B</code></td>
-<td align="center">匹配目标字符串的非边界</td>
-<td align="center">[abcd]{3}</td>
-<td align="center">与 <code>\\b</code>正好相反 “<strong>abc</strong>123abc 4abc” 会匹配头部一个 abc</td>
+<td style="text-align:left"><code>\\B</code></td>
+<td style="text-align:center">匹配目标字符串的非边界</td>
+<td style="text-align:center">[abcd]{3}</td>
+<td style="text-align:center">与 <code>\\b</code>正好相反 “<strong>abc</strong>123abc 4abc” 会匹配头部一个 abc</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
-<li><p>捕获分组</p>
+<li>
+<p>捕获分组</p>
 <ul>
-<li><p>非命名分组：根据括号个数依次编号为 1、2、3、4… 组，取组的时候用 <code>group(name)</code></p>
+<li>
+<p>非命名分组：根据括号个数依次编号为 1、2、3、4… 组，取组的时候用 <code>group(name)</code></p>
 </li>
-<li><p>命名分组</p>
+<li>
+<p>命名分组</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://gitee.com/minghuifan/image/raw/master/20211002110839.png" alt="image-20211002110832346"></p>
 <blockquote>
 <p><code>group(int group)、group(String name)</code>  重载了，前者通过编号取，后者通过命名取</p>
@@ -365,31 +381,34 @@
 </li>
 </ul>
 </li>
-<li><p><code>非捕获分组</code></p>
+<li>
+<p><code>非捕获分组</code></p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th align="center"></th>
+<th style="text-align:center"></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td></td>
-<td align="center"><code>(?:pattern)</code></td>
+<td style="text-align:center"><code>(?:pattern)</code></td>
 </tr>
 <tr>
 <td></td>
-<td align="center"><code>(?=pattern)</code></td>
+<td style="text-align:center"><code>(?=pattern)</code></td>
 </tr>
 <tr>
 <td></td>
-<td align="center"><code>(?!pattern)</code></td>
+<td style="text-align:center"><code>(?!pattern)</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
 <li></li>
 </ol>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xiaofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://755400668.github.io/2021/08/02/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">http://755400668.github.io/2021/08/02/正则表达式/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://755400668.github.io" target="_blank">灰灰爱吃小云朵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/03/27/Battle-of-Tanks/" title="Battle of Tanks"><img class="cover" data-lazy-src="https://gitee.com/minghuifan/image/raw/master/image-20210404154041679.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-27</div><div class="title">Battle of Tanks</div></div></a></div><div><a href="/2021/02/18/链表与指针/" title="链表与指针"><img class="cover" data-lazy-src="https://gitee.com/MingHuifan/image/raw/master/20210305193959.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-18</div><div class="title">链表与指针</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">xiaofan</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/755400668"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/755400668" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:755400668@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到灰灰爱吃小云朵的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">正则表达式语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-number">1.1.</span> <span class="toc-text">元字符</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/16/Linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="Linux文件和目录管理">Linux文件和目录管理</a><time datetime="2022-03-16T02:28:58.000Z" title="发表于 2022-03-16 10:28:58">2022-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/02/ArchLinux%20PPPoE%E6%8B%A8%E5%8F%B7/" title="ArchLinux PPPoE拨号">ArchLinux PPPoE拨号</a><time datetime="2022-03-02T02:28:58.000Z" title="发表于 2022-03-02 10:28:58">2022-03-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/01/ArchLinux%E5%AE%89%E8%A3%85VMware/" title="ArchLinux安装VMware">ArchLinux安装VMware</a><time datetime="2022-03-01T02:28:58.000Z" title="发表于 2022-03-01 10:28:58">2022-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/01/ranger/" title="Ranger">Ranger</a><time datetime="2022-03-01T02:28:58.000Z" title="发表于 2022-03-01 10:28:58">2022-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/02/27/ArchLinux%E5%AE%89%E8%A3%85wine/" title="ArchLinux安装wine">ArchLinux安装wine</a><time datetime="2022-02-27T08:28:58.000Z" title="发表于 2022-02-27 16:28:58">2022-02-27</time></div></div></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xiaofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://755400668.github.io/2021/08/02/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">http://755400668.github.io/2021/08/02/正则表达式/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://755400668.github.io" target="_blank">灰灰爱吃小云朵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/03/27/Battle-of-Tanks/" title="Battle of Tanks"><img class="cover" data-lazy-src="https://gitee.com/minghuifan/image/raw/master/image-20210404154041679.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-27</div><div class="title">Battle of Tanks</div></div></a></div><div><a href="/2021/02/18/链表与指针/" title="链表与指针"><img class="cover" data-lazy-src="https://gitee.com/MingHuifan/image/raw/master/20210305193959.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-18</div><div class="title">链表与指针</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">xiaofan</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/755400668"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/755400668" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:755400668@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到灰灰爱吃小云朵的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">正则表达式语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-number">1.1.</span> <span class="toc-text">元字符</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/16/Linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="Linux文件和目录管理">Linux文件和目录管理</a><time datetime="2022-03-16T02:28:58.000Z" title="发表于 2022-03-16 10:28:58">2022-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/02/ArchLinux%20PPPoE%E6%8B%A8%E5%8F%B7/" title="ArchLinux PPPoE拨号">ArchLinux PPPoE拨号</a><time datetime="2022-03-02T02:28:58.000Z" title="发表于 2022-03-02 10:28:58">2022-03-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/01/ArchLinux%E5%AE%89%E8%A3%85VMware/" title="ArchLinux安装VMware">ArchLinux安装VMware</a><time datetime="2022-03-01T02:28:58.000Z" title="发表于 2022-03-01 10:28:58">2022-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/01/ranger/" title="Ranger">Ranger</a><time datetime="2022-03-01T02:28:58.000Z" title="发表于 2022-03-01 10:28:58">2022-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/02/27/ArchLinux%E5%AE%89%E8%A3%85wine/" title="ArchLinux安装wine">ArchLinux安装wine</a><time datetime="2022-02-27T08:28:58.000Z" title="发表于 2022-02-27 16:28:58">2022-02-27</time></div></div></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
 </script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
