@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>编译原理 | 灰灰爱吃小云朵</title><meta name="keywords" content="底层"><meta name="author" content="xiaofan"><meta name="copyright" content="xiaofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章 引论   程序编译有几个阶段？各有什么功能？  词法分析：从源程序中一个个读取字符，识别一个个单词 语法分析 语义分析 中间代码生成 代码优化 目标代码生成    一个经典的编译程序由哪几部分组成？各有什么功能？   词法分析程序   语法分析程序   语义分析程序   中间代码生成程序   代码优化程序   目标代码生成程序   出错处理程序   表格管理程序     第二章 文法和语">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>编译原理 | 灰灰爱吃小云朵</title><meta name="keywords" content="底层"><meta name="author" content="xiaofan"><meta name="copyright" content="xiaofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章 引论 程序编译有几个阶段？各有什么功能？  词法分析：从源程序中一个个读取字符，识别一个个单词 语法分析 语义分析 中间代码生成 代码优化 目标代码生成   一个经典的编译程序由哪几部分组成？各有什么功能？  词法分析程序  语法分析程序  语义分析程序  中间代码生成程序  代码优化程序  目标代码生成程序  出错处理程序  表格管理程序     第二章 文法和语言 考点：文法、语言、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理">
 <meta property="og:url" content="http://755400668.github.io/2021/09/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="灰灰爱吃小云朵">
-<meta property="og:description" content="第一章 引论   程序编译有几个阶段？各有什么功能？  词法分析：从源程序中一个个读取字符，识别一个个单词 语法分析 语义分析 中间代码生成 代码优化 目标代码生成    一个经典的编译程序由哪几部分组成？各有什么功能？   词法分析程序   语法分析程序   语义分析程序   中间代码生成程序   代码优化程序   目标代码生成程序   出错处理程序   表格管理程序     第二章 文法和语">
+<meta property="og:description" content="第一章 引论 程序编译有几个阶段？各有什么功能？  词法分析：从源程序中一个个读取字符，识别一个个单词 语法分析 语义分析 中间代码生成 代码优化 目标代码生成   一个经典的编译程序由哪几部分组成？各有什么功能？  词法分析程序  语法分析程序  语义分析程序  中间代码生成程序  代码优化程序  目标代码生成程序  出错处理程序  表格管理程序     第二章 文法和语言 考点：文法、语言、">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
 <meta property="article:published_time" content="2021-09-07T02:32:33.000Z">
@@ -166,11 +166,9 @@
     })(window)</script><link rel="stylesheet" href="/css/mycss/background.css"><link rel="stylesheet" href="/css/mycss/footer.css"><link rel="stylesheet" href="/css/mycss/scroll_bar.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/css/hideCategory.min.css"><link rel="stylesheet" href="/css/mycss/read.css"><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">灰灰爱吃小云朵</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">编译原理<a class="post-edit-link" href="https://github.com/755400668/755400668.github.io/_posts/编译原理.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-07T02:32:33.000Z" title="发表于 2021-09-07 10:32:33">2021-09-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-21T04:32:00.721Z" title="更新于 2021-11-21 12:32:00">2021-11-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
-<h1>第一章 引论</h1>
-<ol>
-<li>
-<p>程序编译有几个阶段？各有什么功能？</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">灰灰爱吃小云朵</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">编译原理<a class="post-edit-link" href="https://github.com/755400668/755400668.github.io/_posts/编译原理.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-07T02:32:33.000Z" title="发表于 2021-09-07 10:32:33">2021-09-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-21T04:32:00.721Z" title="更新于 2021-11-21 12:32:00">2021-11-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="第一章-引论"><a href="#第一章-引论" class="headerlink" title="第一章 引论"></a>第一章 引论</h1><ol>
+<li><p>程序编译有几个阶段？各有什么功能？</p>
 <ul>
 <li>词法分析：从源程序中一个个读取字符，识别一个个单词</li>
 <li>语法分析</li>
@@ -180,57 +178,42 @@
 <li>目标代码生成</li>
 </ul>
 </li>
-<li>
-<p>一个经典的编译程序由哪几部分组成？各有什么功能？</p>
+<li><p>一个经典的编译程序由哪几部分组成？各有什么功能？</p>
 <ul>
-<li>
-<p>词法分析程序</p>
+<li><p>词法分析程序</p>
 </li>
-<li>
-<p>语法分析程序</p>
+<li><p>语法分析程序</p>
 </li>
-<li>
-<p>语义分析程序</p>
+<li><p>语义分析程序</p>
 </li>
-<li>
-<p>中间代码生成程序</p>
+<li><p>中间代码生成程序</p>
 </li>
-<li>
-<p>代码优化程序</p>
+<li><p>代码优化程序</p>
 </li>
-<li>
-<p>目标代码生成程序</p>
+<li><p>目标代码生成程序</p>
 </li>
-<li>
-<p>出错处理程序</p>
+<li><p>出错处理程序</p>
 </li>
-<li>
-<p>表格管理程序</p>
+<li><p>表格管理程序</p>
 </li>
 </ul>
 </li>
 </ol>
-<h1>第二章 文法和语言</h1>
-<blockquote>
+<h1 id="第二章-文法和语言"><a href="#第二章-文法和语言" class="headerlink" title="第二章 文法和语言"></a>第二章 文法和语言</h1><blockquote>
 <p>考点：文法、语言、短语、直接短语、句柄</p>
 </blockquote>
-<h2 id="文法的直观概念">文法的直观概念</h2>
-<p>文法是一套规则集合，描述某一特征的符号串，可以说文法是以有穷的集合刻画无穷的集合的一个工具</p>
-<h2 id="符号和符号串">符号和符号串</h2>
-<blockquote>
+<h2 id="文法的直观概念"><a href="#文法的直观概念" class="headerlink" title="文法的直观概念"></a>文法的直观概念</h2><p>文法是一套规则集合，描述某一特征的符号串，可以说文法是以有穷的集合刻画无穷的集合的一个工具</p>
+<h2 id="符号和符号串"><a href="#符号和符号串" class="headerlink" title="符号和符号串"></a>符号和符号串</h2><blockquote>
 <p>几个概念解释：</p>
 </blockquote>
 <ol>
-<li>
-<p>字母表（符号集）：元素的非空有穷集合，字母表中的元素称为符号。以汉语为例，汉语字母表就是各种汉字、数字、标点符号的集合；以英语为例，英语字母表就是各种字母、数字、标点符号的集合…那么到了编程，字母表就可能是字母、数字、各种专用符号和保留字了。</p>
+<li><p>字母表（符号集）：元素的非空有穷集合，字母表中的元素称为符号。以汉语为例，汉语字母表就是各种汉字、数字、标点符号的集合；以英语为例，英语字母表就是各种字母、数字、标点符号的集合……那么到了编程，字母表就可能是字母、数字、各种专用符号和保留字了。</p>
 </li>
-<li>
-<p>符号串：由字母表中的符号组成的任何 <strong>有穷序列</strong> 称为符号串</p>
+<li><p>符号串：由字母表中的符号组成的任何 <strong>有穷序列</strong> 称为符号串</p>
 <p>如 0101010001 就是字母表 A={0,1} 上的符号串</p>
 <p>如果符号串 x 中有 m 个符号，称其长度为 m，记为 |x|=m，|ε|=0</p>
 <ul>
-<li>
-<p>符号串的头尾，固有头、固有尾</p>
+<li><p>符号串的头尾，固有头、固有尾</p>
 <p>比如 x=abcd</p>
 <p>x 的头：ε、a、ab、abc、abcd</p>
 <p>x 的固有头：ε、a、ab、abc</p>
@@ -239,20 +222,18 @@
 <p>头除去本身字符串就是固有头、尾除去本身字符串就是固有尾</p>
 <p>以后算文法符号之间优先级会看到，好比 z=x··· 只关注它的头 x ，而对其他不予关注；z=···x··· 只关注符号 x 再某处地方出现</p>
 </li>
-<li>
-<p>符号串集合：了解闭包和正闭包</p>
+<li><p>符号串集合：了解闭包和正闭包</p>
 <p>有一个字母表 <strong>Σ</strong>，如何描述字母表 <strong>Σ</strong> 上的所有有穷长的符号串的集合</p>
-<p>比如字母表 <strong>Σ={a,b}</strong>，<strong>Σ</strong> 上的所有有穷长的串的集合就是只包含有 <strong>Σ</strong> 字母表中的符号的字符串的集合，即 {ε,a,b,ab,ba,aa,bb,aab,···}，后面还有很多，只要是该符号串中的元素没有 <strong>Σ</strong> 外的字符就属于该集合。</p>
-<p>用闭包表示这个集合 <em><em>Σ</em>={ε,a,b,ab,ba,aa,bb,aab,···}</em>*，这样就表示了 <strong>Σ</strong> 上的所有有穷长的串的集合</p>
-<p>闭包：<em><em>Σ</em> = Σ^0 ∪ Σ^1 ∪ Σ^2 ··· ∪ Σ^n ···</em>*</p>
+<p>比如字母表 <strong>Σ={a,b}**，</strong>Σ** 上的所有有穷长的串的集合就是只包含有 <strong>Σ</strong> 字母表中的符号的字符串的集合，即 {ε,a,b,ab,ba,aa,bb,aab,···}，后面还有很多，只要是该符号串中的元素没有 <strong>Σ</strong> 外的字符就属于该集合。</p>
+<p>用闭包表示这个集合 *<em>Σ</em>={ε,a,b,ab,ba,aa,bb,aab,···}<strong>，这样就表示了 **Σ</strong> 上的所有有穷长的串的集合</p>
+<p>闭包：*<em>Σ</em> = Σ^0 ∪ Σ^1 ∪ Σ^2 ··· ∪ Σ^n ···**</p>
 <p>正闭包(与闭包相比，单纯的少了一个 ε)：<strong>Σ+ = Σ^1 ∪ Σ^2 ··· ∪ Σ^n ···</strong></p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://gitee.com/minghuifan/image/raw/master/20211116154457.png" alt="image-20211116154457804"></p>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="文法和语言的形式定义">文法和语言的形式定义</h2>
-<blockquote>
+<h2 id="文法和语言的形式定义"><a href="#文法和语言的形式定义" class="headerlink" title="文法和语言的形式定义"></a>文法和语言的形式定义</h2><blockquote>
 <p>定义 2.1</p>
 </blockquote>
 <p>文法 G 定义为四元组 (Vn, Vt, P, S)，Vn ∩ Vt = ∅</p>
@@ -266,25 +247,21 @@
 <p>两个重要的定义：定义 2.5 和 定义 2.6 P23</p>
 </blockquote>
 <ol>
-<li>
-<p>定义 2.5：句型包括句子</p>
+<li><p>定义 2.5：句型包括句子</p>
 <p>句型，是指从文法G[S]的开始符S推导出来的符号串α，即S ⇒ *α</p>
 <p>句子，如果句型 α 中不含有非终结符，则称串 α 是文法 G[S] 的句子</p>
 </li>
-<li>
-<p>定义 2.6：语言就是文法描述对象的集合，也就是<strong>一切句子的集合。</strong></p>
+<li><p>定义 2.6：语言就是文法描述对象的集合，也就是<strong>一切句子的集合。</strong></p>
 </li>
 </ol>
-<h2 id="文法的类型">文法的类型</h2>
-<blockquote>
+<h2 id="文法的类型"><a href="#文法的类型" class="headerlink" title="文法的类型"></a>文法的类型</h2><blockquote>
 <p>G = (Vn, Vt, P, S)，P 中的产生式用 α–&gt;β 表示</p>
 </blockquote>
 <ol>
 <li>0 型文法：文法的定义</li>
 <li>1 型文法（上下文有关的）：0 型基础上，右部长度 &gt;= 左边长度 即 <code>|β| &gt;= |α|</code></li>
 <li>2 型文法（上下文无关的）：1 型基础上，<code>左边只是一个非终结符</code></li>
-<li>3 型文法（正规文法）：2 型基础上，规定右部只能是一个终结符或者一个终结符跟一个非终结符 即 文法只能是以下两种情形
-<ul>
+<li>3 型文法（正规文法）：2 型基础上，规定右部只能是一个终结符或者一个终结符跟一个非终结符 即 文法只能是以下两种情形<ul>
 <li><code>A--&gt;aB</code></li>
 <li><code>A--&gt;a</code></li>
 </ul>
@@ -296,8 +273,7 @@
 <p>2 型文法产生的语言：上下文无关语言</p>
 <p>3 型文法产生的语言：正规语言</p>
 </blockquote>
-<h2 id="语法树">语法树</h2>
-<blockquote>
+<h2 id="语法树"><a href="#语法树" class="headerlink" title="语法树"></a>语法树</h2><blockquote>
 <p>一种描述上下文无关文法的句型推导的直观工具，即语法树，也称推导树</p>
 </blockquote>
 <blockquote>
@@ -308,24 +284,18 @@
 <li>什么是语言？</li>
 <li>什么是句型？什么是句子？（请举例回答）</li>
 </ol>
-<h1>第三章 词法分析</h1>
-<h2 id="单词的形式化描述工具">单词的形式化描述工具</h2>
-<p>正规文法(3型)</p>
+<h1 id="第三章-词法分析"><a href="#第三章-词法分析" class="headerlink" title="第三章 词法分析"></a>第三章 词法分析</h1><h2 id="单词的形式化描述工具"><a href="#单词的形式化描述工具" class="headerlink" title="单词的形式化描述工具"></a>单词的形式化描述工具</h2><p>正规文法(3型)</p>
 <p>辅助字母表 Σ’={ <code>∅</code>, <code>ε</code>, <code>|</code>, <code>.</code>, <code>*</code>, <code>(</code>, <code>)</code> }</p>
-<h2 id="正规文法和正规式的等价性">正规文法和正规式的等价性</h2>
-<ol>
+<h2 id="正规文法和正规式的等价性"><a href="#正规文法和正规式的等价性" class="headerlink" title="正规文法和正规式的等价性"></a>正规文法和正规式的等价性</h2><ol>
 <li>将正规式转化成正规文法：P46</li>
 <li>将正规文法转化为正规式：P47</li>
 </ol>
-<h2 id="有穷自动机">有穷自动机</h2>
-<blockquote>
+<h2 id="有穷自动机"><a href="#有穷自动机" class="headerlink" title="有穷自动机"></a>有穷自动机</h2><blockquote>
 <p>有穷自动机的 3 种表示方法：</p>
 <p>五项定义、状态转化图、矩阵</p>
 </blockquote>
-<h3 id="确定的有穷自动机（DFA）">确定的有穷自动机（DFA）</h3>
-<ol>
-<li>
-<p>五元组定义</p>
+<h3 id="确定的有穷自动机（DFA）"><a href="#确定的有穷自动机（DFA）" class="headerlink" title="确定的有穷自动机（DFA）"></a>确定的有穷自动机（DFA）</h3><ol>
+<li><p>五元组定义</p>
 <p>M=(K, Σ, f, S, Z)</p>
 <ul>
 <li>K：一个有穷集，每个元素称为一个状态</li>
@@ -335,44 +305,33 @@
 <li>Z：Z⊆K，是一个终态集，也可称为接受状态或结束状态</li>
 </ul>
 </li>
-<li>
-<p>状态图表示</p>
+<li><p>状态图表示</p>
 </li>
-<li>
-<p>矩阵表示</p>
+<li><p>矩阵表示</p>
 </li>
 </ol>
-<h3 id="不确定的有穷自动机">不确定的有穷自动机</h3>
-<ol>
-<li>
-<p>五元组定义</p>
+<h3 id="不确定的有穷自动机"><a href="#不确定的有穷自动机" class="headerlink" title="不确定的有穷自动机"></a>不确定的有穷自动机</h3><ol>
+<li><p>五元组定义</p>
 <p>Ｍ＝(K，Σ，f，S，Z)</p>
 <ul>
-<li>
-<p>Σ，K，Z的意义和ＤＦＡ的定义一样</p>
+<li><p>Σ，K，Z的意义和ＤＦＡ的定义一样</p>
 </li>
-<li>
-<p>f：转换函数，从 K x Σ* -&gt; 2^K 上的映像（2^K 表示 K 的幂集）</p>
+<li><p>f：转换函数，从 K x Σ* -&gt; 2^K 上的映像（2^K 表示 K 的幂集）</p>
 <p>即f： K(Σ∪{ε})→2^k</p>
-<p>表示：f(q,a)={q1,q2,…,qk}</p>
+<p> 表示：f(q,a)={q1,q2,…,qk}</p>
 <p>在状态转换图中,q向q1,q2,…,qk,各射出一条标记为a的箭弧。</p>
 </li>
-<li>
-<p>S：S⊆K，表示有多个初态</p>
+<li><p>S：S⊆K，表示有多个初态</p>
 </li>
 </ul>
 </li>
-<li>
-<p>对于每个 NFA M，存在一个 DFA M’，使得 L(M)=L(M’)</p>
+<li><p>对于每个 NFA M，存在一个 DFA M’，使得 L(M)=L(M’)</p>
 </li>
 </ol>
-<h3 id="NFA-转换为等价的-DFA（子集法）">NFA 转换为等价的 DFA（子集法）</h3>
-<h3 id="DFA-的化简（分割法）">DFA 的化简（分割法）</h3>
-<h2 id="正规式和有穷自动机的等价性">正规式和有穷自动机的等价性</h2>
-<ol>
+<h3 id="NFA-转换为等价的-DFA（子集法）"><a href="#NFA-转换为等价的-DFA（子集法）" class="headerlink" title="NFA 转换为等价的 DFA（子集法）"></a>NFA 转换为等价的 DFA（子集法）</h3><h3 id="DFA-的化简（分割法）"><a href="#DFA-的化简（分割法）" class="headerlink" title="DFA 的化简（分割法）"></a>DFA 的化简（分割法）</h3><h2 id="正规式和有穷自动机的等价性"><a href="#正规式和有穷自动机的等价性" class="headerlink" title="正规式和有穷自动机的等价性"></a>正规式和有穷自动机的等价性</h2><ol>
 <li>对于 <strong>Σ</strong></li>
 </ol>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xiaofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://755400668.github.io/2021/09/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">http://755400668.github.io/2021/09/07/编译原理/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://755400668.github.io" target="_blank">灰灰爱吃小云朵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BA%95%E5%B1%82/">底层</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/02/18/初识汇编/" title="初识汇编"><img class="cover" data-lazy-src="https://gitee.com/MingHuifan/image/raw/master/20210209165542.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-18</div><div class="title">初识汇编</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">xiaofan</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/755400668"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/755400668" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:755400668@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到灰灰爱吃小云朵的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第一章 引论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">第二章 文法和语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%B3%95%E7%9A%84%E7%9B%B4%E8%A7%82%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">文法的直观概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E4%B8%B2"><span class="toc-number">2.2.</span> <span class="toc-text">符号和符号串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">2.3.</span> <span class="toc-text">文法和语言的形式定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%B3%95%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.4.</span> <span class="toc-text">文法的类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E6%A0%91"><span class="toc-number">2.5.</span> <span class="toc-text">语法树</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">第三章 词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%8F%8F%E8%BF%B0%E5%B7%A5%E5%85%B7"><span class="toc-number">3.1.</span> <span class="toc-text">单词的形式化描述工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E6%96%87%E6%B3%95%E5%92%8C%E6%AD%A3%E8%A7%84%E5%BC%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="toc-number">3.2.</span> <span class="toc-text">正规文法和正规式的等价性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">3.3.</span> <span class="toc-text">有穷自动机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E7%9A%84%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%EF%BC%88DFA%EF%BC%89"><span class="toc-number">3.3.1.</span> <span class="toc-text">确定的有穷自动机（DFA）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">3.3.2.</span> <span class="toc-text">不确定的有穷自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NFA-%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%AD%89%E4%BB%B7%E7%9A%84-DFA%EF%BC%88%E5%AD%90%E9%9B%86%E6%B3%95%EF%BC%89"><span class="toc-number">3.3.3.</span> <span class="toc-text">NFA 转换为等价的 DFA（子集法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DFA-%E7%9A%84%E5%8C%96%E7%AE%80%EF%BC%88%E5%88%86%E5%89%B2%E6%B3%95%EF%BC%89"><span class="toc-number">3.3.4.</span> <span class="toc-text">DFA 的化简（分割法）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%BC%8F%E5%92%8C%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%9A%84%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="toc-number">3.4.</span> <span class="toc-text">正规式和有穷自动机的等价性</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/16/Linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="Linux文件和目录管理">Linux文件和目录管理</a><time datetime="2022-03-16T02:28:58.000Z" title="发表于 2022-03-16 10:28:58">2022-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/02/ArchLinux%20PPPoE%E6%8B%A8%E5%8F%B7/" title="ArchLinux PPPoE拨号">ArchLinux PPPoE拨号</a><time datetime="2022-03-02T02:28:58.000Z" title="发表于 2022-03-02 10:28:58">2022-03-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/01/ArchLinux%E5%AE%89%E8%A3%85VMware/" title="ArchLinux安装VMware">ArchLinux安装VMware</a><time datetime="2022-03-01T02:28:58.000Z" title="发表于 2022-03-01 10:28:58">2022-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/01/ranger/" title="Ranger">Ranger</a><time datetime="2022-03-01T02:28:58.000Z" title="发表于 2022-03-01 10:28:58">2022-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/02/27/ArchLinux%E5%AE%89%E8%A3%85wine/" title="ArchLinux安装wine">ArchLinux安装wine</a><time datetime="2022-02-27T08:28:58.000Z" title="发表于 2022-02-27 16:28:58">2022-02-27</time></div></div></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xiaofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://755400668.github.io/2021/09/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">http://755400668.github.io/2021/09/07/编译原理/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://755400668.github.io" target="_blank">灰灰爱吃小云朵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BA%95%E5%B1%82/">底层</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/02/18/初识汇编/" title="初识汇编"><img class="cover" data-lazy-src="https://gitee.com/MingHuifan/image/raw/master/20210209165542.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-18</div><div class="title">初识汇编</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">xiaofan</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/755400668"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/755400668" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:755400668@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到灰灰爱吃小云朵的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BC%95%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">第一章 引论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">第二章 文法和语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%B3%95%E7%9A%84%E7%9B%B4%E8%A7%82%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">文法的直观概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%92%8C%E7%AC%A6%E5%8F%B7%E4%B8%B2"><span class="toc-number">2.2.</span> <span class="toc-text">符号和符号串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">2.3.</span> <span class="toc-text">文法和语言的形式定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%B3%95%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.4.</span> <span class="toc-text">文法的类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E6%A0%91"><span class="toc-number">2.5.</span> <span class="toc-text">语法树</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">第三章 词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%AF%8D%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%8F%8F%E8%BF%B0%E5%B7%A5%E5%85%B7"><span class="toc-number">3.1.</span> <span class="toc-text">单词的形式化描述工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E6%96%87%E6%B3%95%E5%92%8C%E6%AD%A3%E8%A7%84%E5%BC%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="toc-number">3.2.</span> <span class="toc-text">正规文法和正规式的等价性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">3.3.</span> <span class="toc-text">有穷自动机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E7%9A%84%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%EF%BC%88DFA%EF%BC%89"><span class="toc-number">3.3.1.</span> <span class="toc-text">确定的有穷自动机（DFA）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">3.3.2.</span> <span class="toc-text">不确定的有穷自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NFA-%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%AD%89%E4%BB%B7%E7%9A%84-DFA%EF%BC%88%E5%AD%90%E9%9B%86%E6%B3%95%EF%BC%89"><span class="toc-number">3.3.3.</span> <span class="toc-text">NFA 转换为等价的 DFA（子集法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DFA-%E7%9A%84%E5%8C%96%E7%AE%80%EF%BC%88%E5%88%86%E5%89%B2%E6%B3%95%EF%BC%89"><span class="toc-number">3.3.4.</span> <span class="toc-text">DFA 的化简（分割法）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%BC%8F%E5%92%8C%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%9A%84%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="toc-number">3.4.</span> <span class="toc-text">正规式和有穷自动机的等价性</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/25/Oracle11g%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9AOracle-%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" title="Oracle-安全管理">Oracle-安全管理</a><time datetime="2022-03-25T02:28:58.000Z" title="发表于 2022-03-25 10:28:58">2022-03-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/20/Linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E4%B9%A0%E9%A2%98/" title="Linux用户和权限管理习题">Linux用户和权限管理习题</a><time datetime="2022-03-20T01:28:58.000Z" title="发表于 2022-03-20 09:28:58">2022-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/18/Oracle11g%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%9AOracle-%E6%A8%A1%E5%BC%8F%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/" title="Oracle-模式对象管理">Oracle-模式对象管理</a><time datetime="2022-03-18T02:28:58.000Z" title="发表于 2022-03-18 10:28:58">2022-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/16/Linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="Linux文件和目录管理习题">Linux文件和目录管理习题</a><time datetime="2022-03-16T02:28:58.000Z" title="发表于 2022-03-16 10:28:58">2022-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/07/Oracle11g%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9AOracle-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E7%AE%A1%E7%90%86/" title="Oracle-存储结构管理">Oracle-存储结构管理</a><time datetime="2022-03-07T02:28:58.000Z" title="发表于 2022-03-07 10:28:58">2022-03-07</time></div></div></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
 </script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {

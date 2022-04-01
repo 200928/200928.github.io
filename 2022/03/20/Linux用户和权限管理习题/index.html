@@ -1,0 +1,478 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Linux用户和权限管理习题 | 灰灰爱吃小云朵</title><meta name="keywords" content="Linux"><meta name="author" content="xiaofan"><meta name="copyright" content="xiaofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux中的用户管理主要涉及用户账号文件________、用户密码文件________、用户组文件________。  用户帐号文件：&#x2F;etc&#x2F;passwd 用户密码文件：&#x2F;etc&#x2F;shadow 用户组文件：&#x2F;etc&#x2F;group   通过id命令查看student 用户的身份信息，并将命令执行后的信息全部重定向到黑洞文件中。  显示系统中用户账号的个数。 123456minghui@Linu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux用户和权限管理习题">
+<meta property="og:url" content="http://755400668.github.io/2022/03/20/Linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E4%B9%A0%E9%A2%98/index.html">
+<meta property="og:site_name" content="灰灰爱吃小云朵">
+<meta property="og:description" content="Linux中的用户管理主要涉及用户账号文件________、用户密码文件________、用户组文件________。  用户帐号文件：&#x2F;etc&#x2F;passwd 用户密码文件：&#x2F;etc&#x2F;shadow 用户组文件：&#x2F;etc&#x2F;group   通过id命令查看student 用户的身份信息，并将命令执行后的信息全部重定向到黑洞文件中。  显示系统中用户账号的个数。 123456minghui@Linu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2022-03-20T01:28:58.000Z">
+<meta property="article:modified_time" content="2022-03-30T03:36:07.300Z">
+<meta property="article:author" content="xiaofan">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://755400668.github.io/2022/03/20/Linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E4%B9%A0%E9%A2%98/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="yandex-verification" content="{&quot;enable&quot;:true,&quot;main&quot;:&quot;#49B1F5&quot;,&quot;paginator&quot;:&quot;#00c4b6&quot;,&quot;button_hover&quot;:&quot;#FF7242&quot;,&quot;text_selection&quot;:&quot;#00c4b6&quot;,&quot;link_color&quot;:&quot;#99a9bf&quot;,&quot;meta_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#49b1f5&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":500,"languages":{"author":"作者: xiaofan","link":"链接: ","source":"来源: 灰灰爱吃小云朵","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#ffc0cb","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-03-30 11:36:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="/css/mycss/background.css"><link rel="stylesheet" href="/css/mycss/footer.css"><link rel="stylesheet" href="/css/mycss/scroll_bar.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/css/hideCategory.min.css"><link rel="stylesheet" href="/css/mycss/read.css"><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">灰灰爱吃小云朵</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux用户和权限管理习题<a class="post-edit-link" href="https://github.com/755400668/755400668.github.io/_posts/Linux用户和权限管理习题.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-20T01:28:58.000Z" title="发表于 2022-03-20 09:28:58">2022-03-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-30T03:36:07.300Z" title="更新于 2022-03-30 11:36:07">2022-03-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<ol>
+<li><p>Linux中的用户管理主要涉及用户账号文件________、用户密码文件________、用户组文件________。</p>
+<ul>
+<li>用户帐号文件：<code>/etc/passwd</code></li>
+<li>用户密码文件：<code>/etc/shadow</code></li>
+<li>用户组文件：<code>/etc/group</code></li>
+</ul>
+</li>
+<li><p>通过id命令查看student 用户的身份信息，并将命令执行后的信息全部重定向到黑洞文件中。</p>
+</li>
+<li><p>显示系统中用户账号的个数。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">minghui@Linux ~ $ who</span><br><span class="line">minghui  tty1         2022-03-30 09:51</span><br><span class="line">minghui  pts/0        2022-03-30 09:54 (192.168.164.1)</span><br><span class="line">minghui@Linux ~ $ who | wc -l</span><br><span class="line">2</span><br><span class="line">minghui@Linux ~ $</span><br></pre></td></tr></table></figure></li>
+<li><p>将student 用户的家目录复制到/tmp目录中，并保持源文件的属性不变。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">minghui@Linux ~ $ sudo useradd student</span><br><span class="line">[sudo] minghui 的密码：</span><br><span class="line">minghui@Linux ~ $ sudo cp -rp /home/student /tmp</span><br><span class="line">[sudo] minghui 的密码：</span><br><span class="line">minghui@Linux ~ $</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>创建一个名为financial的组。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minghui@Linux ~ $ sudo groupadd financial</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>创建一个名为test1的用户，指定其UID为1600,将financial组设置为test1用户的基本组。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">minghui@Linux ~ $ sudo useradd -u 1600 -g financial test1</span><br><span class="line">minghui@Linux ~ $ id test1</span><br><span class="line">uid=1600(test1) gid=1011(financial) 组=1011(financial)</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>通过非交互方式为用户test1设置密码123。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Linux ~ # sudo echo &quot;123&quot; | passwd --stdin test1</span><br><span class="line">更改用户 test1 的密码 。</span><br><span class="line">passwd：所有的身份验证令牌已经成功更新。</span><br><span class="line">Linux ~ #</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>–stdin</p>
+<pre><code>         This option is used to indicate that passwd should read the new
+         password from standard input, which can be a pipe.
+</code></pre>
+</blockquote>
+</li>
+<li><p>另外打开一个终端，以test1用户的身份登录系统。在test1的家目录中创建一个名为test1.txt的文件，并查看test1.txt 文件的权限设置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">minghui@Linux ~ $ su - test1</span><br><span class="line">密码：</span><br><span class="line">[test1@Linux ~]$ touch test1.txt</span><br><span class="line">[test1@Linux ~]$ ll test1.txt</span><br><span class="line">-rw-r--r-- 1 test1 financial 0 3月  30 11:24 test1.txt</span><br><span class="line">[test1@Linux ~]$</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>首先对文件test1.txt进行权限设置，要求文件所有者具有读写权限，所属组和其他用户具有只读权限。然后，使test1用户退出登录。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[test1@Linux ~]$ chmod 644 test1.txt</span><br><span class="line">[test1@Linux ~]$ ll</span><br><span class="line">总用量 0</span><br><span class="line">-rw-r--r-- 1 test1 financial 0 3月  30 11:24 test1.txt</span><br><span class="line">[test1@Linux ~]$</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>将test1用户锁定，禁止其登录。再次打开一个终端，尝试能否以test1 用户的身份登录。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Linux ~ # passwd -l test1</span><br><span class="line">锁定用户 test1 的密码 。</span><br><span class="line">passwd: 操作成功</span><br><span class="line">Linux ~ #</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">minghui@Linux ~ $ ssh test1@192.168.164.131</span><br><span class="line">The authenticity of host &#x27;192.168.164.131 (192.168.164.131)&#x27; can&#x27;t be established.</span><br><span class="line">ECDSA key fingerprint is SHA256:5bZfq74NYyTEpwAjym7vK8HR9IK2WoIe/7z9YBrG1OI.</span><br><span class="line">ECDSA key fingerprint is MD5:85:fd:85:65:02:41:c2:ee:44:1f:c8:2a:b3:00:f0:ca.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added &#x27;192.168.164.131&#x27; (ECDSA) to the list of known hosts.</span><br><span class="line">test1@192.168.164.131&#x27;s password:</span><br><span class="line">Permission denied, please try again.</span><br><span class="line">test1@192.168.164.131&#x27;s password:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>将test1用户解锁，在终端中尝试能否以test1 用户的身份登录。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>将用户test1家目录中的test1.txt文件的所有者改为root，所属组改为users。</p>
+</li>
+<li><p>将test1用户连同家目录一并删除。</p>
+</li>
+<li><p>创建用户test2，要求没有家目录，并且禁止其登录。</p>
+</li>
+<li><p>创建用户test3, 并指定其家目录为/test3。</p>
+</li>
+<li><p>将test3用户加入root组，使root组成为其附加组。</p>
+</li>
+<li><p>将用户test3的基本组修改为users。</p>
+</li>
+<li><p>将用户test3的家目录/test3移动到/home目录中，然后将其家目录改为/home/test3。</p>
+</li>
+<li><p>当用户对目录有写权限，但对目录下的文件没有写权限时，能否修改此文件内容？能否删除此文件？</p>
+</li>
+<li><p>Linux 文件的权限位x对目录和文件有何不同？</p>
+</li>
+<li><p>新建目录/tmp/mike,并设置如下权限。</p>
+</li>
+</ol>
+<p>●将此目录的所有者设置为 mike，并设置读、写和执行权限。</p>
+<p>●将此目录的所属组设置为sales，并设置读和执行权限。</p>
+<p>●其他用户没有任何权限。</p>
+<ol start="22">
+<li><p>创建/var/test 目录，要求在此目录中任何用户都可以创建文件或目录，但只有用户自身和root用户可以删除用户所创建的文件或目录。</p>
+</li>
+<li><p>新建一个名为manager的用户组，创建两个用户账号: natasha 和harry,并将manager组设为这两个用户的附加组。复制文件/etc/fstab 到/var/tmp目录中，对文件/var/tmp/fstab进行权限设置。</p>
+</li>
+</ol>
+<p>●添加ACL条目，使manager组具有读取权限。</p>
+<p>●添加ACL条目，使用户harry具有读写权限。</p>
+<p>●添加ACL条目,使用户natasha没有任何权限。</p>
+<p>●删除manager 组的ACL条目。</p>
+<p>●删除所有附加的ACL条目。</p>
+<ol start="24">
+<li><p>假设/var/test目录的所属组是users，要求对/var/test目录进行权限设置，使得任何用户在该目录中所创建的文件或子目录的所属组都自动使用users组。</p>
+</li>
+<li><p>假设普通用户student已经被授权，要求以该用户身份将系统的IP地址修改为192.168.80.10/24。</p>
+</li>
+<li><p>为/etc/passwd文件添加只读属性。</p>
+</li>
+<li><p>将/var/log/message文件设置为只能向其中追加写入数据，但不能删除原有数据。</p>
+</li>
+<li><p>在系统中查找所有人都有写权限的目录。</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xiaofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://755400668.github.io/2022/03/20/Linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E4%B9%A0%E9%A2%98/">http://755400668.github.io/2022/03/20/Linux用户和权限管理习题/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://755400668.github.io" target="_blank">灰灰爱吃小云朵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/15/ArchLinux-Typora-Picgo/" title="ArchLinux-Typora-Picgo"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-15</div><div class="title">ArchLinux-Typora-Picgo</div></div></a></div><div><a href="/2022/03/01/ArchLinux安装VMware/" title="ArchLinux安装VMware"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-01</div><div class="title">ArchLinux安装VMware</div></div></a></div><div><a href="/2022/02/27/ArchLinux安装wine/" title="ArchLinux安装wine"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-27</div><div class="title">ArchLinux安装wine</div></div></a></div><div><a href="/2022/01/11/ArchLinux开发环境配置/" title="ArchLinux开发环境配置"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-11</div><div class="title">ArchLinux开发环境配置</div></div></a></div><div><a href="/2022/01/08/ArchLinux系统安装/" title="ArchLinux系统安装"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-08</div><div class="title">ArchLinux系统安装</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">xiaofan</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/755400668"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/755400668" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:755400668@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到灰灰爱吃小云朵的博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/25/Oracle11g%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9AOracle-%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" title="Oracle-安全管理">Oracle-安全管理</a><time datetime="2022-03-25T02:28:58.000Z" title="发表于 2022-03-25 10:28:58">2022-03-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/20/Linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E4%B9%A0%E9%A2%98/" title="Linux用户和权限管理习题">Linux用户和权限管理习题</a><time datetime="2022-03-20T01:28:58.000Z" title="发表于 2022-03-20 09:28:58">2022-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/18/Oracle11g%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%9AOracle-%E6%A8%A1%E5%BC%8F%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/" title="Oracle-模式对象管理">Oracle-模式对象管理</a><time datetime="2022-03-18T02:28:58.000Z" title="发表于 2022-03-18 10:28:58">2022-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/16/Linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="Linux文件和目录管理习题">Linux文件和目录管理习题</a><time datetime="2022-03-16T02:28:58.000Z" title="发表于 2022-03-16 10:28:58">2022-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/07/Oracle11g%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9AOracle-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E7%AE%A1%E7%90%86/" title="Oracle-存储结构管理">Oracle-存储结构管理</a><time datetime="2022-03-07T02:28:58.000Z" title="发表于 2022-03-07 10:28:58">2022-03-07</time></div></div></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
+</script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'dark',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'xS20Cql4UsmdctL0h7VKtAKM-MdYXbMMI',
+      appKey: 'b5NzzpLCJEwqfX229hVr6TSS',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      visitor: false
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
