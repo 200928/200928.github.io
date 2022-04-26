@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>实验四：RIP与OSPF动态路由配置 | 灰灰爱吃小云朵</title><meta name="keywords" content="route"><meta name="author" content="xiaofan"><meta name="copyright" content="xiaofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="如果文中有什么纰漏或错误的话，请留言指正！！！  实验四：RIP与OSPF动态路由配置  按照书上内容配置：  RIP：P220 ~ P227【RIP协议排错】也要做 OSPF：P235 ~ P24    两个协议配置，放到一个 Word 文档里就行 还有实验文件（pkt）用一个也行，上面是 RIP 下面是 OSPF，如图所示   实验内容   RIP动态路由协议   配置RIP协议   学会">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>实验四：RIP与OSPF动态路由配置 | 灰灰爱吃小云朵</title><meta name="keywords" content="route"><meta name="author" content="xiaofan"><meta name="copyright" content="xiaofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="如果文中有什么纰漏或错误的话，请留言指正！！！  实验四：RIP与OSPF动态路由配置 按照书上内容配置：  RIP：P220 ~ P227【RIP协议排错】也要做 OSPF：P235 ~ P24    两个协议配置，放到一个 Word 文档里就行 还有实验文件（pkt）用一个也行，上面是 RIP 下面是 OSPF，如图所示   实验内容 RIP动态路由协议  配置RIP协议  学会查看路由表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实验四：RIP与OSPF动态路由配置">
 <meta property="og:url" content="http://755400668.github.io/2021/11/15/%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9ARIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="灰灰爱吃小云朵">
-<meta property="og:description" content="如果文中有什么纰漏或错误的话，请留言指正！！！  实验四：RIP与OSPF动态路由配置  按照书上内容配置：  RIP：P220 ~ P227【RIP协议排错】也要做 OSPF：P235 ~ P24    两个协议配置，放到一个 Word 文档里就行 还有实验文件（pkt）用一个也行，上面是 RIP 下面是 OSPF，如图所示   实验内容   RIP动态路由协议   配置RIP协议   学会">
+<meta property="og:description" content="如果文中有什么纰漏或错误的话，请留言指正！！！  实验四：RIP与OSPF动态路由配置 按照书上内容配置：  RIP：P220 ~ P227【RIP协议排错】也要做 OSPF：P235 ~ P24    两个协议配置，放到一个 Word 文档里就行 还有实验文件（pkt）用一个也行，上面是 RIP 下面是 OSPF，如图所示   实验内容 RIP动态路由协议  配置RIP协议  学会查看路由表">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
 <meta property="article:published_time" content="2021-11-15T01:32:33.000Z">
@@ -170,8 +170,7 @@
 <blockquote>
 <p>如果文中有什么纰漏或错误的话，请留言指正！！！</p>
 </blockquote>
-<h1>实验四：RIP与OSPF动态路由配置</h1>
-<blockquote>
+<h1 id="实验四：RIP与OSPF动态路由配置"><a href="#实验四：RIP与OSPF动态路由配置" class="headerlink" title="实验四：RIP与OSPF动态路由配置"></a>实验四：RIP与OSPF动态路由配置</h1><blockquote>
 <p>按照书上内容配置：</p>
 <ul>
 <li>RIP：P220 ~ P227【RIP协议排错】也要做</li>
@@ -183,59 +182,44 @@
 <p>还有实验文件（pkt）用一个也行，上面是 RIP 下面是 OSPF，如图所示</p>
 </blockquote>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211116003758.png" alt="image-20211116003758313"></p>
-<h2 id="实验内容">实验内容</h2>
-<ol>
-<li>
-<p>RIP动态路由协议</p>
+<h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><ol>
+<li><p>RIP动态路由协议</p>
 <ul>
-<li>
-<p>配置RIP协议</p>
+<li><p>配置RIP协议</p>
 </li>
-<li>
-<p>学会查看路由表</p>
+<li><p>学会查看路由表</p>
 </li>
-<li>
-<p>观察RIP协议路由更新活动</p>
+<li><p>观察RIP协议路由更新活动</p>
 </li>
-<li>
-<p>测试RIP协议健壮性</p>
+<li><p>测试RIP协议健壮性</p>
 </li>
-<li>
-<p>RIP协议排错</p>
+<li><p>RIP协议排错</p>
 </li>
 </ul>
 </li>
-<li>
-<p>OSPF动态路由协议</p>
+<li><p>OSPF动态路由协议</p>
 <ul>
-<li>
-<p>配置OSPF协议</p>
+<li><p>配置OSPF协议</p>
 </li>
-<li>
-<p>查看OSPF协议三张表</p>
+<li><p>查看OSPF协议三张表</p>
 </li>
-<li>
-<p>监控OSPF协议的活动</p>
+<li><p>监控OSPF协议的活动</p>
 </li>
-<li>
-<p>验证OSPF协议的健壮性</p>
+<li><p>验证OSPF协议的健壮性</p>
 </li>
-<li>
-<p>OSPF协议配置排错</p>
+<li><p>OSPF协议配置排错</p>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="RIP-协议配置">RIP 协议配置</h2>
-<blockquote>
+<h2 id="RIP-协议配置"><a href="#RIP-协议配置" class="headerlink" title="RIP 协议配置"></a>RIP 协议配置</h2><blockquote>
 <p>首先做第一个动态路由协议 <strong>RIP</strong></p>
 </blockquote>
 <blockquote>
 <p>由于前面做了 3 次实验了，这里省略一些细节，直接在图上标注好<code>各个网段</code>以及<code>各个接口的IP地址</code>和<code>子网掩码</code></p>
 </blockquote>
 <ol>
-<li>
-<p>根据拓扑图搭建好框架</p>
+<li><p>根据拓扑图搭建好框架</p>
 <blockquote>
 <p>路由器可选：<code>PT-Router</code></p>
 <p>交换机可选：<code>2950T</code></p>
@@ -243,8 +227,7 @@
 </blockquote>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115140421.png" alt="image-20211115140421576"></p>
 </li>
-<li>
-<p>然后根据上图写好的各个接口的 IP 地址以及子网掩码给路由器和 PC 配置好（交换机不用配置）</p>
+<li><p>然后根据上图写好的各个接口的 IP 地址以及子网掩码给路由器和 PC 配置好（交换机不用配置）</p>
 <blockquote>
 <p>注意：PC 主机要设置网关，这里的网关就是路由器与交换机相连的那个出口：比如 PC1 的网关就是路由器1 fa0/0 的 IP 地址</p>
 </blockquote>
@@ -256,34 +239,28 @@
 <p><code>下面演示一个路由器，其他自行配置，不要手误打错数字了（/滑稽）</code></p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115095655.png" alt="image-20211115095655405"></p>
 </li>
-<li>
-<p>给每个路由器配置 RIP 协议</p>
+<li><p>给每个路由器配置 RIP 协议</p>
 <p>前面只是给各个接口分配了 IP 地址，以及给 PC 主机设置了网关等信息，易知，两台 PC 是不能通信的</p>
 <p>提示目的主机不可到达</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115133339.png" alt="image-20211115133338983"></p>
 <p>接下配置 RIP 协议使之任意终端设备都能通信</p>
 <ul>
-<li>
-<p>R1</p>
+<li><p>R1</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115134347.png" alt="image-20211115134347163"></p>
 </li>
-<li>
-<p>R2</p>
+<li><p>R2</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115135622.png" alt="image-20211115135622226"></p>
 </li>
-<li>
-<p>R3</p>
+<li><p>R3</p>
 <blockquote>
 <p>我这里忘记打<code>version 2</code>了，自行打上去，不打的话后续 RIP 协议学习到的路由记录可能不完全</p>
 </blockquote>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115141341.png" alt="image-20211115141341477"></p>
 </li>
-<li>
-<p>R4</p>
+<li><p>R4</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115135743.png" alt="image-20211115135743194"></p>
 </li>
-<li>
-<p>R5</p>
+<li><p>R5</p>
 <blockquote>
 <p>我这里忘记打<code>version 2</code>了，自行打上去，不打的话后续 RIP 协议学习到的路由记录可能不完全</p>
 </blockquote>
@@ -291,11 +268,10 @@
 </li>
 </ul>
 </li>
-<li>
-<p>查看路由表</p>
+<li><p>查看路由表</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看整张路由表</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> show ip route</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 只查看RIP协议路由表</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> show ip route rip</span></span><br></pre></td></tr></table></figure>
 <p>查看 R1 的整张路由表</p>
-<p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115142220.png" alt=""></p>
+<p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115142220.png"></p>
 <p>仅仅查看 R1 路由器 RIP 协议学到的路由</p>
 <p>可以发现除了 R1 的直连网段，其他的网段都通过 RIP 协议学习到了</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115185020.png" alt="image-20211115185013615"></p>
@@ -303,21 +279,18 @@
 <p>通过分析路由表可以知道，每个路由器通往其他网段的路由都有了</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115190236.png" alt="image-20211115190236121"></p>
 </li>
-<li>
-<p>测试两台电脑是否可通信</p>
+<li><p>测试两台电脑是否可通信</p>
 <p>PC1 ping PC2 可通信</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115190541.png" alt="image-20211115190541660"></p>
 </li>
-<li>
-<p>观察 RIP 协议路由更新活动</p>
+<li><p>观察 RIP 协议路由更新活动</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 观察 RIP 协议路由更新活动</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> debug ip rip</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭诊断输出</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> undebug all</span></span><br></pre></td></tr></table></figure>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115192709.png" alt="image-20211115192709546"></p>
 <blockquote>
 <p>记得用 undebug all 命令关闭，不然一直会输出信息</p>
 </blockquote>
 </li>
-<li>
-<p>测试 RIP 协议健壮性</p>
+<li><p>测试 RIP 协议健壮性</p>
 <p>动态路由会随着网络的变化重新生成到各个网络的路由，当最佳路径没有了，就会从备用路径中重新选择一个最佳路径。</p>
 <p>下面测试一下 PC1 到 PC2 的数据包路径</p>
 <p>在 PC1 上，用<code>tracert 192.168.3.1</code>命令跟踪到 PC2 的数据包路径，可以看到数据完整路径是<code>PC1-&gt;R1-&gt;R2-&gt;R3-&gt;PC2</code></p>
@@ -336,8 +309,7 @@
 <p>可以看到数据完整路径是<code>PC1-&gt;R1-&gt;R4-&gt;R5-&gt;R3-&gt;PC2</code></p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115201649.png" alt="image-20211115201649965"></p>
 </li>
-<li>
-<p>RIP 协议排错</p>
+<li><p>RIP 协议排错</p>
 <blockquote>
 <p>先把 R2 左边的接口开启，因为上一步关闭了</p>
 </blockquote>
@@ -346,16 +318,14 @@
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115202624.png" alt="image-20211115202624232"></p>
 <p>如果我们在配置 R1 路由器的 RIP 协议时，network 少写了一个 192.168.0.0，其他路由器就不能学习到到该网段的路由</p>
 <p>下面取消添加到 192.168.0.0 的网段，该网段不再参与 RIP 协议</p>
-<p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115203257.png" alt=""></p>
+<p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115203257.png"></p>
 <p>然后再 R3 路由器上查看 RIP 协议学到的路由，可以看到已经没有到 192.168.0.0/24 网段的路由了</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115203604.png" alt="image-20211115203604373"></p>
 </li>
 </ol>
 <hr>
-<h2 id="OSPF-协议配置">OSPF 协议配置</h2>
-<ol>
-<li>
-<p>拓扑图和 RIP 的一样</p>
+<h2 id="OSPF-协议配置"><a href="#OSPF-协议配置" class="headerlink" title="OSPF 协议配置"></a>OSPF 协议配置</h2><ol>
+<li><p>拓扑图和 RIP 的一样</p>
 <blockquote>
 <p>我这里是直接复制（CV 大法好/滑稽） RIP 协议的，然后把 RIP 协议关闭一下就行了（或者前面配置好 IP 之后就复制，然后就不用关闭 RIP 协议的了）</p>
 <p>关闭 RIP 协议如下图，剩下的 R2、R3、R4、R5 都要关闭 RIP 协议，不在赘述</p>
@@ -363,62 +333,51 @@
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115232558.png" alt="image-20211115232558349"></p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115232618.png" alt="image-20211115232618411"></p>
 </li>
-<li>
-<p>配置 OSPF 协议</p>
+<li><p>配置 OSPF 协议</p>
 <blockquote>
 <p>OSPF 配置方法</p>
 </blockquote>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211116004230.png" alt="image-20211116004230498"></p>
 <p>下面对 R1 ~ R5 进行 OSPF 配置</p>
 <ul>
-<li>
-<p>R1</p>
+<li><p>R1</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115233546.png" alt="image-20211115233546464"></p>
 </li>
-<li>
-<p>R2</p>
+<li><p>R2</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115233649.png" alt="image-20211115233649852"></p>
 </li>
-<li>
-<p>R3</p>
+<li><p>R3</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115233815.png" alt="image-20211115233815413"></p>
 </li>
-<li>
-<p>R4</p>
+<li><p>R4</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115233909.png" alt="image-20211115233909607"></p>
 </li>
-<li>
-<p>R5</p>
+<li><p>R5</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115233957.png" alt="image-20211115233957472"></p>
 </li>
 </ul>
 </li>
-<li>
-<p>查看 OSPF 协议三张表</p>
+<li><p>查看 OSPF 协议三张表</p>
 <blockquote>
 <p>邻居表、链路状态数据库表、路由表</p>
 </blockquote>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115234824.png" alt="image-20211115234824587"></p>
 <ul>
-<li>
-<p>邻居表</p>
+<li><p>邻居表</p>
 <p>查看 R1 的邻居表</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115235202.png" alt="image-20211115235202386"></p>
 </li>
-<li>
-<p>链路状态数据库表</p>
+<li><p>链路状态数据库表</p>
 <p>查看 R1 的链路状态数据库表</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211115235457.png" alt="image-20211115235457606"></p>
 </li>
-<li>
-<p>路由表</p>
+<li><p>路由表</p>
 <p>查看 R1 的路由表（OSPF 生成的）</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211116000420.png" alt="image-20211116000420936"></p>
 </li>
 </ul>
 </li>
-<li>
-<p>监控 OSPF 的活动</p>
+<li><p>监控 OSPF 的活动</p>
 <blockquote>
 <p>前面 RIP 协议是观察路由更新活动</p>
 </blockquote>
@@ -427,8 +386,7 @@
 <p>查看 events 信息（事件信息）</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211116001412.png" alt="image-20211116001412096"></p>
 </li>
-<li>
-<p>验证 OSPF 协议健壮性</p>
+<li><p>验证 OSPF 协议健壮性</p>
 <p>当网络的链路状态发送改变后，OSPF协议会迅速通过泛洪更新链路状态，每个路由器单独计算到各个网段的路由</p>
 <p>下面验证 OSPF 协议的健壮性</p>
 <p>测试一下 PC1 到 PC2 的数据包路径，可以看到数据完整路径是<code>PC1-&gt;R1-&gt;R2-&gt;R3-&gt;PC2</code></p>
@@ -439,8 +397,7 @@
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211116003520.png" alt="image-20211116003520756"></p>
 <p>做完之后重新把 R2 左边接口打开</p>
 </li>
-<li>
-<p>OSPF 协议配置排错</p>
+<li><p>OSPF 协议配置排错</p>
 <p>如果配置了网络中的路由器使用 OSPF 协议，但是查看路由表发现有些网段没有通过 OSPF 学习到，就需要检查路由器接口是否配置了正确的 IP 地址和子网掩码，要是串口还要检查是否配置了时钟频率。进行了这些常规检查，还要检查 OSPF 协议的配置。</p>
 <p>输入 <code>show ip protocols</code>能够显示动态路由协议的配置</p>
 <p><img src= "/img/loading2.gif" data-lazy-src="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20211116001831.png" alt="image-20211116001831536"></p>
@@ -448,7 +405,7 @@
 <p>总之出现问题之后可以先看下 OSPF 配置是否正确</p>
 </li>
 </ol>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xiaofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://755400668.github.io/2021/11/15/%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9ARIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/">http://755400668.github.io/2021/11/15/实验四：RIP与OSPF动态路由配置/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://755400668.github.io" target="_blank">灰灰爱吃小云朵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/route/">route</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/10/31/实验三—子网划分与静态路由/" title="实验三：子网划分与静态路由"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-31</div><div class="title">实验三：子网划分与静态路由</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">xiaofan</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/755400668"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/755400668" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:755400668@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到灰灰爱吃小云朵的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验四：RIP与OSPF动态路由配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RIP-%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">RIP 协议配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF-%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">OSPF 协议配置</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/18/ArchLinux%E8%A7%A6%E6%91%B8%E6%9D%BF/" title="ArchLinux安装中文输入法及软件">ArchLinux安装中文输入法及软件</a><time datetime="2022-04-18T02:28:58.000Z" title="发表于 2022-04-18 10:28:58">2022-04-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/13/Linux%E7%A3%81%E7%9B%98%E5%92%8C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" title="Linux磁盘和文件系统">Linux磁盘和文件系统</a><time datetime="2022-04-13T01:28:58.000Z" title="发表于 2022-04-13 09:28:58">2022-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/02/ArchLinux%E5%AE%89%E8%A3%85MySQL8/" title="ArchLinux安装Mariadb">ArchLinux安装Mariadb</a><time datetime="2022-04-02T08:28:58.000Z" title="发表于 2022-04-02 16:28:58">2022-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/25/Oracle11g%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9AOracle-%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" title="Oracle-安全管理">Oracle-安全管理</a><time datetime="2022-03-25T02:28:58.000Z" title="发表于 2022-03-25 10:28:58">2022-03-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/20/Linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E4%B9%A0%E9%A2%98/" title="Linux用户和权限管理习题">Linux用户和权限管理习题</a><time datetime="2022-03-20T01:28:58.000Z" title="发表于 2022-03-20 09:28:58">2022-03-20</time></div></div></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xiaofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://755400668.github.io/2021/11/15/%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9ARIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/">http://755400668.github.io/2021/11/15/实验四：RIP与OSPF动态路由配置/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://755400668.github.io" target="_blank">灰灰爱吃小云朵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/route/">route</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/10/31/实验三—子网划分与静态路由/" title="实验三：子网划分与静态路由"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-31</div><div class="title">实验三：子网划分与静态路由</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">xiaofan</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">35</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/755400668"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/755400668" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:755400668@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到灰灰爱吃小云朵的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9ARIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">实验四：RIP与OSPF动态路由配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RIP-%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">RIP 协议配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF-%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">OSPF 协议配置</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/18/ArchLinux%E8%A7%A6%E6%91%B8%E6%9D%BF/" title="ArchLinux触摸板">ArchLinux触摸板</a><time datetime="2022-04-18T02:28:58.000Z" title="发表于 2022-04-18 10:28:58">2022-04-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/13/Linux%E7%A3%81%E7%9B%98%E5%92%8C%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" title="Linux磁盘和文件系统">Linux磁盘和文件系统</a><time datetime="2022-04-13T01:28:58.000Z" title="发表于 2022-04-13 09:28:58">2022-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/02/ArchLinux%E5%AE%89%E8%A3%85MySQL8/" title="ArchLinux安装Mariadb">ArchLinux安装Mariadb</a><time datetime="2022-04-02T08:28:58.000Z" title="发表于 2022-04-02 16:28:58">2022-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/25/Oracle11g%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9AOracle-%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" title="Oracle-安全管理">Oracle-安全管理</a><time datetime="2022-03-25T02:28:58.000Z" title="发表于 2022-03-25 10:28:58">2022-03-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/20/Linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E4%B9%A0%E9%A2%98/" title="Linux用户和权限管理习题">Linux用户和权限管理习题</a><time datetime="2022-03-20T01:28:58.000Z" title="发表于 2022-03-20 09:28:58">2022-03-20</time></div></div></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
 </script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
