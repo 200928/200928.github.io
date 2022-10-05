@@ -1,0 +1,777 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>nvim键位 | 灰灰爱吃小云朵</title><meta name="keywords" content="Linux"><meta name="author" content="xiaofan"><meta name="copyright" content="xiaofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1. 文件目录   快捷键 功能    &lt;space&gt; + e 开关目录树   o 打开文件&#x2F;打开文件目录   h 折叠一个层级目录   d 删除文件   a 新建文件&#x2F;新建文件夹   r 重命名文件   x 剪切文件   p 粘贴   gy 拷贝文件绝对路径   Y 拷贝文件相对路径   y 拷贝文件名   更多快捷键见 nvim-tree.lua 顶部注释 2. 常规动作   快捷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nvim键位">
+<meta property="og:url" content="http://200928.github.io/2022/07/10/nvim%E9%94%AE%E4%BD%8D/index.html">
+<meta property="og:site_name" content="灰灰爱吃小云朵">
+<meta property="og:description" content="1. 文件目录   快捷键 功能    &lt;space&gt; + e 开关目录树   o 打开文件&#x2F;打开文件目录   h 折叠一个层级目录   d 删除文件   a 新建文件&#x2F;新建文件夹   r 重命名文件   x 剪切文件   p 粘贴   gy 拷贝文件绝对路径   Y 拷贝文件相对路径   y 拷贝文件名   更多快捷键见 nvim-tree.lua 顶部注释 2. 常规动作   快捷">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2022-07-10T02:28:58.000Z">
+<meta property="article:modified_time" content="2022-10-05T06:42:10.712Z">
+<meta property="article:author" content="xiaofan">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://200928.github.io/2022/07/10/nvim%E9%94%AE%E4%BD%8D/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="yandex-verification" content="{&quot;enable&quot;:true,&quot;main&quot;:&quot;#49B1F5&quot;,&quot;paginator&quot;:&quot;#00c4b6&quot;,&quot;button_hover&quot;:&quot;#FF7242&quot;,&quot;text_selection&quot;:&quot;#00c4b6&quot;,&quot;link_color&quot;:&quot;#99a9bf&quot;,&quot;meta_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#49b1f5&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":500,"languages":{"author":"作者: xiaofan","link":"链接: ","source":"来源: 灰灰爱吃小云朵","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#ffc0cb","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-05 14:42:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="/css/mycss/background.css"><link rel="stylesheet" href="/css/mycss/footer.css"><link rel="stylesheet" href="/css/mycss/scroll_bar.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/css/hideCategory.min.css"><link rel="stylesheet" href="/css/mycss/read.css"><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">82</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">灰灰爱吃小云朵</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">nvim键位<a class="post-edit-link" href="https://github.com/755400668/755400668.github.io/_posts/nvim键位.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-10T02:28:58.000Z" title="发表于 2022-07-10 10:28:58">2022-07-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-05T06:42:10.712Z" title="更新于 2022-10-05 14:42:10">2022-10-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="1-文件目录"><a href="#1-文件目录" class="headerlink" title="1. 文件目录"></a>1. 文件目录</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;space&gt;</code> + e</td>
+<td>开关目录树</td>
+</tr>
+<tr>
+<td>o</td>
+<td>打开文件/打开文件目录</td>
+</tr>
+<tr>
+<td>h</td>
+<td>折叠一个层级目录</td>
+</tr>
+<tr>
+<td>d</td>
+<td>删除文件</td>
+</tr>
+<tr>
+<td>a</td>
+<td>新建文件/新建文件夹</td>
+</tr>
+<tr>
+<td>r</td>
+<td>重命名文件</td>
+</tr>
+<tr>
+<td>x</td>
+<td>剪切文件</td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>gy</td>
+<td>拷贝文件绝对路径</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>拷贝文件相对路径</td>
+</tr>
+<tr>
+<td>y</td>
+<td>拷贝文件名</td>
+</tr>
+</tbody></table>
+<p>更多快捷键见 nvim-tree.lua 顶部注释</p>
+<h3 id="2-常规动作"><a href="#2-常规动作" class="headerlink" title="2. 常规动作"></a>2. 常规动作</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;space&gt;</code> + o</td>
+<td>打开大纲</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + f</td>
+<td>搜索文件</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + F</td>
+<td>搜索字符(依赖rg，可传入rg的各类参数，实现忽略大小写、正则表达式搜索等)</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + p</td>
+<td>切换项目</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + P</td>
+<td>切换会话</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + r</td>
+<td>最近文件</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + R</td>
+<td>打开替换窗口</td>
+</tr>
+<tr>
+<td><code>STAB</code></td>
+<td>打开左边标签页</td>
+</tr>
+<tr>
+<td><code>TAB</code></td>
+<td>打开右边标签页</td>
+</tr>
+<tr>
+<td><code>&lt;ctrl&gt;</code> + <code>h/j/k/l</code></td>
+<td>进入左边/下边/上边/右边窗口</td>
+</tr>
+<tr>
+<td><code>&lt;ctrl&gt; + \</code></td>
+<td>打开/关闭终端</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + q</td>
+<td>关闭窗口</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + D</td>
+<td>关闭buffer</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + q</td>
+<td>预览替换位置</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + c</td>
+<td>显示替换命令</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + o</td>
+<td>查看菜单（忽略大小写、忽略隐藏文件）</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + rc</td>
+<td>替换当前行</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + R</td>
+<td>替换全部</td>
+</tr>
+<tr>
+<td><code>ti</code></td>
+<td>大小写忽略切换</td>
+</tr>
+<tr>
+<td><code>th</code></td>
+<td>是否搜索隐藏文件</td>
+</tr>
+<tr>
+<td><code>cs&quot;&#39;</code></td>
+<td>“Hello world!”  –&gt; ‘Hello world!’</td>
+</tr>
+<tr>
+<td><code>cs&#39;&#123;/&#125;</code></td>
+<td>‘Hello world!’  –&gt; { Hello world! } / {Hello world!} ，即 { 有空格，}无空格，其他符号同理</td>
+</tr>
+<tr>
+<td><code>ds&quot;</code></td>
+<td>完全删除”</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt;</code>+hh</td>
+<td>高亮选中行</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt;</code>+hr</td>
+<td>取消高亮行</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + D</td>
+<td>关闭buffer</td>
+</tr>
+</tbody></table>
+<h3 id="3-代码导航"><a href="#3-代码导航" class="headerlink" title="3. 代码导航"></a>3. 代码导航</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;leader&gt;</code> + t</td>
+<td>在声明/定义间来回跳转 (c和cpp项目，需要导出compile_commands.json文件)</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + u</td>
+<td>查看代码引用</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+ in</td>
+<td>函数调用链</td>
+</tr>
+<tr>
+<td><code>]]</code></td>
+<td>跳转到下一个函数头</td>
+</tr>
+<tr>
+<td><code>][</code></td>
+<td>跳转到下一个函数尾</td>
+</tr>
+<tr>
+<td><code>[[</code></td>
+<td>跳转到上一个函数头</td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td>跳转到上一个函数尾</td>
+</tr>
+<tr>
+<td>gh</td>
+<td>查看函数签名+注释文档</td>
+</tr>
+<tr>
+<td>gl</td>
+<td>查看代码诊断</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + rn</td>
+<td>重命名符号</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + s</td>
+<td>搜索当前窗口下的符号 (类似vscode的 <code>@</code>)</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + S</td>
+<td>搜索项目下的符号 (类似vscode <code>#</code>)</td>
+</tr>
+</tbody></table>
+<h3 id="4-代码诊断"><a href="#4-代码诊断" class="headerlink" title="4. 代码诊断"></a>4. 代码诊断</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;leader&gt;</code> + dj</td>
+<td>下一个错误</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+ dk</td>
+<td>上一个错误</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + Td</td>
+<td>错误窗口 （类似vscode problem pane)</td>
+</tr>
+</tbody></table>
+<h3 id="5-Git操作"><a href="#5-Git操作" class="headerlink" title="5. Git操作"></a>5. Git操作</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;leader&gt;</code> + j</td>
+<td>下一个hunk</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + k</td>
+<td>上一个hunk</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + hs</td>
+<td>stage hunk</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + hu</td>
+<td>unstage hunk</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + hr</td>
+<td>reset hunk</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + hp</td>
+<td>preview hunk</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + gd</td>
+<td>diff file</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + gf</td>
+<td>file history</td>
+</tr>
+<tr>
+<td><code>&lt;space&gt;</code> + gg</td>
+<td>打开lazygit</td>
+</tr>
+</tbody></table>
+<h3 id="6-Debug"><a href="#6-Debug" class="headerlink" title="6. Debug"></a>6. Debug</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;leader&gt;</code> + db</td>
+<td>开关断点</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code> + dc</td>
+<td>条件断点</td>
+</tr>
+<tr>
+<td><code>&lt;F5&gt;/&lt;F10&gt;</code></td>
+<td>开始调试/continue</td>
+</tr>
+<tr>
+<td><code>&lt;F4&gt;</code></td>
+<td>结束调试会话</td>
+</tr>
+<tr>
+<td><code>&lt;F6&gt;</code></td>
+<td>stepover</td>
+</tr>
+<tr>
+<td><code>&lt;F7&gt;</code></td>
+<td>stepinto</td>
+</tr>
+<tr>
+<td><code>&lt;F8&gt;</code></td>
+<td>stepout</td>
+</tr>
+<tr>
+<td><code>&lt;shift&gt;</code> + k</td>
+<td>变量悬浮窗（查看cursor下变量的值, 按两次<code>&lt;shift&gt;</code>+k使cursor聚焦到悬浮窗)</td>
+</tr>
+</tbody></table>
+<h3 id="7-可视操作"><a href="#7-可视操作" class="headerlink" title="7. 可视操作"></a>7. 可视操作</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>v[i/a]s</code></td>
+<td>选中结构体</td>
+</tr>
+<tr>
+<td><code>v[i/a]f</code></td>
+<td>选中函数</td>
+</tr>
+<tr>
+<td><code>&lt;F5&gt;/&lt;F10&gt;</code></td>
+<td>开始调试/continue</td>
+</tr>
+<tr>
+<td><code>&lt;F4&gt;</code></td>
+<td>结束调试会话</td>
+</tr>
+<tr>
+<td><code>&lt;F6&gt;</code></td>
+<td>stepover</td>
+</tr>
+<tr>
+<td><code>&lt;F7&gt;</code></td>
+<td>stepinto</td>
+</tr>
+<tr>
+<td><code>&lt;F8&gt;</code></td>
+<td>stepout</td>
+</tr>
+<tr>
+<td><code>&lt;shift&gt;</code> + k</td>
+<td>变量悬浮窗（查看cursor下变量的值, 按两次<code>&lt;shift&gt;</code>+k使cursor聚焦到悬浮窗)</td>
+</tr>
+</tbody></table>
+<h3 id="8-其他"><a href="#8-其他" class="headerlink" title="8. 其他"></a>8. 其他</h3><ul>
+<li>cmake： <code>&lt;space&gt;</code> + c后，查看which key的提示</li>
+<li>ultest: 单元测试插件， <code>&lt;space&gt;</code> + t</li>
+<li>TodoList:  无快捷键，执行 <code>:TodoTrouble</code>查看</li>
+<li>LocalHistory： 无快捷键， 执行 <code>:LocalHistoryToggle</code>查看</li>
+<li>Lsp svr： <code>&lt;space&gt;</code>+li（小l和小i), 查看当前lsp状态， <code>&lt;space&gt;</code> + lI(小L和大I)安装lsp svr</li>
+</ul>
+<h1 id="vim-surround"><a href="#vim-surround" class="headerlink" title="vim-surround"></a>vim-surround</h1><p>用例子来解释是最容易的。按<code>cs&quot;&#39;</code>里面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;Hello world!&quot;</span><br></pre></td></tr></table></figure>
+<p>将其更改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;Hello world!&#39;</span><br></pre></td></tr></table></figure>
+<p>现在按<code>cs&#39;&lt;q&gt;</code>将其更改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;q&gt;Hello world!&lt;&#x2F;q&gt;</span><br></pre></td></tr></table></figure>
+<p>要转一圈，请按<code>cst&quot;</code>获取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;Hello world!&quot;</span><br></pre></td></tr></table></figure>
+<p>要完全删除分隔符，请按<code>ds&quot;</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello world!</span><br></pre></td></tr></table></figure>
+<p>现在将光标放在“Hello”上，按<code>ysiw]</code>(<code>iw</code>是一个文本对象)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Hello] world!</span><br></pre></td></tr></table></figure>
+<p>让我们制作大括号并添加一些空格（使用<code>&#125;</code>而不是<code>&#123;</code>没有空格）：<code>cs]&#123;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; Hello &#125; world!</span><br></pre></td></tr></table></figure>
+<p><code>yssb</code>现在用or将整行括在括号中<code>yss)</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&#123; Hello &#125; world!)</span><br></pre></td></tr></table></figure>
+<p>还原为原文：<code>ds&#123;ds)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello world!</span><br></pre></td></tr></table></figure>
+<p>强调你好：<code>ysiw&lt;em&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;em&gt;Hello&lt;&#x2F;em&gt; world!</span><br></pre></td></tr></table></figure>
+<p>最后，让我们试试视觉模式。按大写 V（用于线性视觉模式），然后按<code>S&lt;p class=&quot;important&quot;&gt;</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class&#x3D;&quot;important&quot;&gt;</span><br><span class="line">  &lt;em&gt;Hello&lt;&#x2F;em&gt; world!</span><br><span class="line">&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个插件对于 HTML 和 XML 编辑来说非常强大，目前在 Vim 领域似乎还没有填补这个利基市场。（与 HTML/XML <em>插入</em>相反，有许多插件可用）。同时添加、更改和删除标签对是一件轻而易举的事。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xiaofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://200928.github.io/2022/07/10/nvim%E9%94%AE%E4%BD%8D/">http://200928.github.io/2022/07/10/nvim键位/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://200928.github.io" target="_blank">灰灰爱吃小云朵</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/03/02/ArchLinux PPPoE拨号/" title="ArchLinux PPPoE拨号"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-02</div><div class="title">ArchLinux PPPoE拨号</div></div></a></div><div><a href="/2022/01/15/ArchLinux-Typora-Picgo/" title="ArchLinux-Typora-Picgo"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-15</div><div class="title">ArchLinux-Typora-Picgo</div></div></a></div><div><a href="/2022/06/10/ArchLinux外接显示器/" title="ArchLinux外接显示器"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-10</div><div class="title">ArchLinux外接显示器</div></div></a></div><div><a href="/2022/03/01/ArchLinux安装VMware/" title="ArchLinux安装VMware"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-01</div><div class="title">ArchLinux安装VMware</div></div></a></div><div><a href="/2022/01/11/ArchLinux开发环境配置/" title="ArchLinux开发环境配置"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-11</div><div class="title">ArchLinux开发环境配置</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">xiaofan</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">82</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/755400668"><i class="fab fa-github"></i><span>Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/755400668" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:755400668@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到灰灰爱吃小云朵的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">1. 文件目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E8%A7%84%E5%8A%A8%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">2. 常规动作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BB%A3%E7%A0%81%E5%AF%BC%E8%88%AA"><span class="toc-number">3.</span> <span class="toc-text">3. 代码导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%BB%A3%E7%A0%81%E8%AF%8A%E6%96%AD"><span class="toc-number">4.</span> <span class="toc-text">4. 代码诊断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Git%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text">5. Git操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Debug"><span class="toc-number">6.</span> <span class="toc-text">6. Debug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%8F%AF%E8%A7%86%E6%93%8D%E4%BD%9C"><span class="toc-number">7.</span> <span class="toc-text">7. 可视操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%85%B6%E4%BB%96"><span class="toc-number">8.</span> <span class="toc-text">8. 其他</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vim-surround"><span class="toc-number"></span> <span class="toc-text">vim-surround</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/09/28/%E8%80%83%E7%A0%94%E6%94%BF%E6%B2%BB%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" title="考研政治知识点总结">考研政治知识点总结</a><time datetime="2022-09-28T02:28:58.000Z" title="发表于 2022-09-28 10:28:58">2022-09-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/07/10/nvim%E9%94%AE%E4%BD%8D/" title="nvim键位">nvim键位</a><time datetime="2022-07-10T02:28:58.000Z" title="发表于 2022-07-10 10:28:58">2022-07-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/06/18/Git%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8/" title="Git在项目中的使用">Git在项目中的使用</a><time datetime="2022-06-18T01:19:37.000Z" title="发表于 2022-06-18 09:19:37">2022-06-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/06/10/ArchLinux%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/" title="ArchLinux外接显示器">ArchLinux外接显示器</a><time datetime="2022-06-10T02:28:58.000Z" title="发表于 2022-06-10 10:28:58">2022-06-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/06/10/nvm%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="nvm的安装与使用">nvm的安装与使用</a><time datetime="2022-06-10T02:28:58.000Z" title="发表于 2022-06-10 10:28:58">2022-06-10</time></div></div></div></div></div></div></main><footer id="footer" style="background: flse"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> xiaofan</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><span>湘ICP备2021007749号</span></a><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2021,01,18,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='本站已安全运行 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
+</script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'dark',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'xS20Cql4UsmdctL0h7VKtAKM-MdYXbMMI',
+      appKey: 'b5NzzpLCJEwqfX229hVr6TSS',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      visitor: false
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
