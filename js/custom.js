@@ -3,7 +3,7 @@
     const runtime = () => {
         window.setTimeout(runtime, 1000);
         /* 请修改这里的起始时间 */
-        let startTime = new Date('01/08/2024 15:00:00');
+        let startTime = new Date('01/08/2024 00:00:00');
         let endTime = new Date();
         let usedTime = endTime - startTime;
         let days = Math.floor(usedTime / (24 * 3600 * 1000));
