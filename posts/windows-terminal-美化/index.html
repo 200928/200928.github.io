@@ -1,0 +1,268 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Windows Terminal + Git-Bash - 灰灰爱吃小云朵</title><meta name=Description content="欢迎来到灰灰爱吃小云朵的博客!"><meta property="og:title" content="Windows Terminal + Git-Bash">
+<meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://200928.github.io/posts/windows-terminal-%E7%BE%8E%E5%8C%96/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-08-19T09:29:57+00:00"><meta property="article:modified_time" content="2021-08-19T09:29:57+00:00"><meta property="og:site_name" content="灰灰爱吃小云朵"><meta name=twitter:card content="summary"><meta name=twitter:title content="Windows Terminal + Git-Bash"><meta name=twitter:description content><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://200928.github.io/posts/windows-terminal-%E7%BE%8E%E5%8C%96/><link rel=prev href=https://200928.github.io/posts/centos+nginx-rtmp-module/><link rel=next href=https://200928.github.io/posts/wt-ssh%E5%92%8C%E9%80%9A%E8%BF%87ssh%E8%BF%9E%E6%8E%A5windows/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Windows Terminal + Git-Bash","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/200928.github.io\/posts\/windows-terminal-%E7%BE%8E%E5%8C%96\/"},"genre":"posts","keywords":"Windows","wordcount":2512,"url":"https:\/\/200928.github.io\/posts\/windows-terminal-%E7%BE%8E%E5%8C%96\/","datePublished":"2021-08-19T09:29:57+00:00","dateModified":"2021-08-19T09:29:57+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"xiaozao"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/><i class='fa-solid fa-file-pen'></i> 文章 </a><a class=menu-item href=/tags/><i class='fa-solid fa-tags'></i> 标签 </a><a class=menu-item href=/categories/><i class='fa-solid fa-layer-group'></i> 分类 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=/catch-the-cat/><i class='fas fa-fw fa-fan fa-spin'></i> 猫咪 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title><i class='fa-solid fa-file-pen'></i>文章</a><a class=menu-item href=/tags/ title><i class='fa-solid fa-tags'></i>标签</a><a class=menu-item href=/categories/ title><i class='fa-solid fa-layer-group'></i>分类</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=/catch-the-cat/ title><i class='fas fa-fw fa-fan fa-spin'></i>猫咪</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Windows Terminal + Git-Bash</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>xiaozao</a></span>&nbsp;<span class=post-category>included in <a href=/categories/%E6%95%99%E7%A8%8B/><i class="far fa-folder fa-fw" aria-hidden=true></i>教程</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2021-08-19>2021-08-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;2512 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;6 minutes&nbsp;</div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#windows-terminal>Windows Terminal</a><ul><li><a href=#先安装powershell>先安装PowerShell</a></li><li><a href=#安装windows-terminal>安装Windows Terminal</a></li><li><a href=#安装-posh-gitoh-my-posh>安装 posh-git、oh-my-posh</a></li><li><a href=#开启插件>开启插件</a></li><li><a href=#主题更改>主题更改</a></li><li><a href=#vscode终端>VsCode终端</a></li></ul></li><li><a href=#git-bash-美化>Git bash 美化</a><ul><li><a href=#前言>前言</a></li><li><a href=#安装-zsh>安装 zsh</a></li><li><a href=#安装-oh-my-zsh>安装 oh my zsh</a></li><li><a href=#插件安装>插件安装</a></li><li><a href=#配置>配置</a></li></ul></li><li><a href=#git-sdk>Git SDK</a><ul><li><a href=#下载安装>下载安装</a></li></ul></li></ul></nav></div></div><div class=content id=content><hr><h1 id=windows-terminal>Windows Terminal</h1><h2 id=先安装powershell>先安装PowerShell</h2><p><a href=https://github.com/PowerShell/PowerShell/releases target=_blank rel="noopener noreffer">https://github.com/PowerShell/PowerShell/releases</a></p><blockquote><p>64位 Windows 可下载 msi 文件</p></blockquote><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819165308.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819165308.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819165308.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819165308.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819165308.png title=image-20210819165308779></p><h2 id=安装windows-terminal>安装Windows Terminal</h2><blockquote><p>打开微软商店，直接搜索 <code>Windows Terminal</code> 即可下载安装</p></blockquote><h2 id=安装-posh-gitoh-my-posh>安装 posh-git、oh-my-posh</h2><blockquote><p><a href=https://github.com/JanDeDobbeleer/oh-my-posh2 target=_blank rel="noopener noreffer">https://github.com/JanDeDobbeleer/oh-my-posh2</a></p></blockquote><p>打开 <code>WindowsTerminal</code>的 <strong>Powershell</strong>窗口</p><ol><li><p><code>post-git</code>加入的 <code>-Verbose</code>显示详情</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ Install-Module posh-git -Scope CurrentUser
+</span></span><span class=line><span class=cl>$ Install-Module posh-git -Verbose -Scope CurrentUser
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>成功安装在 E:\Multimedia Data\文档\PowerShell\Modules\ 这个目录下</p></blockquote><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152425.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152425.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152425.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152425.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152425.png title=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152425.png></p></li><li><p><code>oh-my-posh</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ Install-Module oh-my-posh -Scope CurrentUser
+</span></span><span class=line><span class=cl>$ Install-Module oh-my-posh -Verbose -Scope CurrentUser
+</span></span></code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152548.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152548.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152548.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152548.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152548.png title=image-20210819152548228></p></li></ol><h2 id=开启插件>开启插件</h2><ol><li><p>打开配置文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ notepad <span class=nv>$PROFILE</span>
+</span></span></code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152900.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152900.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152900.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152900.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819152900.png title=image-20210819152843842></p></li><li><p>编辑引入模块</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 引入 posh-git</span>
+</span></span><span class=line><span class=cl>Import-Module posh-git
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 引入 oh-my-posh</span>
+</span></span><span class=line><span class=cl>Import-Module oh-my-posh
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置 PowerShell 主题</span>
+</span></span><span class=line><span class=cl>Set-PoshPrompt -Theme agnoster
+</span></span></code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154229.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154229.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154229.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154229.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154229.png title=image-20210819154229104></p><blockquote><p>这里我使用的是一个博主提供的内容：<a href=https://gist.github.com/LittleNewton/04132945d9b9743ba7cab780fc44a67b target=_blank rel="noopener noreffer">https://gist.github.com/LittleNewton/04132945d9b9743ba7cab780fc44a67b</a></p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>&lt;<span class=c1>#</span>
+</span></span><span class=line><span class=cl> * FileName: Microsoft.PowerShell_profile.ps1
+</span></span><span class=line><span class=cl> * Author: 刘 鹏
+</span></span><span class=line><span class=cl> * Email: littleNewton6@outlook.com
+</span></span><span class=line><span class=cl> * Date: 2020, May. <span class=m>1</span>
+</span></span><span class=line><span class=cl> * Update: 2021, Mar. <span class=m>14</span>
+</span></span><span class=line><span class=cl> * Copyright: No copyright. You can use this code <span class=k>for</span> anything with no warranty.
+</span></span><span class=line><span class=cl><span class=c1>#&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#------------------------------- Import Modules BEGIN -------------------------------</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 引入 posh-git</span>
+</span></span><span class=line><span class=cl>Import-Module posh-git
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 引入 oh-my-posh</span>
+</span></span><span class=line><span class=cl>Import-Module oh-my-posh
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置 PowerShell 主题</span>
+</span></span><span class=line><span class=cl><span class=c1># Set-PoshPrompt -Theme ys</span>
+</span></span><span class=line><span class=cl>Set-PoshPrompt -Theme nu4a
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#------------------------------- Import Modules END   -------------------------------</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#-------------------------------  Set Hot-keys BEGIN  -------------------------------</span>
+</span></span><span class=line><span class=cl><span class=c1># 设置预测文本来源为历史记录</span>
+</span></span><span class=line><span class=cl>Set-PSReadLineOption -PredictionSource History
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置 Tab 为菜单补全和 Intellisense</span>
+</span></span><span class=line><span class=cl>Set-PSReadLineKeyHandler -Key <span class=s2>&#34;Tab&#34;</span> -Function MenuComplete
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置 Ctrl+d 为退出 PowerShell</span>
+</span></span><span class=line><span class=cl>Set-PSReadlineKeyHandler -Key <span class=s2>&#34;Ctrl+d&#34;</span> -Function ViExit
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置 Ctrl+z 为撤销</span>
+</span></span><span class=line><span class=cl>Set-PSReadLineKeyHandler -Key <span class=s2>&#34;Ctrl+z&#34;</span> -Function Undo
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置向上键为后向搜索历史记录</span>
+</span></span><span class=line><span class=cl>Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置向下键为前向搜索历史纪录</span>
+</span></span><span class=line><span class=cl>Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+</span></span><span class=line><span class=cl><span class=c1>#-------------------------------  Set Hot-keys END    -------------------------------</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#-------------------------------    Functions BEGIN   -------------------------------</span>
+</span></span><span class=line><span class=cl><span class=c1># Python 直接执行</span>
+</span></span><span class=line><span class=cl><span class=nv>$env</span>:PATHEXT +<span class=o>=</span> <span class=s2>&#34;;.py&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 更新 pip 的方法</span>
+</span></span><span class=line><span class=cl><span class=k>function</span> Update-Packages <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=c1># update pip</span>
+</span></span><span class=line><span class=cl>	Write-Host <span class=s2>&#34;Step 1: 更新 pip&#34;</span> -ForegroundColor Magenta -BackgroundColor Cyan
+</span></span><span class=line><span class=cl>	<span class=nv>$a</span> <span class=o>=</span> pip list --outdated
+</span></span><span class=line><span class=cl>	<span class=nv>$num_package</span> <span class=o>=</span> <span class=nv>$a</span>.Length - <span class=m>2</span>
+</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=o>(</span><span class=nv>$i</span> <span class=o>=</span> 0<span class=p>;</span> <span class=nv>$i</span> -lt <span class=nv>$num_package</span><span class=p>;</span> <span class=nv>$i</span>++<span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=nv>$tmp</span> <span class=o>=</span> <span class=o>(</span><span class=nv>$a</span><span class=o>[</span><span class=m>2</span> + <span class=nv>$i</span><span class=o>]</span>.Split<span class=o>(</span><span class=s2>&#34; &#34;</span><span class=o>))[</span>0<span class=o>]</span>
+</span></span><span class=line><span class=cl>		pip install -U <span class=nv>$tmp</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c1># update TeX Live</span>
+</span></span><span class=line><span class=cl>	<span class=nv>$CurrentYear</span> <span class=o>=</span> Get-Date -Format yyyy
+</span></span><span class=line><span class=cl>	Write-Host <span class=s2>&#34;Step 2: 更新 TeX Live&#34;</span> <span class=nv>$CurrentYear</span> -ForegroundColor Magenta -BackgroundColor Cyan
+</span></span><span class=line><span class=cl>	tlmgr update --self
+</span></span><span class=line><span class=cl>	tlmgr update --all
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c1># update Chocolotey</span>
+</span></span><span class=line><span class=cl>	choco outdated
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=c1>#-------------------------------    Functions END     -------------------------------</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#-------------------------------   Set Alias BEGIN    -------------------------------</span>
+</span></span><span class=line><span class=cl><span class=c1># 1. 编译函数 make</span>
+</span></span><span class=line><span class=cl><span class=k>function</span> MakeThings <span class=o>{</span>
+</span></span><span class=line><span class=cl>	nmake.exe <span class=nv>$args</span> -nologo
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>Set-Alias -Name make -Value MakeThings
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 2. 更新系统 os-update</span>
+</span></span><span class=line><span class=cl>Set-Alias -Name os-update -Value Update-Packages
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 3. 查看目录 ls &amp; ll</span>
+</span></span><span class=line><span class=cl><span class=k>function</span> ListDirectory <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=o>(</span>Get-ChildItem<span class=o>)</span>.Name
+</span></span><span class=line><span class=cl>	Write-Host<span class=o>(</span><span class=s2>&#34;&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>Set-Alias -Name ls -Value ListDirectory
+</span></span><span class=line><span class=cl>Set-Alias -Name ll -Value Get-ChildItem
+</span></span><span class=line><span class=cl><span class=c1>#-------------------------------    Set Alias END     -------------------------------</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p>重新打开 Windows Terminal ：paradox 主题如下</p><p>尝试查看配置颜色，给了一个<a href=https://ohmyposh.dev/docs/upgrading target=_blank rel="noopener noreffer">网址</a>，打开之后告诉我们怎么更新到 V3</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154202.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154202.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154202.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154202.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154202.png title=image-20210819154201873></p><blockquote><p>更新命令，同样我们加入 Verbose 查看信息</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ Update-Module -Name oh-my-posh -Verbose -Scope CurrentUser
+</span></span></code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155023.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155023.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155023.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155023.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155023.png title=image-20210819155023426></p></li></ol><h2 id=主题更改>主题更改</h2><ol><li><p>查看主题</p><blockquote><p>查看主题样式、列举所有主题命令</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ Get-PoshThemes
+</span></span></code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154544.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154544.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154544.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154544.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819154544.png title=image-20210819154544468></p></li><li><p>更改主题</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ Set-PoshPrompt -Theme theme_name
+</span></span></code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155902.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155902.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155902.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155902.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155902.png title=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210819155902.png></p></li></ol><h2 id=vscode终端>VsCode终端</h2><blockquote><p>经过上面的美化之后，<strong>Vscode</strong> 的终端也会得以改变，但是由于 <strong>Vscode</strong> 设置的字体<strong>可能</strong>会导致乱码</p></blockquote><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130517.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130517.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130517.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130517.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130517.png title=image-20210820130517343></p><p>我们按住 <code>Ctrl+Shift+P</code> 输入 <code>settings.json</code> 然后编辑字体样式即可，我这里用到的是一个<code>FiraCode NF</code> 字体（这个好像是系统内部的，<a href=https://github.com/ryanoasis/nerd-fonts/releases target=_blank rel="noopener noreffer">下载链接</a>）</p><p>提供一个我的字体设置</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=s2>&#34;editor.fontFamily&#34;</span>: <span class=s2>&#34;Fira Code Medium, FiraCode NF, Consolas, &#39;Courier New&#39;, monospace&#34;</span>,
+</span></span></code></pre></td></tr></table></div></div><p>当然还有很多字体都可以，比如 <code>Hack</code> 字体（<a href=https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip target=_blank rel="noopener noreffer">下载链接</a>），但是我安装之后在 <code>Vscode</code>里面没有用，在 Windows Terminal 的配置文件里面就可以用，具体什么原因不清楚</p><p>下面是 Windows Terminal 的配置文件</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130926.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130926.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130926.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130926.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820130926.png title=image-20210820130926051></p><blockquote><p>红色框表示设置终端字体类型，<code>Hack NF、FiraCode NF</code> 都可以达到特殊字符的显示</p></blockquote><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820144905.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820144905.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820144905.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820144905.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820144905.png title=image-20210820144905412></p><h1 id=git-bash-美化>Git bash 美化</h1><h2 id=前言>前言</h2><blockquote><p>经过上面 Vscode 的启发，能否在 IDEA 上面把终端也改成 Windows Terminal 的样式</p><p>但是通过查看 Windows Terminal 的安装路径寻找它的可执行文件，然后在 IDEA 里面设置终端的启动文件</p><p>我通过 Everything 找到了 Windows Terminal 的文件路径，把 IDEA 的终端启动文件设置为 <code>wt.exe</code> 启动</p><p>但是它打开终端是独立打开的，不在 IDEA 窗口里面打开，于是想到能不能设置为 <code>Git Bash</code>启动，然后把 Git Bash 美化一下</p></blockquote><blockquote><p>下面 IDEA 设置为了 <code>Git Bash</code> 启动了，只需要把 <strong>Git Bash</strong> 美化即可</p></blockquote><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150140.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150140.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150140.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150140.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150140.png title=image-20210820150140200></p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150255.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150255.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150255.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150255.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150255.png title=image-20210820150255075></p><h2 id=安装-zsh>安装 zsh</h2><ol><li><p><a href="https://packages.msys2.org/package/zsh?repo=msys&amp;variant=x86_64" target=_blank rel="noopener noreffer">https://packages.msys2.org/package/zsh?repo=msys&amp;variant=x86_64</a></p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150548.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150548.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150548.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150548.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820150548.png title=image-20210820150548480></p></li><li><p>解压，这个 <code>.zst</code>文件可能解压不了，需要安装一个软件<code>peazip</code><a href=https://peazip.github.io/ target=_blank rel="noopener noreffer">https://peazip.github.io/</a></p><p>然后找到第一步下载的，选择解压即可</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820153632.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820153632.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820153632.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820153632.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820153632.png title=image-20210820153632612></p><p>解压之后会有一个去掉了 <code>.zst</code>后缀的文件，此时我们在次解压即可</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154022.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154022.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154022.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154022.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154022.png title=image-20210820154022279></p></li><li><p>我们把上面解压好的文件全部移动到 <code>git</code>的安装目录下，相当于对git bash做一个补充包，比如我这里</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154133.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154133.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154133.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154133.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820154133.png title=image-20210820154133032></p></li><li><p>打开 Git Bash，输入 <code>zsh</code>然后你会发现进入了 <strong>zsh</strong> 终端</p><p>提示我们没有配置文件，输入 0 创建一个就行了</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155009.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155009.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155009.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155009.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155009.png title=image-20210820155009359></p></li></ol><h2 id=安装-oh-my-zsh>安装 oh my zsh</h2><ol><li><p>上面已经从进入了 zsh 终端了，执行下面命令安装 oh-my-zsh （<a href=https://ohmyz.sh/#install target=_blank rel="noopener noreffer">给出官网</a>）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 下面两个任选其一</span>
+</span></span><span class=line><span class=cl>$ sh -c <span class=s2>&#34;</span><span class=k>$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class=k>)</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>$ sh -c <span class=s2>&#34;</span><span class=k>$(</span>wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -<span class=k>)</span><span class=s2>&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>这里我两个链接都没用</p></blockquote><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155519.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155519.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155519.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155519.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820155519.png title=image-20210820155518983></p><p>用另外方法安装，其实就是人工手动实现上面两种安装代码方式</p><ul><li><p>首先随便在哪个地方新建文件 <code>install.sh</code></p><p>然后打开网址 <a href=https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh target=_blank rel="noopener noreffer">https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh</a> 复制里面的内容 写入<code>install.sh</code>文件中</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ vim install.sh
+</span></span></code></pre></td></tr></table></div></div></li><li><p>赋予执行权限</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ chmod +x install.sh
+</span></span></code></pre></td></tr></table></div></div></li><li><p>执行脚本</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ ./install.sh
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>报错了，解决方法先还未知</p></blockquote><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161232.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161232.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161232.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161232.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161232.png title=image-20210820161232838></p><blockquote><p>提示：下面不用看了，因为写到一半发现错了</p></blockquote><hr></li><li><p>报错分析</p><p>根据上面的报错大概是说克隆仓库到本地出错，那我们查看它仓库里面的 <code>install.sh</code> 文件里面的内容</p><p>这是 <code>ohmyzsh</code>仓库 <code>install.sh</code> 的一部分代码，我想大概意思就是拉取仓库到本地，并且保存到 <code>~/.oh-my-zsh</code>下（<code>~/</code>这个目录在Windows下是用户目录，Linux 是 root）</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161551.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161551.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161551.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161551.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820161551.png title=image-20210820161551182></p><p>然后我验证了的确是这样的，我查看云服务器（安装了ohmyzsh）下 <code>/root/</code>目录下是否有个 <code>.oh-my-zsh</code>文件夹以及里面文件是否和仓库一致</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162125.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162125.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162125.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162125.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162125.png title=image-20210820162125734></p><blockquote><p><strong>lib</strong> 提供了核心功能的脚本库
+<strong>tools</strong> 提供安装、升级等功能的快捷工具
+<strong>plugins</strong> 自带插件的存放位置
+<strong>templates</strong> 自带模板的存放位置
+<strong>themes</strong> 自带主题文件的存放位置
+<strong>custom</strong> 个性化配置目录，自安装的插件和主题可放这里</p></blockquote></li><li><p>知道了 执行<code>install.sh</code>文件的目的是先拉取仓库到本地，我们干脆手动拉取到指定目录下</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162433.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162433.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162433.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162433.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162433.png title=image-20210820162432951></p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162502.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162502.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162502.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162502.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162502.png title=image-20210820162502045></p><p>发现它那里写的是要拉取到<code>.oh-my-zsh</code>目录，我们只需将其改名即可</p></li><li><p>随后在 <code>install.sh</code>目录下执行该脚本看看</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ ./install.sh
+</span></span></code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162833.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162833.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162833.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162833.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/20210820162833.png title=image-20210820162833757></p></li><li><p>很明显，即使执行了 <code>install.sh</code> 也没有初始化一些文件，即配置文件 <code>.zshrc</code></p><p>配置文件里面有一些东西，但是我们查看之后并没有</p><p>手动添加试试，我添加成功了，也同样开启了 zsh ，但是后面下载插件的时候会有路径上的错误，不知道怎么回事，所以这个方法不可行</p></li></ul></li></ol><h2 id=插件安装>插件安装</h2><p>待续</p><h2 id=配置>配置</h2><p>待续</p><h1 id=git-sdk>Git SDK</h1><blockquote><p>Git SDK 全称 Git for Windows SDK，基于 MSYS2（MinGW64 + Cygwin 合体增强）的仿 Linux 环境；</p><p>安装后大约会占用 4~5 GB 的磁盘空间，但是包含了完整的仿 Linux 环境：包括常用工具，完整的 GNU Complier 链以及包管理器 pacman</p></blockquote><blockquote><p>Windows 里面 Powershell 有工具 <strong>oh-my-posh</strong></p><p>Linux 里面 有 <strong>oh-my-zsh</strong></p><p>接下来在 Windows 下安装 <strong>Git SDK</strong> 模拟一个 Linux环境</p></blockquote><h2 id=下载安装>下载安装</h2><ol><li><p>方式一：直接从官网下载一个安装包，就是一个下载器，会自动从仓库克隆这个程序所需要的全部文件，但是由于下载速度很慢，不太可行</p><p><a href=https://gitforwindows.org/ target=_blank rel="noopener noreffer">https://gitforwindows.org/</a></p></li><li><p>方式二：直接拉取仓库上的文件到本地（其实就是方式一中需要下载的文件），但是里面文件很大，大概有 5/6 GB</p><p>此时到你想保存的路径克隆下来就行</p><p><a href=https://github.com/git-for-windows/git-sdk-64 target=_blank rel="noopener noreffer">https://github.com/git-for-windows/git-sdk-64</a></p></li></ol><blockquote><p>由于我这里每次都拉取失败，这个就先到这里，具体之后需要安装的 zsh 和 oh-my-zsh 还要参考网上的教程</p></blockquote><p>待续</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2021-08-19</span></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://200928.github.io/posts/windows-terminal-%E7%BE%8E%E5%8C%96/ data-title="Windows Terminal + Git-Bash" data-hashtags=Windows><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://200928.github.io/posts/windows-terminal-%E7%BE%8E%E5%8C%96/ data-hashtag=Windows><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://200928.github.io/posts/windows-terminal-%E7%BE%8E%E5%8C%96/ data-title="Windows Terminal + Git-Bash"><i class="fab fa-hacker-news fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://200928.github.io/posts/windows-terminal-%E7%BE%8E%E5%8C%96/ data-title="Windows Terminal + Git-Bash"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://200928.github.io/posts/windows-terminal-%E7%BE%8E%E5%8C%96/ data-title="Windows Terminal + Git-Bash"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=/tags/windows/>Windows</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/posts/centos+nginx-rtmp-module/ class=prev rel=prev title=CentOs+Nginx-rtmp-module><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>CentOs+Nginx-rtmp-module</a>
+<a href=/posts/wt-ssh%E5%92%8C%E9%80%9A%E8%BF%87ssh%E8%BF%9E%E6%8E%A5windows/ class=next rel=next title="wt ssh和通过 SSH 连接 Windows">wt ssh和通过 SSH 连接 Windows<i class="fas fa-angle-right fa-fw" aria-hidden=true></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-line><span id=run-time></span></div><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.121.2">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden=true></i> LoveIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw" aria-hidden=true></i><span itemprop=copyrightYear>2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank></a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw" aria-hidden=true></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw" aria-hidden=true></i></a></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css><script type=text/javascript src=https://.disqus.com/embed.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:50},comment:{},lightgallery:!0,math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js></script><script type=text/javascript src=/js/custom.js></script></body></html>

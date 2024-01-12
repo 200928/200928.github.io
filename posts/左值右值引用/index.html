@@ -1,0 +1,175 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>左值右值引用 - 灰灰爱吃小云朵</title><meta name=Description content="欢迎来到灰灰爱吃小云朵的博客!"><meta property="og:title" content="左值右值引用">
+<meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://200928.github.io/posts/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-04-18T09:29:57+00:00"><meta property="article:modified_time" content="2023-04-18T09:29:57+00:00"><meta property="og:site_name" content="灰灰爱吃小云朵"><meta name=twitter:card content="summary"><meta name=twitter:title content="左值右值引用"><meta name=twitter:description content><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://200928.github.io/posts/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/><link rel=prev href=https://200928.github.io/posts/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/><link rel=next href=https://200928.github.io/posts/c++%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"左值右值引用","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/200928.github.io\/posts\/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8\/"},"genre":"posts","keywords":"C\u002b\u002b, C","wordcount":1285,"url":"https:\/\/200928.github.io\/posts\/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8\/","datePublished":"2023-04-18T09:29:57+00:00","dateModified":"2023-04-18T09:29:57+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"xiaozao"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/><i class='fa-solid fa-file-pen'></i> 文章 </a><a class=menu-item href=/tags/><i class='fa-solid fa-tags'></i> 标签 </a><a class=menu-item href=/categories/><i class='fa-solid fa-layer-group'></i> 分类 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=/catch-the-cat/><i class='fas fa-fw fa-fan fa-spin'></i> 猫咪 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title><i class='fa-solid fa-file-pen'></i>文章</a><a class=menu-item href=/tags/ title><i class='fa-solid fa-tags'></i>标签</a><a class=menu-item href=/categories/ title><i class='fa-solid fa-layer-group'></i>分类</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=/catch-the-cat/ title><i class='fas fa-fw fa-fan fa-spin'></i>猫咪</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">左值右值引用</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>xiaozao</a></span>&nbsp;<span class=post-category>included in <a href=/categories/%E5%AD%A6%E4%B9%A0/><i class="far fa-folder fa-fw" aria-hidden=true></i>学习</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-04-18>2023-04-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;1285 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;3 minutes&nbsp;</div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#左值右值>左值/右值</a></li><li><a href=#左值右值引用>左值/右值引用</a></li><li><a href=#移动语义>移动语义</a></li><li><a href=#拷贝构造函数和赋值函数>拷贝构造函数和赋值函数</a></li></ul></nav></div></div><div class=content id=content><p>1</p><h1 id=左值右值>左值/右值</h1><ol><li>能去地址的都是左值，反之</li></ol><h1 id=左值右值引用>左值/右值引用</h1><ol><li><p>引入右值引用的目的是实现移动语义</p></li><li><p>下面看一个例子</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;iostream&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Car</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>   <span class=k>public</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>m_price</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>Car</span><span class=p>(</span><span class=kt>int</span> <span class=n>price</span> <span class=o>=</span> <span class=mi>9</span><span class=p>)</span> <span class=o>:</span> <span class=n>m_price</span><span class=p>(</span><span class=n>price</span><span class=p>)</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>Car</span> <span class=nf>getTemp</span><span class=p>()</span> <span class=p>{</span> <span class=k>return</span> <span class=n>Car</span><span class=p>();</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>(</span><span class=kt>int</span> <span class=n>argv</span><span class=p>,</span> <span class=kt>char</span><span class=o>*</span> <span class=n>argc</span><span class=p>[])</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span><span class=o>&amp;&amp;</span> <span class=n>a</span> <span class=o>=</span> <span class=mi>3</span><span class=p>;</span>  <span class=c1>// 3 是右值，a 是右值引用，但它是一个左值（能取地址）
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>b</span> <span class=o>=</span> <span class=mi>4</span><span class=p>;</span>  <span class=c1>// b 和 4 都是左值
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span><span class=o>&amp;&amp;</span> <span class=n>c</span> <span class=o>=</span> <span class=n>b</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>        <span class=c1>// b+5 是右值，c 是右值引用（同时也是左值）
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>Car</span><span class=o>&amp;&amp;</span> <span class=n>car</span> <span class=o>=</span> <span class=n>getTemp</span><span class=p>();</span>  <span class=c1>// getTemp() 返回的是右值（临时变量）,car 是右值引用（同时也是左值）
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;a=&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>a</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;c=&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>c</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;car.m_price=&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>car</span><span class=p>.</span><span class=n>m_price</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 下面3个变量都可以取地址，是左值
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;&amp;a=&#34;</span> <span class=o>&lt;&lt;</span> <span class=o>&amp;</span><span class=n>a</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;&amp;c=&#34;</span> <span class=o>&lt;&lt;</span> <span class=o>&amp;</span><span class=n>c</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;&amp;car.m_price=&#34;</span> <span class=o>&lt;&lt;</span> <span class=o>&amp;</span><span class=n>car</span><span class=p>.</span><span class=n>m_price</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>a=3
+</span></span></span><span class=line><span class=cl><span class=cm>c=5
+</span></span></span><span class=line><span class=cl><span class=cm>car.m_price=9
+</span></span></span><span class=line><span class=cl><span class=cm>&amp;a=0x7ffd8d0922d0
+</span></span></span><span class=line><span class=cl><span class=cm>&amp;c=0x7ffd8d0922d4
+</span></span></span><span class=line><span class=cl><span class=cm>&amp;car.m_price=0x7ffd8d0922d8
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>左值引用只能绑定（关联、指向）左值</strong></p><p><strong>右值引用只能绑定右值，如果绑定不对，编译器报错</strong></p><p>比如我把上面代码改动一下，编译器就会报错</p><p>将右值赋给左值引用，报错</p><p><img class=lazyload src=/svg/loading.min.svg data-src=/home/minghui/Pictures/blog_img/image-20230413161959841.png data-srcset="/home/minghui/Pictures/blog_img/image-20230413161959841.png, /home/minghui/Pictures/blog_img/image-20230413161959841.png 1.5x, /home/minghui/Pictures/blog_img/image-20230413161959841.png 2x" data-sizes=auto alt=/home/minghui/Pictures/blog_img/image-20230413161959841.png title=image-20230413161959841></p><p>将左值赋给右值引用，报错</p><p><img class=lazyload src=/svg/loading.min.svg data-src=/home/minghui/Pictures/blog_img/image-20230413162039208.png data-srcset="/home/minghui/Pictures/blog_img/image-20230413162039208.png, /home/minghui/Pictures/blog_img/image-20230413162039208.png 1.5x, /home/minghui/Pictures/blog_img/image-20230413162039208.png 2x" data-sizes=auto alt=/home/minghui/Pictures/blog_img/image-20230413162039208.png title=image-20230413162039208></p></li><li><p><strong>常量左值引用是一个万能的引用类型，它可以绑定非常量左值、常量左值、右值，而且绑定右值的时候，常量左值引用还可以像右值一样将右值的生命周期延长，缺点是只能读不能修改</strong></p></li></ol><h1 id=移动语义>移动语义</h1><p>如果一个对象中有堆区资源，需要编写拷贝构造函数和赋值函数，实现深拷贝</p><p>深拷贝把对象中的堆区资源赋值一份，如果源对象是临时对象，拷贝完就释放了，这样会造成没有意义的资源申请与资源释放，如果能够直接使用源对象拥有的资源，可以节省资源的申请和释放的时间，C++11新增加的移动语义就能够做到</p><p>实现移动语义需要增加两个函数：移动构造函数和移动赋值函数</p><ol><li>移动构造函数：</li><li>移动赋值函数：</li></ol><h1 id=拷贝构造函数和赋值函数>拷贝构造函数和赋值函数</h1><p>拷贝构造函数和赋值函数都是用于对象拷贝的，但它们有不同的调用时机和语义：</p><ol><li>拷贝构造函数是在创建新对象并用另一个同类型对象初始化它时调用的。例如：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>MyClass</span> <span class=n>a</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>MyClass</span> <span class=nf>b</span><span class=p>(</span><span class=n>a</span><span class=p>);</span> <span class=c1>// 调用拷贝构造函数，将 b 初始化为 a 的副本
+</span></span></span></code></pre></td></tr></table></div></div><p>拷贝构造函数的声明通常为：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>MyClass</span><span class=p>(</span><span class=k>const</span> <span class=n>MyClass</span><span class=o>&amp;</span> <span class=n>other</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>其中 <code>other</code> 是要拷贝的对象的引用。</p><p>赋值函数是在已有对象被赋值为另一个同类型对象时调用的。例如：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>MyClass</span> <span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=n>a</span><span class=p>;</span> <span class=c1>// 调用赋值函数，将 b 赋值为 a 的副本
+</span></span></span></code></pre></td></tr></table></div></div><p>赋值函数的声明通常为：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=n>MyClass</span><span class=o>&amp;</span> <span class=k>operator</span><span class=o>=</span><span class=p>(</span><span class=k>const</span> <span class=n>MyClass</span><span class=o>&amp;</span> <span class=n>other</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>其中 <code>other</code> 是要拷贝的对象的引用，返回值是当前对象的引用。</p><p>需要注意的是，C++11 引入了移动构造函数和移动赋值函数，用于处理右值引用（rvalue reference）的情况。这两个函数在效率上有很大提升，但语义和使用方式与拷贝构造函数和赋值函数有所不同。</p><p>假设有一个名为<code>MyClass</code>的类，其中包含一个指向动态分配内存的指针<code>ptr</code>，可以通过以下代码实现赋值函数：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyClass</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=k>public</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 构造函数
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>MyClass</span><span class=p>()</span> <span class=o>:</span> <span class=n>ptr</span><span class=p>(</span><span class=k>nullptr</span><span class=p>)</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 拷贝构造函数
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>MyClass</span><span class=p>(</span><span class=k>const</span> <span class=n>MyClass</span><span class=o>&amp;</span> <span class=n>other</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=n>other</span><span class=p>.</span><span class=n>ptr</span> <span class=o>!=</span> <span class=k>nullptr</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>ptr</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>(</span><span class=o>*</span><span class=n>other</span><span class=p>.</span><span class=n>ptr</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 赋值函数
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>MyClass</span><span class=o>&amp;</span> <span class=k>operator</span><span class=o>=</span><span class=p>(</span><span class=k>const</span> <span class=n>MyClass</span><span class=o>&amp;</span> <span class=n>other</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=k>this</span> <span class=o>!=</span> <span class=o>&amp;</span><span class=n>other</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// 释放当前对象的资源
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>delete</span> <span class=n>ptr</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// 分配新的资源
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>if</span> <span class=p>(</span><span class=n>other</span><span class=p>.</span><span class=n>ptr</span> <span class=o>!=</span> <span class=k>nullptr</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>ptr</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=p>(</span><span class=o>*</span><span class=n>other</span><span class=p>.</span><span class=n>ptr</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>ptr</span> <span class=o>=</span> <span class=k>nullptr</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=o>*</span><span class=k>this</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 析构函数
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=o>~</span><span class=n>MyClass</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>delete</span> <span class=n>ptr</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>private</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span><span class=o>*</span> <span class=n>ptr</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><p>在赋值函数中，需要首先判断是否为自我赋值，若是则直接返回当前对象的引用；否则需要先释放当前对象所持有的资源，再根据<code>other</code>对象是否持有资源进行不同的处理，最后返回当前对象的引用。这里返回左值引用是为了支持链式赋值操作，例如<code>a = b = c</code></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2023-04-18</span></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://200928.github.io/posts/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/ data-title=左值右值引用 data-hashtags=C++,C><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://200928.github.io/posts/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/ data-hashtag=C++><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://200928.github.io/posts/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/ data-title=左值右值引用><i class="fab fa-hacker-news fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://200928.github.io/posts/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/ data-title=左值右值引用><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://200928.github.io/posts/%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/ data-title=左值右值引用><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=/tags/c++/>C++</a>,&nbsp;<a href=/tags/c/>C</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/posts/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/ class=prev rel=prev title=引用传递><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>引用传递</a>
+<a href=/posts/c++%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/ class=next rel=next title="C++ 面向对象">C++ 面向对象<i class="fas fa-angle-right fa-fw" aria-hidden=true></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-line><span id=run-time></span></div><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.121.2">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden=true></i> LoveIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw" aria-hidden=true></i><span itemprop=copyrightYear>2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank></a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw" aria-hidden=true></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw" aria-hidden=true></i></a></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css><script type=text/javascript src=https://.disqus.com/embed.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:50},comment:{},lightgallery:!0,math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js></script><script type=text/javascript src=/js/custom.js></script></body></html>
