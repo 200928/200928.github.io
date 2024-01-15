@@ -1,5 +1,5 @@
 <!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Spring日志设置 - 灰灰爱吃小云朵</title><meta name=Description content="欢迎来到灰灰爱吃小云朵的博客!"><meta property="og:title" content="Spring日志设置">
-<meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://200928.github.io/posts/springboot%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE%E6%97%A5%E5%BF%97/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-12-09T09:04:08+08:00"><meta property="article:modified_time" content="2023-12-09T09:04:08+08:00"><meta property="og:site_name" content="灰灰爱吃小云朵"><meta name=twitter:card content="summary"><meta name=twitter:title content="Spring日志设置"><meta name=twitter:description content><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://200928.github.io/posts/springboot%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE%E6%97%A5%E5%BF%97/><link rel=prev href=https://200928.github.io/posts/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/><link rel=next href=https://200928.github.io/posts/%E4%BB%8Ehexo%E5%88%B0hugo/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Spring日志设置","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/200928.github.io\/posts\/springboot%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE%E6%97%A5%E5%BF%97\/"},"genre":"posts","keywords":"Java, XML, Spring","wordcount":7737,"url":"https:\/\/200928.github.io\/posts\/springboot%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE%E6%97%A5%E5%BF%97\/","datePublished":"2023-12-09T09:04:08+08:00","dateModified":"2023-12-09T09:04:08+08:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"xiaozao"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/><i class='fa-solid fa-file-pen'></i> 文章 </a><a class=menu-item href=/tags/><i class='fa-solid fa-tags'></i> 标签 </a><a class=menu-item href=/categories/><i class='fa-solid fa-layer-group'></i> 分类 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=/catch-the-cat/><i class='fas fa-fw fa-fan fa-spin'></i> 猫咪 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://200928.github.io/posts/springboot%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE%E6%97%A5%E5%BF%97/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-12-09T09:04:08+08:00"><meta property="article:modified_time" content="2023-12-09T09:04:08+08:00"><meta property="og:site_name" content="灰灰爱吃小云朵"><meta name=twitter:card content="summary"><meta name=twitter:title content="Spring日志设置"><meta name=twitter:description content><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://200928.github.io/posts/springboot%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE%E6%97%A5%E5%BF%97/><link rel=prev href=https://200928.github.io/posts/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/><link rel=next href=https://200928.github.io/posts/%E4%BB%8Ehexo%E5%88%B0hugo/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Spring日志设置","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/200928.github.io\/posts\/springboot%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE%E6%97%A5%E5%BF%97\/"},"genre":"posts","keywords":"Java, XML, Spring","wordcount":12654,"url":"https:\/\/200928.github.io\/posts\/springboot%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE%E6%97%A5%E5%BF%97\/","datePublished":"2023-12-09T09:04:08+08:00","dateModified":"2023-12-09T09:04:08+08:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"xiaozao"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/><i class='fa-solid fa-file-pen'></i> 文章 </a><a class=menu-item href=/tags/><i class='fa-solid fa-tags'></i> 标签 </a><a class=menu-item href=/categories/><i class='fa-solid fa-layer-group'></i> 分类 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=/catch-the-cat/><i class='fas fa-fw fa-fan fa-spin'></i> 猫咪 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
 </a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
@@ -8,11 +8,1135 @@
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
 </a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
 </a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title><i class='fa-solid fa-file-pen'></i>文章</a><a class=menu-item href=/tags/ title><i class='fa-solid fa-tags'></i>标签</a><a class=menu-item href=/categories/ title><i class='fa-solid fa-layer-group'></i>分类</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=/catch-the-cat/ title><i class='fas fa-fw fa-fan fa-spin'></i>猫咪</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Spring日志设置</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>xiaozao</a></span>&nbsp;<span class=post-category>included in <a href=/categories/%E5%AD%A6%E4%B9%A0/><i class="far fa-folder fa-fw" aria-hidden=true></i>学习</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-12-09>2023-12-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;7737 words&nbsp;
-<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;16 minutes&nbsp;
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Spring日志设置</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>xiaozao</a></span>&nbsp;<span class=post-category>included in <a href=/categories/%E5%AD%A6%E4%B9%A0/><i class="far fa-folder fa-fw" aria-hidden=true></i>学习</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-12-09>2023-12-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;12654 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;26 minutes&nbsp;
 <span id=busuanzi_container_value_page_pv><i class="far fa-eye fa-fw"></i>
 <span id=busuanzi_value_page_pv></span>&nbsp;views</span></div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#引入依赖>引入依赖</a></li><li><a href=#applicationyml>application.yml</a></li><li><a href=#logback-springxml>logback-spring.xml</a></li></ul></nav></div></div><div class=content id=content><h1 id=引入依赖>引入依赖</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#springboot-项目初始化配置>SpringBoot 项目初始化配置</a></li><li><a href=#日志设置>日志设置</a><ul><li><a href=#引入依赖>引入依赖</a></li><li><a href=#applicationyml>application.yml</a></li><li><a href=#logback-springxml>logback-spring.xml</a></li></ul></li></ul></nav></div></div><div class=content id=content><hr><h1 id=springboot-项目初始化配置>SpringBoot 项目初始化配置</h1><p><code>pom.xml</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>xmlns=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span class=line><span class=cl>         <span class=na>xsi:schemaLocation=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;modelVersion&gt;</span>4.0.0<span class=nt>&lt;/modelVersion&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;parent&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-parent<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;version&gt;</span>2.6.0<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;relativePath/&gt;</span> <span class=c>&lt;!-- lookup parent from repository --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/parent&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;groupId&gt;</span>org.sg<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>DockMaintenanceManagementBackend<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;version&gt;</span>1.0-SNAPSHOT<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;packaging&gt;</span>jar<span class=nt>&lt;/packaging&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;name&gt;</span>DockMaintenanceManagementBackend<span class=nt>&lt;/name&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;url&gt;</span>http://maven.apache.org<span class=nt>&lt;/url&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;properties&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class=nt>&lt;/project.build.sourceEncoding&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/properties&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;dependencies&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-logging<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-web<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--Druid--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>com.alibaba<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>druid-spring-boot-starter<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>1.2.18<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>com.oracle.database.jdbc<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>ojdbc8<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;scope&gt;</span>runtime<span class=nt>&lt;/scope&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--MyBatisPlus--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>com.baomidou<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>mybatis-plus-boot-starter<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>3.5.1<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--Swagger--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- https://mvnrepository.com/artifact/io.swagger/swagger-annotations --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>io.springfox<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>springfox-boot-starter<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>3.0.0<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>spring-boot-actuator<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>2.6.0<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>spring-boot-actuator-autoconfigure<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>2.6.0<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--日志输出--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>ch.qos.logback<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>logback-core<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>1.2.6<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>org.slf4j<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>slf4j-api<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>1.7.30<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>ch.qos.logback<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>logback-classic<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>1.2.6<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>org.projectlombok<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>lombok<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;optional&gt;</span>true<span class=nt>&lt;/optional&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>junit<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>junit<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;version&gt;</span>3.8.1<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;scope&gt;</span>test<span class=nt>&lt;/scope&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/dependencies&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;build&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;plugins&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;plugin&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;configuration&gt;</span>
+</span></span><span class=line><span class=cl>                    <span class=nt>&lt;excludes&gt;</span>
+</span></span><span class=line><span class=cl>                        <span class=nt>&lt;exclude&gt;</span>
+</span></span><span class=line><span class=cl>                            <span class=nt>&lt;groupId&gt;</span>org.projectlombok<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>                            <span class=nt>&lt;artifactId&gt;</span>lombok<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>                        <span class=nt>&lt;/exclude&gt;</span>
+</span></span><span class=line><span class=cl>                    <span class=nt>&lt;/excludes&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;/configuration&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/plugin&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/plugins&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/build&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;profiles&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;profile&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;id&gt;</span>dev<span class=nt>&lt;/id&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;activation&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;activeByDefault&gt;</span>true<span class=nt>&lt;/activeByDefault&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/activation&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;properties&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;spring.profiles.active&gt;</span>dev<span class=nt>&lt;/spring.profiles.active&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/properties&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/profile&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;profile&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;id&gt;</span>prod<span class=nt>&lt;/id&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;properties&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;spring.profiles.active&gt;</span>prod<span class=nt>&lt;/spring.profiles.active&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/properties&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/profile&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;profile&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;id&gt;</span>test<span class=nt>&lt;/id&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;properties&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;spring.profiles.active&gt;</span>test<span class=nt>&lt;/spring.profiles.active&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/properties&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/profile&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/profiles&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/project&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>application.yml</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>profiles</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>active</span><span class=p>:</span><span class=w> </span>@<span class=l>spring.profiles.active@</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p><code>application-dev.yml</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=c># 服务器配置</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>server</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>8999</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Spring 配置</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>datasource</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>com.alibaba.druid.pool.DruidDataSource</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>druid</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>driver-class-name</span><span class=p>:</span><span class=w> </span><span class=l>oracle.jdbc.driver.OracleDriver</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>jdbc:oracle:thin:@&lt;IP&gt;&lt;PORT&gt;:&lt;MODE&gt;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>username</span><span class=p>:</span><span class=w> </span><span class=l>&lt;username&gt;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>password</span><span class=p>:</span><span class=w> </span><span class=l>&lt;password&gt;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>initial-size</span><span class=p>:</span><span class=w> </span><span class=m>5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>min-idle</span><span class=p>:</span><span class=w> </span><span class=m>5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>max-active</span><span class=p>:</span><span class=w> </span><span class=m>20</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>max-wait</span><span class=p>:</span><span class=w> </span><span class=m>60000</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>time-between-eviction-runs-millis</span><span class=p>:</span><span class=w> </span><span class=m>60000</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>min-evictable-idle-time-millis</span><span class=p>:</span><span class=w> </span><span class=m>30001</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>test-while-idle</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>test-on-borrow</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>test-on-return</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>redis</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>6379</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>host</span><span class=p>:</span><span class=w> </span><span class=m>127.0.0.1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>jackson</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>time-zone</span><span class=p>:</span><span class=w> </span><span class=l>GMT+8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>date-format</span><span class=p>:</span><span class=w> </span><span class=l>yyyy-MM-dd HH:mm:ss</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>mybatis-plus</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>configuration</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c># 启用或禁用缓存</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>cache-enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c># 启用或禁用生成的键</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>use-generated-keys</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c># 设置默认的执行器类型。选项有 SIMPLE、REUSE 和 BATCH</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>default-executor-type</span><span class=p>:</span><span class=w> </span><span class=l>REUSE</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c># 启用或禁用实际参数名的使用</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>use-actual-param-name</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>log-impl</span><span class=p>:</span><span class=w> </span><span class=l>org.apache.ibatis.logging.slf4j.Slf4jImpl</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#    global-config:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#      db-config:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#        # 设置表前缀</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#        table-prefix: TB_</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#      mapper-locations: classpath*:mapper/*.xml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 日志配置</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>logging</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>level</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>root</span><span class=p>:</span><span class=w> </span><span class=l>info</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>org.springframework.web</span><span class=p>:</span><span class=w> </span><span class=l>info</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>com.baomidou.mybatisplus.samples.quickstart</span><span class=p>:</span><span class=w> </span><span class=l>debug</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p><code>logback-spring.xml</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span><span class=lnt>156
+</span><span class=lnt>157
+</span><span class=lnt>158
+</span><span class=lnt>159
+</span><span class=lnt>160
+</span><span class=lnt>161
+</span><span class=lnt>162
+</span><span class=lnt>163
+</span><span class=lnt>164
+</span><span class=lnt>165
+</span><span class=lnt>166
+</span><span class=lnt>167
+</span><span class=lnt>168
+</span><span class=lnt>169
+</span><span class=lnt>170
+</span><span class=lnt>171
+</span><span class=lnt>172
+</span><span class=lnt>173
+</span><span class=lnt>174
+</span><span class=lnt>175
+</span><span class=lnt>176
+</span><span class=lnt>177
+</span><span class=lnt>178
+</span><span class=lnt>179
+</span><span class=lnt>180
+</span><span class=lnt>181
+</span><span class=lnt>182
+</span><span class=lnt>183
+</span><span class=lnt>184
+</span><span class=lnt>185
+</span><span class=lnt>186
+</span><span class=lnt>187
+</span><span class=lnt>188
+</span><span class=lnt>189
+</span><span class=lnt>190
+</span><span class=lnt>191
+</span><span class=lnt>192
+</span><span class=lnt>193
+</span><span class=lnt>194
+</span><span class=lnt>195
+</span><span class=lnt>196
+</span><span class=lnt>197
+</span><span class=lnt>198
+</span><span class=lnt>199
+</span><span class=lnt>200
+</span><span class=lnt>201
+</span><span class=lnt>202
+</span><span class=lnt>203
+</span><span class=lnt>204
+</span><span class=lnt>205
+</span><span class=lnt>206
+</span><span class=lnt>207
+</span><span class=lnt>208
+</span><span class=lnt>209
+</span><span class=lnt>210
+</span><span class=lnt>211
+</span><span class=lnt>212
+</span><span class=lnt>213
+</span><span class=lnt>214
+</span><span class=lnt>215
+</span><span class=lnt>216
+</span><span class=lnt>217
+</span><span class=lnt>218
+</span><span class=lnt>219
+</span><span class=lnt>220
+</span><span class=lnt>221
+</span><span class=lnt>222
+</span><span class=lnt>223
+</span><span class=lnt>224
+</span><span class=lnt>225
+</span><span class=lnt>226
+</span><span class=lnt>227
+</span><span class=lnt>228
+</span><span class=lnt>229
+</span><span class=lnt>230
+</span><span class=lnt>231
+</span><span class=lnt>232
+</span><span class=lnt>233
+</span><span class=lnt>234
+</span><span class=lnt>235
+</span><span class=lnt>236
+</span><span class=lnt>237
+</span><span class=lnt>238
+</span><span class=lnt>239
+</span><span class=lnt>240
+</span><span class=lnt>241
+</span><span class=lnt>242
+</span><span class=lnt>243
+</span><span class=lnt>244
+</span><span class=lnt>245
+</span><span class=lnt>246
+</span><span class=lnt>247
+</span><span class=lnt>248
+</span><span class=lnt>249
+</span><span class=lnt>250
+</span><span class=lnt>251
+</span><span class=lnt>252
+</span><span class=lnt>253
+</span><span class=lnt>254
+</span><span class=lnt>255
+</span><span class=lnt>256
+</span><span class=lnt>257
+</span><span class=lnt>258
+</span><span class=lnt>259
+</span><span class=lnt>260
+</span><span class=lnt>261
+</span><span class=lnt>262
+</span><span class=lnt>263
+</span><span class=lnt>264
+</span><span class=lnt>265
+</span><span class=lnt>266
+</span><span class=lnt>267
+</span><span class=lnt>268
+</span><span class=lnt>269
+</span><span class=lnt>270
+</span><span class=lnt>271
+</span><span class=lnt>272
+</span><span class=lnt>273
+</span><span class=lnt>274
+</span><span class=lnt>275
+</span><span class=lnt>276
+</span><span class=lnt>277
+</span><span class=lnt>278
+</span><span class=lnt>279
+</span><span class=lnt>280
+</span><span class=lnt>281
+</span><span class=lnt>282
+</span><span class=lnt>283
+</span><span class=lnt>284
+</span><span class=lnt>285
+</span><span class=lnt>286
+</span><span class=lnt>287
+</span><span class=lnt>288
+</span><span class=lnt>289
+</span><span class=lnt>290
+</span><span class=lnt>291
+</span><span class=lnt>292
+</span><span class=lnt>293
+</span><span class=lnt>294
+</span><span class=lnt>295
+</span><span class=lnt>296
+</span><span class=lnt>297
+</span><span class=lnt>298
+</span><span class=lnt>299
+</span><span class=lnt>300
+</span><span class=lnt>301
+</span><span class=lnt>302
+</span><span class=lnt>303
+</span><span class=lnt>304
+</span><span class=lnt>305
+</span><span class=lnt>306
+</span><span class=lnt>307
+</span><span class=lnt>308
+</span><span class=lnt>309
+</span><span class=lnt>310
+</span><span class=lnt>311
+</span><span class=lnt>312
+</span><span class=lnt>313
+</span><span class=lnt>314
+</span><span class=lnt>315
+</span><span class=lnt>316
+</span><span class=lnt>317
+</span><span class=lnt>318
+</span><span class=lnt>319
+</span><span class=lnt>320
+</span><span class=lnt>321
+</span><span class=lnt>322
+</span><span class=lnt>323
+</span><span class=lnt>324
+</span><span class=lnt>325
+</span><span class=lnt>326
+</span><span class=lnt>327
+</span><span class=lnt>328
+</span><span class=lnt>329
+</span><span class=lnt>330
+</span><span class=lnt>331
+</span><span class=lnt>332
+</span><span class=lnt>333
+</span><span class=lnt>334
+</span><span class=lnt>335
+</span><span class=lnt>336
+</span><span class=lnt>337
+</span><span class=lnt>338
+</span><span class=lnt>339
+</span><span class=lnt>340
+</span><span class=lnt>341
+</span><span class=lnt>342
+</span><span class=lnt>343
+</span><span class=lnt>344
+</span><span class=lnt>345
+</span><span class=lnt>346
+</span><span class=lnt>347
+</span><span class=lnt>348
+</span><span class=lnt>349
+</span><span class=lnt>350
+</span><span class=lnt>351
+</span><span class=lnt>352
+</span><span class=lnt>353
+</span><span class=lnt>354
+</span><span class=lnt>355
+</span><span class=lnt>356
+</span><span class=lnt>357
+</span><span class=lnt>358
+</span><span class=lnt>359
+</span><span class=lnt>360
+</span><span class=lnt>361
+</span><span class=lnt>362
+</span><span class=lnt>363
+</span><span class=lnt>364
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;configuration</span> <span class=na>scan=</span><span class=s>&#34;true&#34;</span> <span class=na>scanPeriod=</span><span class=s>&#34;10 seconds&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- 日志级别从低到高分为TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL，如果设置为WARN，则低于WARN的信息都不会输出 --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 --&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;contextName&gt;</span>logback<span class=nt>&lt;/contextName&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- 全局属性：name的值是变量的名称，value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。 --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--  日志文件路径属性,不同环境日志输出位置不一样  --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;springProfile</span> <span class=na>name=</span><span class=s>&#34;dev&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;log.path&#34;</span> <span class=na>value=</span><span class=s>&#34;dev-logs&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/springProfile&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;springProfile</span> <span class=na>name=</span><span class=s>&#34;prod&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;log.path&#34;</span> <span class=na>value=</span><span class=s>&#34;prod_logs&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/springProfile&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- 控制台日志输出格式属性，magenta:洋红,boldMagenta:粗红,cyan:青色,white:白色,magenta:洋红--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;CONSOLE_LOG_PATTERN&#34;</span>
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;%yellow(%date{yyyy-MM-dd HH:mm:ss}) |%highlight(%-5level) |%blue(%thread) |%blue(%file:%line) |%green(%logger) |%cyan(%msg%n)&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;conversionRule</span> <span class=na>conversionWord=</span><span class=s>&#34;wEx&#34;</span>
+</span></span><span class=line><span class=cl>                    <span class=na>converterClass=</span><span class=s>&#34;org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;FILE_LOG_PATTERN&#34;</span>
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} %file:%line: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到控制台的Appender配置--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;CONSOLE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.ConsoleAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 例如：如果此处配置了INFO级别，则后面其他位置即使配置了DEBUG级别的日志，也不会被输出 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.ThresholdFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>DEBUG<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!-- 输出日志格式 --&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Pattern&gt;</span>${CONSOLE_LOG_PATTERN}<span class=nt>&lt;/Pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!-- 设置字符集 --&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到文件的Appender配置  info日志--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;INFO_FILE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志具体路径及文件名 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;file&gt;</span>${log.path}/log_info.log<span class=nt>&lt;/file&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--日志文件输出格式--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;pattern&gt;</span>${FILE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;configuration</span> <span class=na>scan=</span><span class=s>&#34;true&#34;</span> <span class=na>scanPeriod=</span><span class=s>&#34;10 seconds&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- 日志级别从低到高分为TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL，如果设置为WARN，则低于WARN的信息都不会输出 --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 --&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;contextName&gt;</span>logback<span class=nt>&lt;/contextName&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- 全局属性：name的值是变量的名称，value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。 --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--  日志文件路径属性,不同环境日志输出位置不一样  --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;springProfile</span> <span class=na>name=</span><span class=s>&#34;dev&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;log.path&#34;</span> <span class=na>value=</span><span class=s>&#34;dev-logs&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/springProfile&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;springProfile</span> <span class=na>name=</span><span class=s>&#34;prod&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;log.path&#34;</span> <span class=na>value=</span><span class=s>&#34;prod_logs&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/springProfile&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- 控制台日志输出格式属性，magenta:洋红,boldMagenta:粗红,cyan:青色,white:白色,magenta:洋红--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;CONSOLE_LOG_PATTERN&#34;</span>
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;%yellow(%date{yyyy-MM-dd HH:mm:ss}) |%highlight(%-5level) |%blue(%thread) |%blue(%file:%line) |%green(%logger) |%cyan(%msg%n)&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;conversionRule</span> <span class=na>conversionWord=</span><span class=s>&#34;wEx&#34;</span>
+</span></span><span class=line><span class=cl>                    <span class=na>converterClass=</span><span class=s>&#34;org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;FILE_LOG_PATTERN&#34;</span>
+</span></span><span class=line><span class=cl>              <span class=na>value=</span><span class=s>&#34;%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} %file:%line: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到控制台的Appender配置--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;CONSOLE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.ConsoleAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 例如：如果此处配置了INFO级别，则后面其他位置即使配置了DEBUG级别的日志，也不会被输出 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.ThresholdFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>DEBUG<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!-- 输出日志格式 --&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Pattern&gt;</span>${CONSOLE_LOG_PATTERN}<span class=nt>&lt;/Pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!-- 设置字符集 --&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到文件的Appender配置  info日志--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;INFO_FILE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志具体路径及文件名 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;file&gt;</span>${log.path}/log_info.log<span class=nt>&lt;/file&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--日志文件输出格式--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;pattern&gt;</span>${FILE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!-- 每天日志归档路径以及格式 --&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;fileNamePattern&gt;</span>${log.path}/info/log-info-%d{yyyy-MM-dd}.%i.log<span class=nt>&lt;/fileNamePattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;maxFileSize&gt;</span>100MB<span class=nt>&lt;/maxFileSize&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--日志文件保留天数--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;maxHistory&gt;</span>60<span class=nt>&lt;/maxHistory&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/rollingPolicy&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 此日志文件只记录info级别的 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>INFO<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMatch&gt;</span>ACCEPT<span class=nt>&lt;/onMatch&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMismatch&gt;</span>DENY<span class=nt>&lt;/onMismatch&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到文件的Appender配置  warn日志--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;WARN_FILE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;file&gt;</span>${log.path}/log_warn.log<span class=nt>&lt;/file&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;pattern&gt;</span>${FILE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;fileNamePattern&gt;</span>${log.path}/warn/log-warn-%d{yyyy-MM-dd}.%i.log<span class=nt>&lt;/fileNamePattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;maxFileSize&gt;</span>100MB<span class=nt>&lt;/maxFileSize&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--日志文件保留天数--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;maxHistory&gt;</span>60<span class=nt>&lt;/maxHistory&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/rollingPolicy&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 此日志文件只记录warn级别的 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>warn<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMatch&gt;</span>ACCEPT<span class=nt>&lt;/onMatch&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMismatch&gt;</span>DENY<span class=nt>&lt;/onMismatch&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到文件的Appender配置  error日志--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;ERROR_FILE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;file&gt;</span>${log.path}/log_error.log<span class=nt>&lt;/file&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;pattern&gt;</span>${FILE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;fileNamePattern&gt;</span>${log.path}/error/log-error-%d{yyyy-MM-dd}.%i.log<span class=nt>&lt;/fileNamePattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;maxFileSize&gt;</span>100MB<span class=nt>&lt;/maxFileSize&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--日志文件保留天数--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;maxHistory&gt;</span>60<span class=nt>&lt;/maxHistory&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/rollingPolicy&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 此日志文件只记录ERROR级别的 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>ERROR<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMatch&gt;</span>ACCEPT<span class=nt>&lt;/onMatch&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMismatch&gt;</span>DENY<span class=nt>&lt;/onMismatch&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到文件的Appender配置  SQL执行日志--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;SQL_FILE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;file&gt;</span>${log.path}/log_sql.log<span class=nt>&lt;/file&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;pattern&gt;</span>${FILE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;fileNamePattern&gt;</span>${log.path}/sql/log-sql-%d{yyyy-MM-dd}.%i.log<span class=nt>&lt;/fileNamePattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;maxFileSize&gt;</span>100MB<span class=nt>&lt;/maxFileSize&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--日志文件保留天数--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;maxHistory&gt;</span>60<span class=nt>&lt;/maxHistory&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/rollingPolicy&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 此日志文件记录TRACE级别以上 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>DEBUG<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMatch&gt;</span>ACCEPT<span class=nt>&lt;/onMatch&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- &lt;logger&gt;用来设置某一个包或者具体的某一个类的日志打印级别。有name属性，可选的level和可选的addtivity属性，以及可指定appender。
+</span></span></span><span class=line><span class=cl><span class=c>         name:用来指定受此logger约束的某一个包或者具体的某一个类。
+</span></span></span><span class=line><span class=cl><span class=c>         level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，如果未设置此属性，那么当前logger将会继承上级的级别。
+</span></span></span><span class=line><span class=cl><span class=c>         addtivity :是否向上级loger传递打印信息。默认是true。--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--
+</span></span></span><span class=line><span class=cl><span class=c>        使用mybatis的时候，sql语句是debug下才会打印，spring默认日志级别是INFO，所以想要查看sql语句的话，有以下两种操作：
+</span></span></span><span class=line><span class=cl><span class=c>        第一种把&lt;root level=&#34;INFO&#34;&gt;改成&lt;root level=&#34;DEBUG&#34;&gt;这样就会打印sql，不过这样日志那边会出现很多其他消息
+</span></span></span><span class=line><span class=cl><span class=c>        第二种就是单独给mapper下目录配置DEBUG级别：
+</span></span></span><span class=line><span class=cl><span class=c>            例如：&lt;logger name=&#34;com.kingoit.mapper&#34; level=&#34;DEBUG&#34;/&gt;
+</span></span></span><span class=line><span class=cl><span class=c>            或者在配置文件中配置：logging.level.com.kingoit.mapper=DEBUG，这样配置sql语句会打印，其他还是正常INFO级别：--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--开发环境--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;springProfile</span> <span class=na>name=</span><span class=s>&#34;dev&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--单独设置mapper包下的日志级别为TRACE，因为输出执行的sql需要DEBUG级别，TRACE级别小于DEBUG，设置为TRACE级别同时将SQL执行结果输出--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;logger</span> <span class=na>name=</span><span class=s>&#34;com.sg.dockmaintenance.mapper&#34;</span> <span class=na>level=</span><span class=s>&#34;TRACE&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;SQL_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/logger&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- root节点是必选节点，用来指定最基础的日志输出级别，只有一个level属性
+</span></span></span><span class=line><span class=cl><span class=c>             level:指定打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，默认是DEBUG
+</span></span></span><span class=line><span class=cl><span class=c>             可以包含零个或多个appender元素。--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;root</span> <span class=na>level=</span><span class=s>&#34;INFO&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;CONSOLE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;INFO_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;WARN_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;ERROR_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/root&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/springProfile&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--生产环境--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;springProfile</span> <span class=na>name=</span><span class=s>&#34;prod&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--单独设置mapper包下的日志级别为DEBUG，因为输出执行的sql需要DEBUG级别--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;logger</span> <span class=na>name=</span><span class=s>&#34;com.sg.dockmaintenance.mapper&#34;</span> <span class=na>level=</span><span class=s>&#34;DEBUG&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;SQL_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/logger&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;root</span> <span class=na>level=</span><span class=s>&#34;INFO&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;CONSOLE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;INFO_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;ERROR_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;WARN_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/root&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/springProfile&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/configuration&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!-- 每天日志归档路径以及格式 --&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;fileNamePattern&gt;</span>${log.path}/info/log-info-%d{yyyy-MM-dd}.%i.log<span class=nt>&lt;/fileNamePattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;maxFileSize&gt;</span>100MB<span class=nt>&lt;/maxFileSize&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--日志文件保留天数--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;maxHistory&gt;</span>60<span class=nt>&lt;/maxHistory&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/rollingPolicy&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 此日志文件只记录info级别的 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>INFO<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMatch&gt;</span>ACCEPT<span class=nt>&lt;/onMatch&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMismatch&gt;</span>DENY<span class=nt>&lt;/onMismatch&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到文件的Appender配置  warn日志--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;WARN_FILE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;file&gt;</span>${log.path}/log_warn.log<span class=nt>&lt;/file&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;pattern&gt;</span>${FILE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;fileNamePattern&gt;</span>${log.path}/warn/log-warn-%d{yyyy-MM-dd}.%i.log<span class=nt>&lt;/fileNamePattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;maxFileSize&gt;</span>100MB<span class=nt>&lt;/maxFileSize&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--日志文件保留天数--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;maxHistory&gt;</span>60<span class=nt>&lt;/maxHistory&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/rollingPolicy&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 此日志文件只记录warn级别的 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>warn<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMatch&gt;</span>ACCEPT<span class=nt>&lt;/onMatch&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMismatch&gt;</span>DENY<span class=nt>&lt;/onMismatch&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到文件的Appender配置  error日志--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;ERROR_FILE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;file&gt;</span>${log.path}/log_error.log<span class=nt>&lt;/file&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;pattern&gt;</span>${FILE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;fileNamePattern&gt;</span>${log.path}/error/log-error-%d{yyyy-MM-dd}.%i.log<span class=nt>&lt;/fileNamePattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;maxFileSize&gt;</span>100MB<span class=nt>&lt;/maxFileSize&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--日志文件保留天数--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;maxHistory&gt;</span>60<span class=nt>&lt;/maxHistory&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/rollingPolicy&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 此日志文件只记录ERROR级别的 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>ERROR<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMatch&gt;</span>ACCEPT<span class=nt>&lt;/onMatch&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMismatch&gt;</span>DENY<span class=nt>&lt;/onMismatch&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--输出到文件的Appender配置  SQL执行日志--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;SQL_FILE&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;file&gt;</span>${log.path}/log_sql.log<span class=nt>&lt;/file&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;encoder&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;pattern&gt;</span>${FILE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;charset&gt;</span>UTF-8<span class=nt>&lt;/charset&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/encoder&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;fileNamePattern&gt;</span>${log.path}/sql/log-sql-%d{yyyy-MM-dd}.%i.log<span class=nt>&lt;/fileNamePattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;maxFileSize&gt;</span>100MB<span class=nt>&lt;/maxFileSize&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--日志文件保留天数--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;maxHistory&gt;</span>60<span class=nt>&lt;/maxHistory&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/rollingPolicy&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 此日志文件记录TRACE级别以上 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;level&gt;</span>DEBUG<span class=nt>&lt;/level&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;onMatch&gt;</span>ACCEPT<span class=nt>&lt;/onMatch&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/filter&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/appender&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!-- &lt;logger&gt;用来设置某一个包或者具体的某一个类的日志打印级别。有name属性，可选的level和可选的addtivity属性，以及可指定appender。
+</span></span></span><span class=line><span class=cl><span class=c>         name:用来指定受此logger约束的某一个包或者具体的某一个类。
+</span></span></span><span class=line><span class=cl><span class=c>         level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，如果未设置此属性，那么当前logger将会继承上级的级别。
+</span></span></span><span class=line><span class=cl><span class=c>         addtivity :是否向上级loger传递打印信息。默认是true。--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--
+</span></span></span><span class=line><span class=cl><span class=c>        使用mybatis的时候，sql语句是debug下才会打印，spring默认日志级别是INFO，所以想要查看sql语句的话，有以下两种操作：
+</span></span></span><span class=line><span class=cl><span class=c>        第一种把&lt;root level=&#34;INFO&#34;&gt;改成&lt;root level=&#34;DEBUG&#34;&gt;这样就会打印sql，不过这样日志那边会出现很多其他消息
+</span></span></span><span class=line><span class=cl><span class=c>        第二种就是单独给mapper下目录配置DEBUG级别：
+</span></span></span><span class=line><span class=cl><span class=c>            例如：&lt;logger name=&#34;com.kingoit.mapper&#34; level=&#34;DEBUG&#34;/&gt;
+</span></span></span><span class=line><span class=cl><span class=c>            或者在配置文件中配置：logging.level.com.kingoit.mapper=DEBUG，这样配置sql语句会打印，其他还是正常INFO级别：--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--开发环境--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;springProfile</span> <span class=na>name=</span><span class=s>&#34;dev&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--单独设置mapper包下的日志级别为TRACE，因为输出执行的sql需要DEBUG级别，TRACE级别小于DEBUG，设置为TRACE级别同时将SQL执行结果输出--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;logger</span> <span class=na>name=</span><span class=s>&#34;com.sg.dockmaintenance.mapper&#34;</span> <span class=na>level=</span><span class=s>&#34;TRACE&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;SQL_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/logger&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- root节点是必选节点，用来指定最基础的日志输出级别，只有一个level属性
+</span></span></span><span class=line><span class=cl><span class=c>             level:指定打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，默认是DEBUG
+</span></span></span><span class=line><span class=cl><span class=c>             可以包含零个或多个appender元素。--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;root</span> <span class=na>level=</span><span class=s>&#34;INFO&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;CONSOLE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;INFO_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;WARN_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;ERROR_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/root&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/springProfile&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--生产环境--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;springProfile</span> <span class=na>name=</span><span class=s>&#34;prod&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--单独设置mapper包下的日志级别为DEBUG，因为输出执行的sql需要DEBUG级别--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;logger</span> <span class=na>name=</span><span class=s>&#34;com.sg.dockmaintenance.mapper&#34;</span> <span class=na>level=</span><span class=s>&#34;DEBUG&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;SQL_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/logger&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;root</span> <span class=na>level=</span><span class=s>&#34;INFO&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;CONSOLE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;INFO_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;ERROR_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;WARN_FILE&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/root&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/springProfile&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/configuration&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=日志设置>日志设置</h1><h2 id=引入依赖>引入依赖</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -44,7 +1168,7 @@
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>logback-classic<span class=nt>&lt;/artifactId&gt;</span>
 </span></span><span class=line><span class=cl>    <span class=nt>&lt;version&gt;</span>1.2.6<span class=nt>&lt;/version&gt;</span>
 </span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
-</span></span></code></pre></td></tr></table></div></div><h1 id=applicationyml>application.yml</h1><p>修改<code>mybatis-plus.configuration.log-impl=org.apache.ibatis.logging.slf4j.Slf4jImpl</code>可输出到日志文件中</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h2 id=applicationyml>application.yml</h2><p>修改<code>mybatis-plus.configuration.log-impl=org.apache.ibatis.logging.slf4j.Slf4jImpl</code>可输出到日志文件中</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -76,7 +1200,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c>#log-impl: org.apache.ibatis.logging.stdout.StdOutImpl</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c># 当前的日志实现是 org.apache.ibatis.logging.slf4j.Slf4jImpl，它支持输出到日志文件</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>log-impl</span><span class=p>:</span><span class=w> </span><span class=l>org.apache.ibatis.logging.slf4j.Slf4jImpl</span><span class=w>
-</span></span></span></code></pre></td></tr></table></div></div><h1 id=logback-springxml>logback-spring.xml</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=logback-springxml>logback-spring.xml</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
 </span><span class=lnt>  2
 </span><span class=lnt>  3
 </span><span class=lnt>  4
