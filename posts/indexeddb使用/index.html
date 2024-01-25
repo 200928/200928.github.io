@@ -1,0 +1,672 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>IndexedDB使用 - 灰灰爱吃小云朵</title><meta name=Description content="欢迎来到灰灰爱吃小云朵的博客!"><meta property="og:title" content="IndexedDB使用">
+<meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://200928.github.io/posts/indexeddb%E4%BD%BF%E7%94%A8/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-01-25T09:08:03+08:00"><meta property="article:modified_time" content="2024-01-25T09:08:03+08:00"><meta property="og:site_name" content="灰灰爱吃小云朵"><meta name=twitter:card content="summary"><meta name=twitter:title content="IndexedDB使用"><meta name=twitter:description content><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://200928.github.io/posts/indexeddb%E4%BD%BF%E7%94%A8/><link rel=prev href=https://200928.github.io/posts/linux%E5%86%85%E5%AD%98%E8%80%97%E5%B0%BD%E5%8D%A1%E6%AD%BB/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"IndexedDB使用","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/200928.github.io\/posts\/indexeddb%E4%BD%BF%E7%94%A8\/"},"genre":"posts","wordcount":3871,"url":"https:\/\/200928.github.io\/posts\/indexeddb%E4%BD%BF%E7%94%A8\/","datePublished":"2024-01-25T09:08:03+08:00","dateModified":"2024-01-25T09:08:03+08:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"ming"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/><i class='fa-solid fa-file-pen'></i> 文章 </a><a class=menu-item href=/tags/><i class='fa-solid fa-tags'></i> 标签 </a><a class=menu-item href=/categories/><i class='fa-solid fa-layer-group'></i> 分类 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=/catch-the-cat/><i class='fas fa-fw fa-fan fa-spin'></i> 猫咪 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title><i class='fa-solid fa-file-pen'></i>文章</a><a class=menu-item href=/tags/ title><i class='fa-solid fa-tags'></i>标签</a><a class=menu-item href=/categories/ title><i class='fa-solid fa-layer-group'></i>分类</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=/catch-the-cat/ title><i class='fas fa-fw fa-fan fa-spin'></i>猫咪</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">IndexedDB使用</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>ming</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2024-01-25>2024-01-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;3871 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;8 minutes&nbsp;
+<span id=busuanzi_container_value_page_pv><i class="far fa-eye fa-fw"></i>
+<span id=busuanzi_value_page_pv></span>&nbsp;views</span></div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#创建数据库>创建数据库</a></li><li><a href=#对象库>对象库</a></li><li><a href=#封装工具类>封装工具类</a></li></ul></nav></div></div><div class=content id=content><blockquote><p><a href=https://zh.javascript.info/indexeddb target=_blank rel="noopener noreffer">https://zh.javascript.info/indexeddb</a></p></blockquote><h1 id=创建数据库>创建数据库</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>openRequest</span> <span class=o>=</span> <span class=nx>indexedDB</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=s2>&#34;store&#34;</span><span class=p>,</span> <span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>openRequest</span><span class=p>.</span><span class=nx>onupgradeneeded</span> <span class=o>=</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 如果客户端没有数据库则触发
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=c1>// ...执行初始化...
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>openRequest</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>console</span><span class=p>.</span><span class=nx>error</span><span class=p>(</span><span class=s2>&#34;Error&#34;</span><span class=p>,</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>error</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>openRequest</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kd>let</span> <span class=nx>db</span> <span class=o>=</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>result</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 继续使用 db 对象处理数据库
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>onupgradeneeded、onerror、onsuccess</code>这几个属性有点像回调函数，当<code>indexedDB.open("store", 1);</code>打开数据库成功调用 onsuccess 函数，打开失败调用 onerror 函数</p><p>其中<code>onupgradeneeded</code>属性可以写创建数据库以及升级数据库版本的初始化或者升级代码操作</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>openRequest</span> <span class=o>=</span> <span class=nx>indexedDB</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=s2>&#34;store&#34;</span><span class=p>,</span> <span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>openRequest</span><span class=p>.</span><span class=nx>onupgradeneeded</span> <span class=o>=</span> <span class=kd>function</span><span class=p>(</span><span class=nx>event</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 现有的数据库版本小于 2（或不存在）
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>let</span> <span class=nx>db</span> <span class=o>=</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>result</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>switch</span><span class=p>(</span><span class=nx>event</span><span class=p>.</span><span class=nx>oldVersion</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// 现有的 db 版本
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>case</span> <span class=mi>0</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// 版本 0 表示客户端没有数据库
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=c1>// 执行初始化
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>case</span> <span class=mi>1</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// 客户端版本为 1
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=c1>// 更新
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>举例：数据库的创建</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>openRequest</span> <span class=o>=</span> <span class=nx>indexedDB</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=s2>&#34;db&#34;</span><span class=p>,</span> <span class=mi>3</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 创建/升级 数据库而无需版本检查
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>openRequest</span><span class=p>.</span><span class=nx>onupgradeneeded</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>db</span> <span class=o>=</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>result</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>db</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>db</span><span class=p>.</span><span class=nx>objectStoreNames</span><span class=p>.</span><span class=nx>contains</span><span class=p>(</span><span class=s2>&#34;books&#34;</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 如果没有 “books” 数据
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>db</span><span class=p>.</span><span class=nx>createObjectStore</span><span class=p>(</span><span class=s2>&#34;books&#34;</span><span class=p>,</span> <span class=p>{</span> <span class=nx>keyPath</span><span class=o>:</span> <span class=s2>&#34;id&#34;</span> <span class=p>})</span> <span class=c1>// 创造它
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>openRequest</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;成功&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>openRequest</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;失败&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>上面代码在第一次执行并且打开数据库成功的清空下，会调用<code>onupgradeneeded</code>和<code>onsuccess</code>函数</p><p>输出结果如下</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125092902042.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125092902042.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125092902042.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125092902042.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125092902042.png title=image-20240125092902042></p><blockquote><p>举例：数据库的删除</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>deleteRequest</span> <span class=o>=</span> <span class=nx>indexedDB</span><span class=p>.</span><span class=nx>deleteDatabase</span><span class=p>(</span><span class=s2>&#34;db&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// deleteRequest.onsuccess/onerror 追踪（tracks）结果
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>deleteRequest</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;删除数据库成功&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>deleteRequest</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;删除数据库失败&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>创建后插入数据</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>  <span class=nx>useEffect</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>openRequest</span> <span class=o>=</span> <span class=nx>indexedDB</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=s2>&#34;db&#34;</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 创建/升级 数据库而无需版本检查
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>openRequest</span><span class=p>.</span><span class=nx>onupgradeneeded</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=kd>let</span> <span class=nx>db</span> <span class=o>=</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>result</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>db</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>db</span><span class=p>.</span><span class=nx>objectStoreNames</span><span class=p>.</span><span class=nx>contains</span><span class=p>(</span><span class=s2>&#34;books&#34;</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 如果没有 “books” 数据
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>db</span><span class=p>.</span><span class=nx>createObjectStore</span><span class=p>(</span><span class=s2>&#34;books&#34;</span><span class=p>,</span> <span class=p>{</span> <span class=nx>keyPath</span><span class=o>:</span> <span class=s2>&#34;id&#34;</span> <span class=p>})</span> <span class=c1>// 创造它
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>openRequest</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;成功&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>openRequest</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;失败&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>db</span> <span class=o>=</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>result</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据插入&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>transaction</span> <span class=o>=</span> <span class=nx>db</span><span class=p>.</span><span class=nx>transaction</span><span class=p>([</span><span class=s2>&#34;books&#34;</span><span class=p>],</span> <span class=s2>&#34;readwrite&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>booksStore</span> <span class=o>=</span> <span class=nx>transaction</span><span class=p>.</span><span class=nx>objectStore</span><span class=p>(</span><span class=s2>&#34;books&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 待插入的数据
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=nx>booksData</span> <span class=o>=</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;小王子&#34;</span><span class=p>,</span> <span class=nx>desc</span><span class=o>:</span> <span class=s2>&#34;小王子描述&#34;</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=mi>2</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;数据结构&#34;</span><span class=p>,</span> <span class=nx>desc</span><span class=o>:</span> <span class=s2>&#34;数据结构说明&#34;</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 插入数据
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>booksData</span><span class=p>.</span><span class=nx>forEach</span><span class=p>(</span><span class=nx>book</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>booksStore</span><span class=p>.</span><span class=nx>add</span><span class=p>(</span><span class=nx>book</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>      
+</span></span><span class=line><span class=cl>    <span class=c1>// 等待事务完成
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>transaction</span><span class=p>.</span><span class=nx>oncomplete</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据插入成功&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>transaction</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据插入失败&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span> <span class=p>[])</span>
+</span></span></code></pre></td></tr></table></div></div><p>这种写法有个很明显的问题，IndexedDB 操作是异步的，而在 <code>transaction</code> 相关的操作处可能在数据库打开成功之前就被执行了</p><p>改写如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>  <span class=nx>useEffect</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>openRequest</span> <span class=o>=</span> <span class=nx>indexedDB</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=s2>&#34;db&#34;</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 创建/升级 数据库而无需版本检查
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>openRequest</span><span class=p>.</span><span class=nx>onupgradeneeded</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=kd>let</span> <span class=nx>db</span> <span class=o>=</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>result</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>db</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>db</span><span class=p>.</span><span class=nx>objectStoreNames</span><span class=p>.</span><span class=nx>contains</span><span class=p>(</span><span class=s2>&#34;books&#34;</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 如果没有 “books” 数据
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>db</span><span class=p>.</span><span class=nx>createObjectStore</span><span class=p>(</span><span class=s2>&#34;books&#34;</span><span class=p>,</span> <span class=p>{</span> <span class=nx>keyPath</span><span class=o>:</span> <span class=s2>&#34;id&#34;</span> <span class=p>})</span> <span class=c1>// 创造它
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>openRequest</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;成功&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=kr>const</span> <span class=nx>db</span> <span class=o>=</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>result</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据插入&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=kr>const</span> <span class=nx>transaction</span> <span class=o>=</span> <span class=nx>db</span><span class=p>.</span><span class=nx>transaction</span><span class=p>([</span><span class=s2>&#34;books&#34;</span><span class=p>],</span> <span class=s2>&#34;readwrite&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=kr>const</span> <span class=nx>booksStore</span> <span class=o>=</span> <span class=nx>transaction</span><span class=p>.</span><span class=nx>objectStore</span><span class=p>(</span><span class=s2>&#34;books&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// 待插入的数据
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=kr>const</span> <span class=nx>booksData</span> <span class=o>=</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;小王子&#34;</span><span class=p>,</span> <span class=nx>desc</span><span class=o>:</span> <span class=s2>&#34;小王子描述&#34;</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=mi>2</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;数据结构&#34;</span><span class=p>,</span> <span class=nx>desc</span><span class=o>:</span> <span class=s2>&#34;数据结构说明&#34;</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=p>]</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// 插入数据
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=nx>booksData</span><span class=p>.</span><span class=nx>forEach</span><span class=p>(</span><span class=nx>book</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>booksStore</span><span class=p>.</span><span class=nx>add</span><span class=p>(</span><span class=nx>book</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>})</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// 等待事务完成
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=nx>transaction</span><span class=p>.</span><span class=nx>oncomplete</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据插入成功&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=nx>transaction</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据插入失败&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>openRequest</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;失败&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span> <span class=p>[])</span>
+</span></span></code></pre></td></tr></table></div></div><p>第一次执行结果</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101133001.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101133001.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101133001.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101133001.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101133001.png title=image-20240125101133001></p><p>下面看下本地的 IndexedDB 的存储结构是什么样子的</p><ul><li>Firefox</li></ul><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101513415.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101513415.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101513415.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101513415.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101513415.png title=image-20240125101513415></p><ul><li>Google Chrome：这里还显示了键路径，也就是键值对的 key</li></ul><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101707060.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101707060.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101707060.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101707060.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125101707060.png title=image-20240125101707060></p><h1 id=对象库>对象库</h1><blockquote><p>引用自：https://zh.javascript.info/indexeddb#dui-xiang-ku-objectstore</p><p>要在 <code>IndexedDB</code> 中存储某些内容，我们需要一个 <strong>对象库</strong>。</p><p>对象库是 IndexedDB 的核心概念，在其他数据库中对应的对象称为“表”或“集合”。它是储存数据的地方。一个数据库可能有多个存储区：一个用于存储用户数据，另一个用于商品，等等。</p><p>尽管被命名为“对象库”，但也可以存储原始类型。</p><p><strong>几乎可以存储任何值，包括复杂的对象。</strong></p><p>IndexedDB 使用 <a href=https://www.w3.org/TR/html53/infrastructure.html#section-structuredserializeforstorage target=_blank rel="noopener noreffer">标准序列化算法</a> 来克隆和存储对象。类似于 <code>JSON.stringify</code>，不过功能更加强大，能够存储更多的数据类型。</p><p>有一种对象不能被存储：循环引用的对象。此类对象不可序列化，也不能进行 <code>JSON.stringify</code>。</p><p><strong>库中的每个值都必须有唯一的键 <code>key</code>。</strong></p><p>键的类型必须为数字、日期、字符串、二进制或数组。它是唯一的标识符，所以我们可以通过键来搜索/删除/更新值。</p></blockquote><p>上面我创建了一个 db 名称的库：<code>let openRequest = indexedDB.open("db", 1)</code></p><p>db 库里面又创建了一个 books 的对象库：<code>db.createObjectStore("books", { keyPath: "id" })</code></p><p>我们可以对比一下 bilibili 的 IndexedDB</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125102445202.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125102445202.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125102445202.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125102445202.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125102445202.png title=image-20240125102445202></p><blockquote><p>引用自：https://zh.javascript.info/indexeddb#dui-xiang-ku-objectstore</p><p>创建对象库的语法：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>db</span><span class=p>.</span><span class=nx>createObjectStore</span><span class=p>(</span><span class=nx>name</span><span class=p>[,</span> <span class=nx>keyOptions</span><span class=p>]);</span>
+</span></span></code></pre></td></tr></table></div></div><p>请注意，操作是同步的，不需要 <code>await</code>。</p><ul><li><p><code>name</code> 是存储区名称，例如 <code>"books"</code> 表示书。</p></li><li><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback></code></pre></td></tr></table></div></div></li></ul><p>keyOptions</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=err>是具有以下两个属性之一的可选对象：</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=o>-</span><span class=w> </span><span class=o>`</span><span class=n>keyPath</span><span class=o>`</span><span class=w> </span><span class=err>——</span><span class=w> </span><span class=err>对象属性的路径，</span><span class=n>IndexedDB</span><span class=w> </span><span class=err>将以此路径作为键，例如</span><span class=w> </span><span class=o>`</span><span class=n>id</span><span class=o>`</span><span class=err>。</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=o>-</span><span class=w> </span><span class=o>`</span><span class=n>autoIncrement</span><span class=o>`</span><span class=w> </span><span class=err>——</span><span class=w> </span><span class=err>如果为</span><span class=w> </span><span class=o>`</span><span class=no>true</span><span class=o>`</span><span class=err>，则自动生成新存储的对象的键，键是一个不断递增的数字。</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=err>如果我们不提供</span><span class=w> </span><span class=o>`</span><span class=n>keyOptions</span><span class=o>`</span><span class=err>，那么以后需要在存储对象时，显式地提供一个键</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div></blockquote><p>上面我创建指定了<code>keyPath</code>：<code>db.createObjectStore("books", { keyPath: "id" })</code></p><p>所以后面给这个 books 对象库插入数据的时候，比如插入一个对象，那么对象里面需要有<code>id</code>属性，如果没有将会插入数据失败</p><p>比如下面的数据</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125103257951.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125103257951.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125103257951.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125103257951.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125103257951.png title=image-20240125103257951></p><h1 id=封装工具类>封装工具类</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * 打开或创建指定名称和版本的 IndexedDB 数据库
+</span></span></span><span class=line><span class=cl><span class=cm> * @param {string} dbName - 数据库名称
+</span></span></span><span class=line><span class=cl><span class=cm> * @param {string} storeName - 对象存储的名称
+</span></span></span><span class=line><span class=cl><span class=cm> * @param {Object} keyOptions - 键选项对象，包括 keyPath 和 autoIncrement
+</span></span></span><span class=line><span class=cl><span class=cm> * @param {number} version - 数据库版本（默认为1）
+</span></span></span><span class=line><span class=cl><span class=cm> * @returns {Promise&lt;IDBDatabase&gt;} - 返回一个 Promise，解析为打开或创建的 IndexedDB 数据库实例
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>openDB</span> <span class=o>=</span> <span class=nx>options</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=p>{</span> <span class=nx>dbName</span><span class=p>,</span> <span class=nx>storeName</span><span class=p>,</span> <span class=nx>keyOptions</span><span class=p>,</span> <span class=nx>version</span> <span class=o>=</span> <span class=mi>1</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>options</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>,</span> <span class=nx>reject</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 兼容不同浏览器的 IndexedDB 实现
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>var</span> <span class=nx>indexedDB</span> <span class=o>=</span>
+</span></span><span class=line><span class=cl>      <span class=nb>window</span><span class=p>.</span><span class=nx>indexedDB</span> <span class=o>||</span>
+</span></span><span class=line><span class=cl>      <span class=nb>window</span><span class=p>.</span><span class=nx>mozIndexedDB</span> <span class=o>||</span>
+</span></span><span class=line><span class=cl>      <span class=nb>window</span><span class=p>.</span><span class=nx>webkitIndexedDB</span> <span class=o>||</span>
+</span></span><span class=line><span class=cl>      <span class=nb>window</span><span class=p>.</span><span class=nx>msIndexedDB</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>db</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 创建或打开数据库的请求
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>let</span> <span class=nx>openRequest</span> <span class=o>=</span> <span class=nx>indexedDB</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=nx>dbName</span><span class=p>,</span> <span class=nx>version</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 成功打开数据库时的回调
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>openRequest</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// 获取数据库实例
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=nx>db</span> <span class=o>=</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>result</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`</span><span class=si>${</span><span class=nx>dbName</span><span class=si>}</span><span class=sb>数据库打开成功`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// 将数据库实例返回出去
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=nx>resolve</span><span class=p>(</span><span class=nx>db</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 打开数据库失败时的回调
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>openRequest</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`</span><span class=si>${</span><span class=nx>dbName</span><span class=si>}</span><span class=sb>数据库打开失败`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=nx>reject</span><span class=p>(</span><span class=sb>`</span><span class=si>${</span><span class=nx>dbName</span><span class=si>}</span><span class=sb>数据库打开失败`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 数据库版本升级时的回调，用于创建或修改数据库结构
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>openRequest</span><span class=p>.</span><span class=nx>onupgradeneeded</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;onupgradeneeded&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=nx>db</span> <span class=o>=</span> <span class=nx>openRequest</span><span class=p>.</span><span class=nx>result</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=c1>// 判断是否已存在名为 &#34;part&#34; 的对象存储
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>db</span><span class=p>.</span><span class=nx>objectStoreNames</span><span class=p>.</span><span class=nx>contains</span><span class=p>(</span><span class=nx>storeName</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>storeName</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 如果不存在，则创建
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=c1>// 创建对象存储，根据传递的参数设置选项对象
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kr>const</span> <span class=nx>storeOptions</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=nx>keyOptions</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=p>(</span><span class=nx>keyOptions</span><span class=p>.</span><span class=nx>keyPath</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>storeOptions</span><span class=p>.</span><span class=nx>keyPath</span> <span class=o>=</span> <span class=nx>keyOptions</span><span class=p>.</span><span class=nx>keyPath</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span>
+</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=p>(</span><span class=nx>keyOptions</span><span class=p>.</span><span class=nx>autoIncrement</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>storeOptions</span><span class=p>.</span><span class=nx>autoIncrement</span> <span class=o>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 创建对象存储
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>db</span><span class=p>.</span><span class=nx>createObjectStore</span><span class=p>(</span><span class=nx>storeName</span><span class=p>,</span> <span class=nx>storeOptions</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>})</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * 向 IndexedDB 中指定的对象存储添加数据
+</span></span></span><span class=line><span class=cl><span class=cm> * @param {IDBDatabase} db - IndexedDB 数据库实例
+</span></span></span><span class=line><span class=cl><span class=cm> * @param {string} storeName - 对象存储的名称
+</span></span></span><span class=line><span class=cl><span class=cm> * @param {any} data - 要添加的数据
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>addData</span> <span class=o>=</span> <span class=p>(</span><span class=nx>db</span><span class=p>,</span> <span class=nx>storeName</span><span class=p>,</span> <span class=nx>data</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 启动事务，指定对象存储和操作模式为读写
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kr>const</span> <span class=nx>transaction</span> <span class=o>=</span> <span class=nx>db</span><span class=p>.</span><span class=nx>transaction</span><span class=p>([</span><span class=nx>storeName</span><span class=p>],</span> <span class=s2>&#34;readwrite&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 获取对象存储进行操作
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kr>const</span> <span class=nx>store</span> <span class=o>=</span> <span class=nx>transaction</span><span class=p>.</span><span class=nx>objectStore</span><span class=p>(</span><span class=nx>storeName</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 添加数据到对象存储
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=c1>// 判断 data 是不是一个数组对象
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>let</span> <span class=nx>addRequest</span>
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=nb>Array</span><span class=p>.</span><span class=nx>isArray</span><span class=p>(</span><span class=nx>data</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>data</span><span class=p>.</span><span class=nx>forEach</span><span class=p>(</span><span class=nx>item</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>addRequest</span> <span class=o>=</span> <span class=nx>store</span><span class=p>.</span><span class=nx>add</span><span class=p>(</span><span class=nx>item</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>})</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>addRequest</span> <span class=o>=</span> <span class=nx>store</span><span class=p>.</span><span class=nx>add</span><span class=p>(</span><span class=nx>data</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 事务成功时触发的事件
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nx>transaction</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据写入成功&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 事务失败时触发的事件
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nx>transaction</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据写入失败&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 如果你还希望在添加请求成功时执行额外的逻辑，可以监听添加请求的成功事件
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nx>addRequest</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=nx>event</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据添加请求成功&#34;</span><span class=p>,</span> <span class=nx>event</span><span class=p>.</span><span class=nx>target</span><span class=p>.</span><span class=nx>result</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// event.target.result 包含了添加的数据的主键值
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 如果你还希望在添加请求失败时执行额外的逻辑，可以监听添加请求的失败事件
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nx>addRequest</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=nx>event</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;数据添加请求失败&#34;</span><span class=p>,</span> <span class=nx>event</span><span class=p>.</span><span class=nx>target</span><span class=p>.</span><span class=nx>error</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * 获取指定对象存储中的所有数据
+</span></span></span><span class=line><span class=cl><span class=cm> * @param {IDBDatabase} db - IndexedDB 数据库实例
+</span></span></span><span class=line><span class=cl><span class=cm> * @param {string} storeName - 对象存储的名称
+</span></span></span><span class=line><span class=cl><span class=cm> * @returns {Promise&lt;Array&lt;any&gt;&gt;} - 返回一个 Promise，解析为对象存储中的所有数据数组
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>getAllDataFromStore</span> <span class=o>=</span> <span class=p>(</span><span class=nx>db</span><span class=p>,</span> <span class=nx>storeName</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>,</span> <span class=nx>reject</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 启动只读事务
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=nx>transaction</span> <span class=o>=</span> <span class=nx>db</span><span class=p>.</span><span class=nx>transaction</span><span class=p>([</span><span class=nx>storeName</span><span class=p>],</span> <span class=s2>&#34;readonly&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 获取对象存储进行操作
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>const</span> <span class=nx>store</span> <span class=o>=</span> <span class=nx>transaction</span><span class=p>.</span><span class=nx>objectStore</span><span class=p>(</span><span class=nx>storeName</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>getAllRequest</span> <span class=o>=</span> <span class=nx>store</span><span class=p>.</span><span class=nx>getAll</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 获取所有数据成功，将数据数组返回
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>getAllRequest</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;成功&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=nx>resolve</span><span class=p>(</span><span class=nx>getAllRequest</span><span class=p>.</span><span class=nx>result</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 事务成功时触发的事件
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>transaction</span><span class=p>.</span><span class=nx>onsuccess</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// // 获取对象存储中的所有数据
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=c1>// 获取所有数据成功，将数据数组返回
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=nx>resolve</span><span class=p>(</span><span class=nx>getAllRequest</span><span class=p>.</span><span class=nx>result</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 事务失败时触发的事件
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>transaction</span><span class=p>.</span><span class=nx>onerror</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`获取 </span><span class=si>${</span><span class=nx>storeName</span><span class=si>}</span><span class=sb> 对象存储中的数据失败`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=nx>reject</span><span class=p>(</span><span class=sb>`获取 </span><span class=si>${</span><span class=nx>storeName</span><span class=si>}</span><span class=sb> 对象存储中的数据失败`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>})</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=kr>const</span> <span class=nx>DBUtils</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>openDB</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>addData</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>getAllDataFromStore</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>由于使用过程中碰到了 Promise 的异步问题，现在总结一下，下面我会使用上面的工具类进行操作</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>initDB</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;------start------&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>DBUtils</span><span class=p>.</span><span class=nx>openDB</span><span class=p>(</span><span class=s2>&#34;clgl&#34;</span><span class=p>,</span> <span class=s2>&#34;part&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>.</span><span class=nx>then</span><span class=p>(</span><span class=nx>res</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>res</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>})</span>
+</span></span><span class=line><span class=cl>      <span class=p>.</span><span class=k>catch</span><span class=p>(</span><span class=nx>err</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>})</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;------end------&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>上面代码将打开<code>clgl</code>数据库里面的<code>part</code>对象库</p><p>由于 Promise 是异步的，所以<code>.then .catch</code>里面的代码将后执行，下面是一个输出结果</p><p><img class=lazyload src=/svg/loading.min.svg data-src=/home/minghui/Pictures/blog_img/image-20240125142233434.png data-srcset="/home/minghui/Pictures/blog_img/image-20240125142233434.png, /home/minghui/Pictures/blog_img/image-20240125142233434.png 1.5x, /home/minghui/Pictures/blog_img/image-20240125142233434.png 2x" data-sizes=auto alt=/home/minghui/Pictures/blog_img/image-20240125142233434.png title=image-20240125142233434></p><p>如果需要按照代码的顺序执行，需要使用<code>async</code>和<code>await</code>关键字</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>initDB</span> <span class=o>=</span> <span class=kr>async</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;------start------&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=kr>await</span> <span class=nx>DBUtils</span><span class=p>.</span><span class=nx>openDB</span><span class=p>(</span><span class=s2>&#34;clgl&#34;</span><span class=p>,</span> <span class=s2>&#34;part&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>.</span><span class=nx>then</span><span class=p>(</span><span class=nx>res</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>res</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>})</span>
+</span></span><span class=line><span class=cl>      <span class=p>.</span><span class=k>catch</span><span class=p>(</span><span class=nx>err</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>})</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;------end------&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>下面是输出结果</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125150645744.png data-srcset="https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125150645744.png, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125150645744.png 1.5x, https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125150645744.png 2x" data-sizes=auto alt=https://ming-blog.oss-cn-shenzhen.aliyuncs.com/image/blog_img/image-20240125150645744.png title=image-20240125150645744></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2024-01-25</span></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://200928.github.io/posts/indexeddb%E4%BD%BF%E7%94%A8/ data-title=IndexedDB使用><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://200928.github.io/posts/indexeddb%E4%BD%BF%E7%94%A8/><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://200928.github.io/posts/indexeddb%E4%BD%BF%E7%94%A8/ data-title=IndexedDB使用><i class="fab fa-hacker-news fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://200928.github.io/posts/indexeddb%E4%BD%BF%E7%94%A8/ data-title=IndexedDB使用><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://200928.github.io/posts/indexeddb%E4%BD%BF%E7%94%A8/ data-title=IndexedDB使用><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/posts/linux%E5%86%85%E5%AD%98%E8%80%97%E5%B0%BD%E5%8D%A1%E6%AD%BB/ class=prev rel=prev title=Linux内存耗尽卡死><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>Linux内存耗尽卡死</a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-line><span id=run-time></span></div><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.121.2">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden=true></i> LoveIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw" aria-hidden=true></i><span itemprop=copyrightYear>2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank></a></span></div><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><section><span id=busuanzi_container_value_site_pv><i class="far fa-eye fa-fw"></i>
+<span id=busuanzi_value_site_pv></span>
+</span>&nbsp;|&nbsp;
+<span id=busuanzi_container_value_site_uv><i class="fa fa-user"></i>
+<span id=busuanzi_value_site_uv></span></span></section></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw" aria-hidden=true></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw" aria-hidden=true></i></a></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css><script type=text/javascript src=https://.disqus.com/embed.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:50},comment:{},lightgallery:!0,math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script defer src=https://us.umami.is/script.js data-website-id=076a706b-b869-4daf-a0f4-6aa04b5620fa></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js></script><script type=text/javascript src=/js/custom.js></script></body></html>
