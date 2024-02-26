@@ -1,0 +1,154 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>TigerVNC使用 - 灰灰爱吃小云朵</title><meta name=Description content="欢迎来到灰灰爱吃小云朵的博客!"><meta property="og:title" content="TigerVNC使用">
+<meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://200928.github.io/posts/tigervnc%E4%BD%BF%E7%94%A8/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-02-20T17:01:01+08:00"><meta property="article:modified_time" content="2024-02-20T17:01:01+08:00"><meta property="og:site_name" content="灰灰爱吃小云朵"><meta name=twitter:card content="summary"><meta name=twitter:title content="TigerVNC使用"><meta name=twitter:description content><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://200928.github.io/posts/tigervnc%E4%BD%BF%E7%94%A8/><link rel=prev href=https://200928.github.io/posts/wine%E4%BD%BF%E7%94%A8/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"TigerVNC使用","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/200928.github.io\/posts\/tigervnc%E4%BD%BF%E7%94%A8\/"},"genre":"posts","wordcount":993,"url":"https:\/\/200928.github.io\/posts\/tigervnc%E4%BD%BF%E7%94%A8\/","datePublished":"2024-02-20T17:01:01+08:00","dateModified":"2024-02-20T17:01:01+08:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"ming"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/><i class='fa-solid fa-file-pen'></i> 文章 </a><a class=menu-item href=/tags/><i class='fa-solid fa-tags'></i> 标签 </a><a class=menu-item href=/categories/><i class='fa-solid fa-layer-group'></i> 分类 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=/catch-the-cat/><i class='fas fa-fw fa-fan fa-spin'></i> 猫咪 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=灰灰爱吃小云朵>灰灰爱吃小云朵</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title><i class='fa-solid fa-file-pen'></i>文章</a><a class=menu-item href=/tags/ title><i class='fa-solid fa-tags'></i>标签</a><a class=menu-item href=/categories/ title><i class='fa-solid fa-layer-group'></i>分类</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=/catch-the-cat/ title><i class='fas fa-fw fa-fan fa-spin'></i>猫咪</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">TigerVNC使用</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>ming</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2024-02-20>2024-02-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;993 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;2 minutes&nbsp;
+<span id=busuanzi_container_value_page_pv><i class="far fa-eye fa-fw"></i>
+<span id=busuanzi_value_page_pv></span>&nbsp;views</span></div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#配置>配置</a><ul><li><a href=#初始化密码>初始化密码</a></li><li><a href=#配置用户映射文件>配置用户映射文件</a></li><li><a href=#配置会话类型>配置会话类型</a></li><li><a href=#启动-tigervnc>启动 tigervnc</a></li><li><a href=#防火墙开发端口>防火墙开发端口</a></li></ul></li><li><a href=#实际使用>实际使用</a><ul><li><a href=#运行-x0vncserver-来直接控制本地显示内容>运行 x0vncserver 来直接控制本地显示内容</a></li></ul></li></ul></nav></div></div><div class=content id=content><h1 id=配置>配置</h1><h2 id=初始化密码>初始化密码</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ vncpasswd
+</span></span></code></pre></td></tr></table></div></div><p>将哈希处理之后的密码存储到<code>~/.vnc/passwd</code></p><h2 id=配置用户映射文件>配置用户映射文件</h2><p>编辑<code>/etc/tigervnc/vncserver.users</code>文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># TigerVNC User assignment</span>
+</span></span><span class=line><span class=cl><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=c1># This file assigns users to specific VNC display numbers.</span>
+</span></span><span class=line><span class=cl><span class=c1># The syntax is &lt;display&gt;=&lt;username&gt;. E.g.:</span>
+</span></span><span class=line><span class=cl><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=c1># :2=andrew</span>
+</span></span><span class=line><span class=cl><span class=c1># :3=lisa</span>
+</span></span><span class=line><span class=cl>:1<span class=o>=</span>minghui
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>我这里指定了 5901端口对应minghui用户名，如果不设置将启动不了 vncserver 服务，报错如下</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ systemctl status vncserver@:1.service
+</span></span><span class=line><span class=cl>× vncserver@:1.service - Remote desktop service <span class=o>(</span>VNC<span class=o>)</span>
+</span></span><span class=line><span class=cl>     Loaded: loaded <span class=o>(</span>/usr/lib/systemd/system/vncserver@.service<span class=p>;</span> disabled<span class=p>;</span> preset: disabled<span class=o>)</span>
+</span></span><span class=line><span class=cl>     Active: failed <span class=o>(</span>Result: exit-code<span class=o>)</span> since Tue 2024-02-20 15:44:55 CST<span class=p>;</span> 17s ago
+</span></span><span class=line><span class=cl>    Process: <span class=m>3136048</span> <span class=nv>ExecStart</span><span class=o>=</span>/usr/bin/vncsession-start :1 <span class=o>(</span><span class=nv>code</span><span class=o>=</span>exited, <span class=nv>status</span><span class=o>=</span>1/FAILURE<span class=o>)</span>
+</span></span><span class=line><span class=cl>        CPU: 12ms
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>2月 <span class=m>20</span> 15:44:55 Arch systemd<span class=o>[</span>1<span class=o>]</span>: Starting Remote desktop service <span class=o>(</span>VNC<span class=o>)</span>...
+</span></span><span class=line><span class=cl>2月 <span class=m>20</span> 15:44:55 Arch vncsession-start<span class=o>[</span>3136048<span class=o>]</span>: No user configured <span class=k>for</span> display :1
+</span></span><span class=line><span class=cl>2月 <span class=m>20</span> 15:44:55 Arch systemd<span class=o>[</span>1<span class=o>]</span>: vncserver@:1.service: Control process exited, <span class=nv>code</span><span class=o>=</span>exited, <span class=nv>status</span><span class=o>=</span>1/FA&gt;
+</span></span><span class=line><span class=cl>2月 <span class=m>20</span> 15:44:55 Arch systemd<span class=o>[</span>1<span class=o>]</span>: vncserver@:1.service: Failed with result <span class=s1>&#39;exit-code&#39;</span>.
+</span></span><span class=line><span class=cl>2月 <span class=m>20</span> 15:44:55 Arch systemd<span class=o>[</span>1<span class=o>]</span>: Failed to start Remote desktop service <span class=o>(</span>VNC<span class=o>)</span>.
+</span></span></code></pre></td></tr></table></div></div><h2 id=配置会话类型>配置会话类型</h2><p>编辑<code>~/.vnc/config</code>，我这里配置的是 dwm</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=nv>session</span><span class=o>=</span>dwm
+</span></span><span class=line><span class=cl><span class=nv>geometry</span><span class=o>=</span>1920x1080
+</span></span><span class=line><span class=cl>localhost
+</span></span><span class=line><span class=cl>alwaysshared
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>这里 localhost 代表只能本地连接，如果需要外网/局域网连接则去掉</p></blockquote><p>然后在<code>/usr/share/xsessions/</code>创建<code>dwm.desktop</code>文件内容如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[Desktop Entry]
+</span></span><span class=line><span class=cl>Encoding=UTF-8
+</span></span><span class=line><span class=cl>Name=Dwm
+</span></span><span class=line><span class=cl>Comment=Dynamic window manager
+</span></span><span class=line><span class=cl>Exec=dwm
+</span></span><span class=line><span class=cl>Icon=dwm
+</span></span><span class=line><span class=cl>Type=Xsession
+</span></span></code></pre></td></tr></table></div></div><h2 id=启动-tigervnc>启动 tigervnc</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ systemctl start vncserver@:1
+</span></span></code></pre></td></tr></table></div></div><h2 id=防火墙开发端口>防火墙开发端口</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ sudo firewall-cmd --zone<span class=o>=</span>public --add-port<span class=o>=</span>5901/tcp --permanent
+</span></span><span class=line><span class=cl>$ systemctl restart firewalld.service
+</span></span></code></pre></td></tr></table></div></div><h1 id=实际使用>实际使用</h1><p>查看连接设备，第二条就是连接信息，10.147.17.129:5901 是服务端的 IP+Port，10.147.17.132:41380 是客户端的 IP+Port</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ netstat -ano <span class=p>|</span> grep <span class=m>5901</span>
+</span></span><span class=line><span class=cl>tcp        <span class=m>0</span>      <span class=m>0</span> 0.0.0.0:5901            0.0.0.0:*               LISTEN      off <span class=o>(</span>0.00/0/0<span class=o>)</span>
+</span></span><span class=line><span class=cl>tcp        <span class=m>0</span>      <span class=m>0</span> 10.147.17.129:5901      10.147.17.132:41380     ESTABLISHED off <span class=o>(</span>0.00/0/0<span class=o>)</span>
+</span></span><span class=line><span class=cl>tcp6       <span class=m>0</span>      <span class=m>0</span> :::5901                 :::*                    LISTEN      off <span class=o>(</span>0.00/0/0<span class=o>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>发现连接上之后 dwm 窗口管理器没有效果，使用键盘也不行，能不能直接控制物理 X 会话，而不重新启动 dwm 窗口管理器</p><h2 id=运行-x0vncserver-来直接控制本地显示内容>运行 x0vncserver 来直接控制本地显示内容</h2><blockquote><p>参考 ArchWiki：https://wiki.archlinuxcn.org/wiki/TigerVNC#%E8%BF%90%E8%A1%8C_x0vncserver_%E6%9D%A5%E7%9B%B4%E6%8E%A5%E6%8E%A7%E5%88%B6%E6%9C%AC%E5%9C%B0%E6%98%BE%E7%A4%BA%E5%86%85%E5%AE%B9</p></blockquote><p><a href="https://archlinux.org/packages/?name=tigervnc" target=_blank rel="noopener noreffer">tigervnc</a>包 同时也提供 <code>x0vncserver</code>，允许直接控制物理 X 会话。在使用 <em>vncpasswd</em> 定义了会话密码后，请这样启动服务端：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ x0vncserver -rfbauth ~/.vnc/passwd
+</span></span></code></pre></td></tr></table></div></div><p>这样会监听 5900 端口</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ x0vncserver -rfbauth ~/.vnc/passwd
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Wed Feb <span class=m>21</span> 08:48:09 <span class=m>2024</span>
+</span></span><span class=line><span class=cl> Geometry:    Desktop geometry is <span class=nb>set</span> to 3456x1229+0+0
+</span></span><span class=line><span class=cl> XDesktop:    Using evdev codemap
+</span></span><span class=line><span class=cl> XDesktop:
+</span></span><span class=line><span class=cl> XDesktop:    XTest extension present - version 2.2
+</span></span><span class=line><span class=cl> XDesktop:    RANDR extension not present
+</span></span><span class=line><span class=cl> XDesktop:    Will not be able to handle session resize
+</span></span><span class=line><span class=cl> Main:        Listening <span class=k>for</span> VNC connections on all interface<span class=o>(</span>s<span class=o>)</span>, port <span class=m>5900</span>
+</span></span></code></pre></td></tr></table></div></div><p>通过 systemd 启动与停止 x0vncserver</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>~/.config/systemd/user/x0vncserver.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>[</span>Unit<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=nv>Description</span><span class=o>=</span>Remote desktop service <span class=o>(</span>VNC<span class=o>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>[</span>Service<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=nv>Type</span><span class=o>=</span>simple
+</span></span><span class=line><span class=cl><span class=c1># wait for Xorg started by ${USER}</span>
+</span></span><span class=line><span class=cl><span class=nv>ExecStartPre</span><span class=o>=</span>/bin/sh -c <span class=s1>&#39;while ! pgrep -U &#34;$USER&#34; Xorg; do sleep 2; done&#39;</span>
+</span></span><span class=line><span class=cl><span class=nv>ExecStart</span><span class=o>=</span>/usr/bin/x0vncserver -rfbauth %h/.vnc/passwd
+</span></span><span class=line><span class=cl><span class=c1># or login with your username &amp; password</span>
+</span></span><span class=line><span class=cl><span class=c1>#ExecStart=/usr/bin/x0vncserver -PAMService=login -PlainUsers=${USER} -SecurityTypes=TLSPlain</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>[</span>Install<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=nv>WantedBy</span><span class=o>=</span>default.target
+</span></span></code></pre></td></tr></table></div></div><p>启动</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ systemctl start --user x0vncserver.service
+</span></span></code></pre></td></tr></table></div></div><p>停止</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ systemctl stop --user x0vncserver.service
+</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2024-02-20</span></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://200928.github.io/posts/tigervnc%E4%BD%BF%E7%94%A8/ data-title=TigerVNC使用><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://200928.github.io/posts/tigervnc%E4%BD%BF%E7%94%A8/><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://200928.github.io/posts/tigervnc%E4%BD%BF%E7%94%A8/ data-title=TigerVNC使用><i class="fab fa-hacker-news fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://200928.github.io/posts/tigervnc%E4%BD%BF%E7%94%A8/ data-title=TigerVNC使用><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://200928.github.io/posts/tigervnc%E4%BD%BF%E7%94%A8/ data-title=TigerVNC使用><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/posts/wine%E4%BD%BF%E7%94%A8/ class=prev rel=prev title=Wine使用><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>Wine使用</a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-line><span id=run-time></span></div><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.121.2">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden=true></i> LoveIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw" aria-hidden=true></i><span itemprop=copyrightYear>2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank></a></span></div><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><section><span id=busuanzi_container_value_site_pv><i class="far fa-eye fa-fw"></i>
+<span id=busuanzi_value_site_pv></span>
+</span>&nbsp;|&nbsp;
+<span id=busuanzi_container_value_site_uv><i class="fa fa-user"></i>
+<span id=busuanzi_value_site_uv></span></span></section></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw" aria-hidden=true></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw" aria-hidden=true></i></a></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css><script type=text/javascript src=https://.disqus.com/embed.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:50},comment:{},lightgallery:!0,math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script defer src=https://us.umami.is/script.js data-website-id=076a706b-b869-4daf-a0f4-6aa04b5620fa></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js></script><script type=text/javascript src=/js/custom.js></script></body></html>
